@@ -25,16 +25,16 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 31586,
+          "mem_used": 31380,
           "mem_total": 95830,
-          "util": 96,
+          "util": 0,
           "processes": []
         },
         {
           "index": 1,
           "mem_used": 92569,
           "mem_total": 95830,
-          "util": 0,
+          "util": 24,
           "processes": [
             {
               "pid": "3338428",
@@ -54,7 +54,7 @@
           "index": 2,
           "mem_used": 58112,
           "mem_total": 95830,
-          "util": 79,
+          "util": 100,
           "processes": [
             {
               "pid": "3936508",
@@ -66,10 +66,17 @@
         },
         {
           "index": 3,
-          "mem_used": 4,
+          "mem_used": 16764,
           "mem_total": 95830,
-          "util": 0,
-          "processes": []
+          "util": 1,
+          "processes": [
+            {
+              "pid": "3989839",
+              "name": "/home/aglc/rfcllm/myvenv/bin/python3",
+              "user": "aglc",
+              "mem": 16754
+            }
+          ]
         }
       ],
       "error": null
@@ -93,15 +100,15 @@
         },
         {
           "index": 1,
-          "mem_used": 42588,
+          "mem_used": 42568,
           "mem_total": 49140,
-          "util": 44,
+          "util": 32,
           "processes": [
             {
               "pid": "4045626",
               "name": "python",
               "user": "luzsun",
-              "mem": 42578
+              "mem": 42558
             }
           ]
         }
@@ -109,5 +116,5 @@
       "error": null
     }
   ],
-  "last_updated": "2025-10-24T17:05:01.788559Z"
+  "last_updated": "2025-10-24T17:06:01.826990Z"
 }
