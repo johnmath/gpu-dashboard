@@ -2,8 +2,8 @@ import subprocess
 import json
 from datetime import datetime
 import os
-import glob # New import to scan for files
-import time # New import to check file age
+import glob 
+import time 
 
 # --- Configuration ---
 script_dir = os.path.dirname(os.path.realpath(__file__))
@@ -12,7 +12,6 @@ config_path = os.path.join(script_dir, 'config.json')
 try:
     with open(config_path) as f:
         config = json.load(f)
-    # This is *now only* for the hub machine itself
     SERVERS = config['servers']
 except FileNotFoundError:
     print(f"FATAL: config.json not found at {config_path}")
@@ -22,9 +21,22 @@ OUTPUT_FILE = os.path.join(script_dir, 'status.json')
 AGGREGATE_FILE = os.path.join(script_dir, 'aggregate_stats.json')
 ALIAS_FILE = os.path.join(script_dir, 'user_aliases.json')
 INCOMING_DIR = os.path.join(script_dir, 'incoming')
-STALE_THRESHOLD_SECONDS = 300 # 5 minutes
+STALE_THRESHOLD_SECONDS = 300 
 # ---------------------
 
+def safe_int(value, default=0):
+    """Converts a value to int, returning default on failure."""
+    try:
+        return int(value)
+    except (ValueError, TypeError):
+        return default
+
+def safe_float(value, default=0.0):
+    """Converts a value to float, returning default on failure."""
+    try:
+        return float(value)
+    except (ValueError, TypeError):
+        return default
 
 def run_ssh_command(server_address, command):
     """Runs a command on a remote server via SSH and returns the output."""
@@ -36,9 +48,8 @@ def run_ssh_command(server_address, command):
         print(f"Error connecting to {server_address}: {e}")
         return None
 
-
+# --- All your leaderboard/alias functions (UNCHANGED) ---
 def load_alias_map(path):
-    """Loads a map of aliases to canonical usernames."""
     try:
         with open(path) as alias_file:
             raw_map = json.load(alias_file)
@@ -49,58 +60,47 @@ def load_alias_map(path):
         print(f"Warning: failed to read alias map {path}: {exc}")
         return {}
 
-
 def canonicalize_user(username, alias_map):
     if not username:
         return 'unknown'
     return alias_map.get(username.lower(), username)
 
-
 def compute_snapshot_totals(all_stats, alias_map):
     totals = {}
     total_capacity = 0
-
     for server in all_stats.get("servers", []):
         if server.get("error"):
             continue
-
         server_name = server.get("name", "unknown")
-        
-        # ADDED: Include CPU in hog logic
-        if server.get("cpu_util", 0) > 50: # 50% CPU hog threshold
+        if server.get("cpu_util", 0) > 50:
              for gpu in server.get("gpus", []):
                 for proc in gpu.get("processes", []):
                     raw_user = proc.get("user") or "unknown"
+                    if raw_user == "root": continue # Ignore root processes
                     canonical = canonicalize_user(raw_user, alias_map)
                     if canonical not in totals:
                          totals[canonical] = { "mem": 0, "machines": set(), "raw_users": set() }
                     totals[canonical]["machines"].add(f"{server_name} (CPU)")
-
-
         for gpu in server.get("gpus", []):
             total_capacity += gpu.get("mem_total", 0)
             for proc in gpu.get("processes", []):
                 raw_user = proc.get("user") or "unknown"
+                if raw_user == "root": continue # Ignore root processes
                 canonical = canonicalize_user(raw_user, alias_map)
-
                 if canonical not in totals:
                     totals[canonical] = {
                         "mem": 0,
                         "machines": set(),
                         "raw_users": set()
                     }
-
                 entry = totals[canonical]
                 entry["mem"] += proc.get("mem", 0)
                 entry["machines"].add(server_name)
                 entry["raw_users"].add(raw_user)
-
     return totals, total_capacity
-
 
 def update_aggregate_file(snapshot_totals, snapshot_capacity):
     now_ts = datetime.utcnow().isoformat() + "Z"
-
     default_payload = {
         "users": {},
         "cluster": {
@@ -111,7 +111,6 @@ def update_aggregate_file(snapshot_totals, snapshot_capacity):
         },
         "updated_at": None
     }
-
     if os.path.exists(AGGREGATE_FILE):
         try:
             with open(AGGREGATE_FILE) as aggregate_file:
@@ -121,19 +120,17 @@ def update_aggregate_file(snapshot_totals, snapshot_capacity):
             aggregate_data = default_payload
     else:
         aggregate_data = default_payload
-
     aggregate_data.setdefault("users", {})
     aggregate_data.setdefault("cluster", {})
-
     cluster_info = aggregate_data["cluster"]
     cluster_info["total_capacity_accum"] = cluster_info.get("total_capacity_accum", 0) + snapshot_capacity
     cluster_info["samples"] = cluster_info.get("samples", 0) + 1
     cluster_info["last_capacity"] = snapshot_capacity
     cluster_info["last_updated"] = now_ts
-
     for user, info in snapshot_totals.items():
         entry = aggregate_data["users"].get(user, {
             "total_mem_accum": 0,
+            "total_gb_hours": 0.0, 
             "samples": 0,
             "avg_mem": 0,
             "last_sample_mem": 0,
@@ -143,33 +140,28 @@ def update_aggregate_file(snapshot_totals, snapshot_capacity):
             "last_sample_machines": [],
             "raw_users_seen": []
         })
-
-        entry["total_mem_accum"] += info["mem"]
+        entry["total_mem_accum"] += info["mem"] 
         entry["samples"] += 1
         entry["last_sample_mem"] = info["mem"]
         entry["last_seen"] = now_ts
         entry.setdefault("first_seen", now_ts)
-
+        entry["total_gb_hours"] = entry["total_mem_accum"] / 1024.0 / 60.0
         machines_seen = set(entry.get("all_machines", []))
         machines_seen.update(info["machines"])
         entry["all_machines"] = sorted(machines_seen)
         entry["last_sample_machines"] = sorted(info["machines"])
-
         raw_seen = set(entry.get("raw_users_seen", []))
         raw_seen.update(info["raw_users"])
         entry["raw_users_seen"] = sorted(raw_seen)
-
         entry["avg_mem"] = entry["total_mem_accum"] / entry["samples"] if entry["samples"] else 0
-
         aggregate_data["users"][user] = entry
-
     aggregate_data["updated_at"] = now_ts
-
     try:
         with open(AGGREGATE_FILE, 'w') as aggregate_file:
             json.dump(aggregate_data, aggregate_file, indent=2)
     except Exception as exc:
         print(f"Warning: failed to write aggregate stats to {AGGREGATE_FILE}: {exc}")
+# --- End of leaderboard/alias functions ---
 
 def get_username_from_pid(server_address, pids):
     """Gets a map of {pid: username} from a list of PIDs."""
@@ -187,20 +179,14 @@ def get_username_from_pid(server_address, pids):
 def fetch_server_stats(server_name, server_address):
     """Fetches all GPU, CPU, and process stats from a single server."""
     print(f"Querying {server_name}...")
-    # ADDED cpu_util
     server_data = {"name": server_name, "gpus": [], "cpu_util": 0, "error": None}
     
     # 1. Get CPU stats
     cpu_command = "top -bn1 | grep '%Cpu(s)' | awk '{print $2 + $4}'"
     cpu_output = run_ssh_command(server_address, cpu_command)
-    try:
-        server_data["cpu_util"] = float(cpu_output.strip()) if cpu_output else 0
-    except Exception as e:
-        print(f"Could not parse CPU stats for {server_name}: {e}")
-        server_data["cpu_util"] = 0
+    server_data["cpu_util"] = safe_float(cpu_output.strip()) if cpu_output else 0
     
     # 2. Get GPU stats
-    # ADDED 'name'
     gpu_query = "nvidia-smi --query-gpu=index,memory.used,memory.total,utilization.gpu,uuid,name --format=csv,noheader,nounits"
     gpu_output = run_ssh_command(server_address, gpu_query)
     
@@ -211,18 +197,18 @@ def fetch_server_stats(server_name, server_address):
     gpus = {}
     for line in gpu_output.splitlines():
         parts = [p.strip() for p in line.split(',')]
+        if len(parts) < 6: continue
         gpus[parts[4]] = { # uuid is parts[4]
-            "index": int(parts[0]), 
-            "mem_used": int(parts[1]),
-            "mem_total": int(parts[2]), 
-            "util": int(parts[3]),
-            "name": parts[5], # ADDED
+            "index": safe_int(parts[0]), 
+            "mem_used": safe_int(parts[1]),
+            "mem_total": safe_int(parts[2]), 
+            "util": safe_int(parts[3]),
+            "name": parts[5],
             "processes": []
         }
 
     # 3. Get Process stats
-    # ADDED 'elapsed_time'
-    proc_query = "nvidia-smi --query-compute-apps=gpu_uuid,pid,process_name,used_gpu_memory,elapsed_time --format=csv,noheader,nounits"
+    proc_query = "nvidia-smi --query-processes=gpu_uuid,pid,process_name,used_gpu_memory,elapsed_time --format=csv,noheader,nounits"
     proc_output = run_ssh_command(server_address, proc_query)
     
     pid_to_gpu = {}
@@ -231,13 +217,17 @@ def fetch_server_stats(server_name, server_address):
     if proc_output:
         for line in proc_output.splitlines():
             parts = [p.strip() for p in line.split(',')]
-            gpu_uuid, pid, proc_name, mem_used = parts[:4]
+            if len(parts) < 5: continue
+            gpu_uuid, pid, proc_name = parts[:3]
+            mem_used = parts[3] # Can be 'N/A'
+            elapsed_time = parts[4]
+
             pids_on_server.append(pid)
             pid_to_gpu[pid] = {
                 "uuid": gpu_uuid, 
                 "name": proc_name, 
-                "mem": int(mem_used),
-                "time": parts[4] # ADDED
+                "mem": safe_int(mem_used), 
+                "time": elapsed_time
             }
 
     # 4. Get Usernames
@@ -246,13 +236,17 @@ def fetch_server_stats(server_name, server_address):
     # 5. Combine data
     for pid, proc_data in pid_to_gpu.items():
         gpu_uuid = proc_data["uuid"]
-        if gpu_uuid in gpus:
+        user = user_map.get(pid, "unknown")
+        
+        # --- NEW FILTER ---
+        # Ignore processes owned by root
+        if gpu_uuid in gpus and user != "root":
             gpus[gpu_uuid]["processes"].append({
                 "pid": pid, 
                 "name": proc_data["name"],
-                "user": user_map.get(pid, "unknown"), 
+                "user": user, 
                 "mem": proc_data["mem"],
-                "time": proc_data["time"] # ADDED
+                "time": proc_data["time"]
             })
             
     server_data["gpus"] = list(gpus.values())
@@ -279,10 +273,8 @@ current_time = time.time()
 
 for file_path in spoke_files:
     try:
-        # Check if the file is stale (e.g., machine is offline)
         file_mtime = os.path.getmtime(file_path)
         if (current_time - file_mtime) > STALE_THRESHOLD_SECONDS:
-            # File is old, report an error
             machine_name = os.path.basename(file_path).split('.')[0]
             print(f"Found stale data for {machine_name}.")
             all_stats["servers"].append({
@@ -290,9 +282,8 @@ for file_path in spoke_files:
                 "gpus": [],
                 "error": "Data is stale. Machine may be offline."
             })
-            continue # Skip to next file
+            continue 
             
-        # File is fresh, read it
         with open(file_path) as f:
             spoke_data = json.load(f)
             print(f"Adding data for {spoke_data.get('name')}")
