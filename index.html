@@ -184,7 +184,7 @@
         const container = document.getElementById('servers-container');
         const lastUpdatedEl = document.getElementById('last-updated');
         const jokeBox = document.getElementById('joke-box'); // Get joke box
-    const leaderboardEl = document.getElementById('leaderboard');
+        const leaderboardEl = document.getElementById('leaderboard');
 
         // 3. Joke templates
         const JOKES = [
@@ -210,6 +210,7 @@
 
         let userAliasMap = {};
         let aliasMapLoaded = false;
+        let aggregateStats = null;
 
         async function loadAliasMap() {
             try {
@@ -227,10 +228,117 @@
             }
         }
 
+        async function loadAggregateStats() {
+            try {
+                const response = await fetch(`aggregate_stats.json?v=${new Date().getTime()}`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                aggregateStats = await response.json();
+            } catch (error) {
+                console.warn('Failed to load aggregate stats:', error);
+                aggregateStats = null;
+            }
+        }
+
         function getCanonicalUser(rawUser) {
             if (!rawUser) return 'unknown';
             const normalized = rawUser.toLowerCase();
             return userAliasMap[normalized] || rawUser;
+        }
+
+        function buildLeaderboardEntries(userTotals, totalMemCapacity) {
+            if (aggregateStats && aggregateStats.users) {
+                const clusterInfo = aggregateStats.cluster || {};
+                const totalTrackedCapacity = clusterInfo.total_capacity_accum || 0;
+
+                return Object.entries(aggregateStats.users).map(([user, stats]) => {
+                    const totalMem = stats.total_mem_accum || 0;
+                    const samples = stats.samples || 0;
+                    const machines = new Set(stats.all_machines || []);
+                    const lastSampleMachines = new Set(stats.last_sample_machines || []);
+                    const memPercent = totalTrackedCapacity ? (totalMem / totalTrackedCapacity) * 100 : 0;
+
+                    return {
+                        user,
+                        totalMem,
+                        samples,
+                        avgMem: stats.avg_mem || (samples ? totalMem / samples : 0),
+                        memPercent,
+                        machines,
+                        lastSampleMachines,
+                        lastSeen: stats.last_seen || null,
+                        lastSampleMem: stats.last_sample_mem || 0,
+                        scope: 'historical'
+                    };
+                }).sort((a, b) => b.totalMem - a.totalMem);
+            }
+
+            return Array.from(userTotals.entries()).map(([user, stats]) => ({
+                user,
+                totalMem: stats.totalMem,
+                samples: 1,
+                avgMem: stats.totalMem,
+                memPercent: totalMemCapacity ? (stats.totalMem / totalMemCapacity) * 100 : 0,
+                machines: stats.machines,
+                lastSampleMachines: stats.machines,
+                lastSeen: null,
+                lastSampleMem: stats.totalMem,
+                scope: 'snapshot'
+            })).sort((a, b) => b.totalMem - a.totalMem);
+        }
+
+        function renderLeaderboard(entries) {
+            if (!entries || entries.length === 0) {
+                leaderboardEl.innerHTML = `<div class="leaderboard-panel leaderboard-empty">No historical GPU usage tracked yet.</div>`;
+                return;
+            }
+
+            const topEntries = entries.slice(0, 5);
+            let leaderboardHtml = `<div class="leaderboard-panel"><div class="leaderboard-title">Top GPU Users</div><ol class="leaderboard-list">`;
+
+            topEntries.forEach((entry, index) => {
+                const machineCount = entry.machines.size;
+                const machineLabel = machineCount === 1 ? 'machine' : 'machines';
+                const scopePrefix = entry.scope === 'historical' ? 'lifetime' : 'current';
+                const percentLabel = entry.scope === 'historical' ? 'tracked usage' : 'cluster';
+                const samplesLabel = entry.scope === 'historical' ? ` • ${entry.samples} samples` : '';
+                const meta = `${entry.totalMem.toFixed(0)} ${scopePrefix} MiB • ${entry.memPercent.toFixed(1)}% of ${percentLabel}${samplesLabel} • ${machineCount} ${machineLabel}`;
+
+                leaderboardHtml += `
+                    <li class="leaderboard-entry">
+                        <span class="leaderboard-rank">${index + 1}.</span>
+                        <div style="flex: 1;">
+                            <div><strong>${entry.user}</strong></div>
+                            <div class="leaderboard-meta">${meta}</div>
+                            <div class="leaderboard-bar">
+                                <div class="leaderboard-bar-fill" style="width: ${Math.min(entry.memPercent, 100)}%;"></div>
+                            </div>
+                        </div>
+                    </li>
+                `;
+            });
+
+            leaderboardHtml += `</ol></div>`;
+            leaderboardEl.innerHTML = leaderboardHtml;
+        }
+
+        function selectHogCandidates(leaderboardEntries, userTotals) {
+            if (!leaderboardEntries || leaderboardEntries.length === 0) {
+                return [];
+            }
+
+            let candidates = leaderboardEntries.filter(entry => entry.memPercent > HOG_THRESHOLD && (!aggregateStats || userTotals.has(entry.user)));
+
+            if (candidates.length === 0) {
+                candidates = leaderboardEntries.filter(entry => entry.memPercent > HOG_THRESHOLD);
+            }
+
+            if (candidates.length === 0) {
+                candidates = leaderboardEntries.slice(0, Math.min(leaderboardEntries.length, 3));
+            }
+
+            return candidates;
         }
 
         const COLOR_UTIL = 'rgb(100, 200, 100)';
@@ -329,49 +437,15 @@
                 container.innerHTML += serverHtml;
             }
 
-            // Leaderboard rendering runs after we've aggregated usage
-            const leaderboardEntries = Array.from(userTotals.entries()).map(([user, stats]) => ({
-                user,
-                totalMem: stats.totalMem,
-                processes: stats.processes,
-                machines: stats.machines,
-                memPercent: totalMemCapacity ? (stats.totalMem / totalMemCapacity) * 100 : 0,
-                aliases: stats.aliases
-            })).sort((a, b) => b.totalMem - a.totalMem);
+            const leaderboardEntries = buildLeaderboardEntries(userTotals, totalMemCapacity);
+            renderLeaderboard(leaderboardEntries);
 
-            if (leaderboardEntries.length > 0 && totalMemCapacity > 0) {
-                const topEntries = leaderboardEntries.slice(0, 5);
-                let leaderboardHtml = `<div class="leaderboard-panel"><div class="leaderboard-title">Top GPU Users</div><ol class="leaderboard-list">`;
-
-                topEntries.forEach((entry, index) => {
-                    const machineCount = entry.machines.size;
-                    const machineLabel = machineCount === 1 ? 'machine' : 'machines';
-                    leaderboardHtml += `
-                        <li class="leaderboard-entry">
-                            <span class="leaderboard-rank">${index + 1}.</span>
-                            <div style="flex: 1;">
-                                <div><strong>${entry.user}</strong></div>
-                                <div class="leaderboard-meta">${entry.totalMem.toFixed(0)} MiB • ${entry.memPercent.toFixed(1)}% of cluster • ${machineCount} ${machineLabel}</div>
-                                <div class="leaderboard-bar">
-                                    <div class="leaderboard-bar-fill" style="width: ${Math.min(entry.memPercent, 100)}%;"></div>
-                                </div>
-                            </div>
-                        </li>
-                    `;
-                });
-
-                leaderboardHtml += `</ol></div>`;
-                leaderboardEl.innerHTML = leaderboardHtml;
-            } else {
-                leaderboardEl.innerHTML = `<div class="leaderboard-panel leaderboard-empty">No GPU usage detected.</div>`;
-            }
-
-            // --- Joke Display Logic ---
-            const hogCandidates = leaderboardEntries.filter(entry => entry.memPercent > HOG_THRESHOLD);
+            const hogCandidates = selectHogCandidates(leaderboardEntries, userTotals);
             if (hogCandidates.length > 0) {
                 const randomEntry = hogCandidates[Math.floor(Math.random() * hogCandidates.length)];
-                const machineList = Array.from(randomEntry.machines);
-                const chosenMachine = machineList.length > 0 ? machineList[Math.floor(Math.random() * machineList.length)] : 'the cluster';
+                const machineSource = randomEntry.lastSampleMachines.size > 0 ? randomEntry.lastSampleMachines : randomEntry.machines;
+                const machineArray = Array.from(machineSource);
+                const chosenMachine = machineArray.length > 0 ? machineArray[Math.floor(Math.random() * machineArray.length)] : 'the cluster';
 
                 const jokeTemplate = JOKES[Math.floor(Math.random() * JOKES.length)];
                 const jokeText = jokeTemplate
@@ -388,6 +462,7 @@
                 if (!aliasMapLoaded) {
                     await loadAliasMap();
                 }
+                await loadAggregateStats();
                 const response = await fetch(`status.json?v=${new Date().getTime()}`);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);

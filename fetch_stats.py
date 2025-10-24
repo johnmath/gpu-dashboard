@@ -19,6 +19,8 @@ except FileNotFoundError:
     exit(1)
 
 OUTPUT_FILE = os.path.join(script_dir, 'status.json')
+AGGREGATE_FILE = os.path.join(script_dir, 'aggregate_stats.json')
+ALIAS_FILE = os.path.join(script_dir, 'user_aliases.json')
 INCOMING_DIR = os.path.join(script_dir, 'incoming')
 STALE_THRESHOLD_SECONDS = 300 # 5 minutes
 # ---------------------
@@ -33,6 +35,130 @@ def run_ssh_command(server_address, command):
     except Exception as e:
         print(f"Error connecting to {server_address}: {e}")
         return None
+
+
+def load_alias_map(path):
+    """Loads a map of aliases to canonical usernames."""
+    try:
+        with open(path) as alias_file:
+            raw_map = json.load(alias_file)
+            return {key.lower(): value for key, value in raw_map.items()}
+    except FileNotFoundError:
+        return {}
+    except Exception as exc:
+        print(f"Warning: failed to read alias map {path}: {exc}")
+        return {}
+
+
+def canonicalize_user(username, alias_map):
+    if not username:
+        return 'unknown'
+    return alias_map.get(username.lower(), username)
+
+
+def compute_snapshot_totals(all_stats, alias_map):
+    totals = {}
+    total_capacity = 0
+
+    for server in all_stats.get("servers", []):
+        if server.get("error"):
+            continue
+
+        server_name = server.get("name", "unknown")
+
+        for gpu in server.get("gpus", []):
+            total_capacity += gpu.get("mem_total", 0)
+            for proc in gpu.get("processes", []):
+                raw_user = proc.get("user") or "unknown"
+                canonical = canonicalize_user(raw_user, alias_map)
+
+                if canonical not in totals:
+                    totals[canonical] = {
+                        "mem": 0,
+                        "machines": set(),
+                        "raw_users": set()
+                    }
+
+                entry = totals[canonical]
+                entry["mem"] += proc.get("mem", 0)
+                entry["machines"].add(server_name)
+                entry["raw_users"].add(raw_user)
+
+    return totals, total_capacity
+
+
+def update_aggregate_file(snapshot_totals, snapshot_capacity):
+    now_ts = datetime.utcnow().isoformat() + "Z"
+
+    default_payload = {
+        "users": {},
+        "cluster": {
+            "total_capacity_accum": 0,
+            "samples": 0,
+            "last_capacity": 0,
+            "last_updated": None
+        },
+        "updated_at": None
+    }
+
+    if os.path.exists(AGGREGATE_FILE):
+        try:
+            with open(AGGREGATE_FILE) as aggregate_file:
+                aggregate_data = json.load(aggregate_file)
+        except Exception as exc:
+            print(f"Warning: failed to parse existing aggregate stats, resetting file: {exc}")
+            aggregate_data = default_payload
+    else:
+        aggregate_data = default_payload
+
+    aggregate_data.setdefault("users", {})
+    aggregate_data.setdefault("cluster", {})
+
+    cluster_info = aggregate_data["cluster"]
+    cluster_info["total_capacity_accum"] = cluster_info.get("total_capacity_accum", 0) + snapshot_capacity
+    cluster_info["samples"] = cluster_info.get("samples", 0) + 1
+    cluster_info["last_capacity"] = snapshot_capacity
+    cluster_info["last_updated"] = now_ts
+
+    for user, info in snapshot_totals.items():
+        entry = aggregate_data["users"].get(user, {
+            "total_mem_accum": 0,
+            "samples": 0,
+            "avg_mem": 0,
+            "last_sample_mem": 0,
+            "last_seen": None,
+            "first_seen": now_ts,
+            "all_machines": [],
+            "last_sample_machines": [],
+            "raw_users_seen": []
+        })
+
+        entry["total_mem_accum"] += info["mem"]
+        entry["samples"] += 1
+        entry["last_sample_mem"] = info["mem"]
+        entry["last_seen"] = now_ts
+        entry.setdefault("first_seen", now_ts)
+
+        machines_seen = set(entry.get("all_machines", []))
+        machines_seen.update(info["machines"])
+        entry["all_machines"] = sorted(machines_seen)
+        entry["last_sample_machines"] = sorted(info["machines"])
+
+        raw_seen = set(entry.get("raw_users_seen", []))
+        raw_seen.update(info["raw_users"])
+        entry["raw_users_seen"] = sorted(raw_seen)
+
+        entry["avg_mem"] = entry["total_mem_accum"] / entry["samples"] if entry["samples"] else 0
+
+        aggregate_data["users"][user] = entry
+
+    aggregate_data["updated_at"] = now_ts
+
+    try:
+        with open(AGGREGATE_FILE, 'w') as aggregate_file:
+            json.dump(aggregate_data, aggregate_file, indent=2)
+    except Exception as exc:
+        print(f"Warning: failed to write aggregate stats to {AGGREGATE_FILE}: {exc}")
 
 def get_username_from_pid(server_address, pids):
     """Gets a map of {pid: username} from a list of PIDs."""
@@ -100,6 +226,8 @@ all_stats = {
     "last_updated": datetime.utcnow().isoformat() + "Z"
 }
 
+alias_map = load_alias_map(ALIAS_FILE)
+
 # 1. Fetch stats for the 'hub' machine (lambda) itself
 for name, address in SERVERS.items():
     stats = fetch_server_stats(name, address)
@@ -134,7 +262,11 @@ for file_path in spoke_files:
     except Exception as e:
         print(f"Error reading {file_path}: {e}")
 
-# 3. Write the final, combined file
+# 3a. Update aggregate statistics before writing snapshot
+snapshot_totals, snapshot_capacity = compute_snapshot_totals(all_stats, alias_map)
+update_aggregate_file(snapshot_totals, snapshot_capacity)
+
+# 4. Write the final, combined file
 with open(OUTPUT_FILE, 'w') as f:
     json.dump(all_stats, f, indent=2)
 
