@@ -15,8 +15,8 @@
             --background: #191919;
             --foreground: #ffffff;
             --accent-green: rgb(100, 200, 100);
-            --accent-purple: rgb(150, 100, 250); /* NEW memory color */
-            --accent-blue: rgb(50, 100, 200);   /* NEW CPU color */
+            --accent-purple: rgb(150, 100, 250); /* Memory color */
+            --accent-blue: rgb(50, 100, 200);   /* CPU color */
             --accent-red: rgb(200, 50, 50);
             --panel-bg: #2a2a2a;
             --border-color: #444;
@@ -46,7 +46,6 @@
             border-bottom: 1px solid var(--border-color); 
         }
         
-        /* NEW Style for CPU bar */
         .server-stats {
             padding: 20px 20px 0 20px;
         }
@@ -101,6 +100,7 @@
         .proc-list li { 
             padding: 4px 0; 
             border-bottom: 1px dashed var(--border-color); 
+            word-break: break-all; /* Handle long process names */
         }
         .proc-list li:last-child { border-bottom: none; }
         #last-updated { 
@@ -154,7 +154,7 @@
         }
         .leaderboard-bar-fill {
             height: 100%;
-            background: var(--accent-purple); /* Changed bar to purple */
+            background: var(--accent-purple); /* Leaderboard bar is purple */
         }
         .leaderboard-empty {
             text-align: center;
@@ -256,21 +256,19 @@
 
         function buildLeaderboardEntries(userTotals, totalMemCapacity) {
             if (aggregateStats && aggregateStats.users) {
-                // --- LEADERBOARD METRIC CHANGED ---
                 return Object.entries(aggregateStats.users).map(([user, stats]) => {
-                    // Use the new total_gb_hours field
+                    // --- FIX: Read the correct total_gb_hours field ---
                     const totalGbHours = stats.total_gb_hours || 0; 
                     const samples = stats.samples || 0;
                     const machines = new Set(stats.all_machines || []);
                     const lastSampleMachines = new Set(stats.last_sample_machines || []);
                     
-                    // Calculate percent based on current usage for simplicity
                     const lastMem = stats.last_sample_mem || 0;
-                    const memPercent = totalMemCapacity ? (lastMem / totalMemCapacity) * 100 : 0;
+                    const memPercent = totalMemCapacity > 0 ? (lastMem / totalMemCapacity) * 100 : 0;
 
                     return {
                         user,
-                        totalGbHours, // NEW
+                        totalGbHours, // Use the new metric
                         samples,
                         memPercent, // Used for bar width
                         machines,
@@ -283,9 +281,9 @@
             // Fallback for snapshot (no aggregate data)
             return Array.from(userTotals.entries()).map(([user, stats]) => ({
                 user,
-                totalGbHours: stats.totalMem / 1024, // Show current as GB, not GB-Hours
+                totalGbHours: stats.totalMem / 1024, // Show current as GB
                 samples: 1,
-                memPercent: totalMemCapacity ? (stats.totalMem / totalMemCapacity) * 100 : 0,
+                memPercent: totalMemCapacity > 0 ? (stats.totalMem / totalMemCapacity) * 100 : 0,
                 machines: stats.machines,
                 lastSampleMachines: stats.machines,
                 scope: 'snapshot'
@@ -305,7 +303,7 @@
                 const machineCount = entry.machines.size;
                 const machineLabel = machineCount === 1 ? 'machine' : 'machines';
                 
-                // --- LEADERBOARD LABELING CHANGED ---
+                // --- FIX: Update labeling logic ---
                 let meta, unitLabel;
                 if (entry.scope === 'historical') {
                     unitLabel = "GB-Hours";
@@ -331,26 +329,6 @@
 
             leaderboardHtml += `</ol></div>`;
             leaderboardEl.innerHTML = leaderboardHtml;
-        }
-
-        function selectHogCandidates(leaderboardEntries, userTotals) {
-             if (!leaderboardEntries || leaderboardEntries.length === 0) {
-                return [];
-            }
-            
-            // HOG_THRESHOLD is defined below
-            let candidates = leaderboardEntries.filter(entry => entry.memPercent > HOG_THRESHOLD && (!aggregateStats || userTotals.has(entry.user)));
-
-            if (candidates.length === 0) {
-                candidates = leaderboardEntries.filter(entry => entry.memPercent > HOG_THRESHOLD);
-            }
-
-            if (candidates.length === 0 && leaderboardEntries.length > 0) {
-                // If no one is hogging, pick the top user for a gentle tease
-                candidates = leaderboardEntries.slice(0, 1); 
-            }
-
-            return candidates;
         }
 
         // --- UPDATED COLORS ---
@@ -397,79 +375,82 @@
                     
                     if (!server.gpus || server.gpus.length === 0) {
                          serverHtml += `<div class="server-error" style="padding-top: 15px;">No GPUs found on this server.</div>`;
-                    }
+                    } else {
+                        serverHtml += `<div class="gpu-grid">`;
+                        server.gpus.sort((a, b) => a.index - b.index);
 
-                    serverHtml += `<div class="gpu-grid">`;
-                    server.gpus.sort((a, b) => a.index - b.index);
+                        for (const gpu of server.gpus) {
+                            const memPercent = (gpu.mem_total > 0) ? (gpu.mem_used / gpu.mem_total) * 100 : 0;
+                            const utilPercent = gpu.util || 0;
 
-                    for (const gpu of server.gpus) {
-                        const memPercent = (gpu.mem_total > 0) ? (gpu.mem_used / gpu.mem_total) * 100 : 0;
-                        const utilPercent = gpu.util || 0;
+                            totalMemCapacity += gpu.mem_total || 0;
 
-                        totalMemCapacity += gpu.mem_total || 0;
+                            const utilColor = utilPercent >= 90 ? COLOR_DANGER : COLOR_UTIL;
+                            const memColor = memPercent >= 90 ? COLOR_DANGER : COLOR_MEM; // Now purple
 
-                        const utilColor = utilPercent >= 90 ? COLOR_DANGER : COLOR_UTIL;
-                        const memColor = memPercent >= 90 ? COLOR_DANGER : COLOR_MEM; // Now purple
-
-                        // Track total usage per user
-                        for (const proc of gpu.processes) {
-                            const rawUser = proc.user || 'unknown';
-                            const canonicalUser = getCanonicalUser(rawUser);
-                            if (!userTotals.has(canonicalUser)) {
-                                userTotals.set(canonicalUser, {
-                                    totalMem: 0,
-                                    processes: 0,
-                                    machines: new Set(),
-                                    aliases: new Set()
-                                });
+                            // Track total usage per user
+                            for (const proc of gpu.processes) {
+                                const rawUser = proc.user || 'unknown';
+                                // Skip root user for totals
+                                if (rawUser === 'root') continue; 
+                                
+                                const canonicalUser = getCanonicalUser(rawUser);
+                                if (!userTotals.has(canonicalUser)) {
+                                    userTotals.set(canonicalUser, {
+                                        totalMem: 0,
+                                        processes: 0,
+                                        machines: new Set(),
+                                        aliases: new Set()
+                                    });
+                                }
+                                const stats = userTotals.get(canonicalUser);
+                                stats.totalMem += proc.mem || 0;
+                                stats.processes += 1;
+                                stats.machines.add(server.name);
+                                stats.aliases.add(rawUser);
                             }
-                            const stats = userTotals.get(canonicalUser);
-                            stats.totalMem += proc.mem || 0;
-                            stats.processes += 1;
-                            stats.machines.add(server.name);
-                            stats.aliases.add(rawUser);
-                        }
-                        
-                        // --- GB/MiB CHANGE ---
-                        const memUsedGB = (gpu.mem_used / 1024).toFixed(1);
-                        const memTotalGB = (gpu.mem_total / 1024).toFixed(1);
+                            
+                            // --- GB/MiB CHANGE ---
+                            const memUsedGB = (gpu.mem_used / 1024).toFixed(1);
+                            const memTotalGB = (gpu.mem_total / 1024).toFixed(1);
 
-                        serverHtml += `
-                            <div class="gpu">
-                                <div class="gpu-header"><span class="gpu-title">${gpu.name} (GPU ${gpu.index})</span></div>
-                                <div class="gpu-stats">
-                                    <div class="stat">
-                                        <span class="stat-label">⚙️ Utilization</span>
-                                        <span>${utilPercent}%</span>
+                            serverHtml += `
+                                <div class="gpu">
+                                    <div class="gpu-header"><span class="gpu-title">${gpu.name} (GPU ${gpu.index})</span></div>
+                                    <div class="gpu-stats">
+                                        <div class="stat">
+                                            <span class="stat-label">⚙️ Utilization</span>
+                                            <span>${utilPercent}%</span>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div class="progress" style="width: ${utilPercent}%; background-color: ${utilColor};"></div>
+                                        </div>
+                                        <br>
+                                        <div class="stat">
+                                            <span class="stat-label">💾 Memory</span>
+                                            <span>${memUsedGB} GB / ${memTotalGB} GB</span>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div class="progress" style="width: ${memPercent}%; background-color: ${memColor};"></div>
+                                        </div>
                                     </div>
-                                    <div class="progress-bar">
-                                        <div class="progress" style="width: ${utilPercent}%; background-color: ${utilColor};"></div>
-                                    </div>
-                                    <br>
-                                    <div class="stat">
-                                        <span class="stat-label">💾 Memory</span>
-                                        <span>${memUsedGB} GB / ${memTotalGB} GB</span>
-                                    </div>
-                                    <div class="progress-bar">
-                                        <div class="progress" style="width: ${memPercent}%; background-color: ${memColor};"></div>
+                                    <div class="processes">
+                                        <strong>Processes:</strong>
+                                        <ul class="proc-list">
+                                            ${gpu.processes.length > 0 ? 
+                                                gpu.processes.map(p => {
+                                                    const procMemGB = (p.mem / 1024).toFixed(1);
+                                                    return `<li><strong>${p.user}</strong> (${p.pid}, ${p.time}): ${p.name} (${procMemGB} GB)</li>`
+                                                }).join('') : 
+                                                `<li>No processes running.</li>`
+                                            }
+                                        </ul>
                                     </div>
                                 </div>
-                                <div class="processes">
-                                    <strong>Processes:</strong>
-                                    <ul class="proc-list">
-                                        ${gpu.processes.length > 0 ? 
-                                            gpu.processes.map(p => {
-                                                const procMemGB = (p.mem / 1024).toFixed(1);
-                                                return `<li><strong>${p.user}</strong> (${p.pid}, ${p.time}): ${p.name} (${procMemGB} GB)</li>`
-                                            }).join('') : 
-                                            `<li>No processes running.</li>`
-                                        }
-                                    </ul>
-                                </div>
-                            </div>
-                        `;
+                            `;
+                        }
+                        serverHtml += `</div>`; // end .gpu-grid
                     }
-                    serverHtml += `</div>`; // end .gpu-grid
                 }
                 serverHtml += `</div>`; // end .server
                 container.innerHTML += serverHtml;
@@ -478,10 +459,22 @@
             const leaderboardEntries = buildLeaderboardEntries(userTotals, totalMemCapacity);
             renderLeaderboard(leaderboardEntries);
 
-            // Hog logic based on current snapshot
-            const snapshotHogs = leaderboardEntries.filter(entry => entry.scope === 'snapshot' && entry.memPercent > HOG_THRESHOLD);
+            // --- FIX: JOKE LOGIC ---
+            // Base joke logic *only* on the current snapshot (userTotals)
+            let snapshotHogs = [];
+            for (const [user, stats] of userTotals.entries()) {
+                const userMemPercent = totalMemCapacity > 0 ? (stats.totalMem / totalMemCapacity) * 100 : 0;
+                // Add any user over the threshold to the list
+                if (userMemPercent > HOG_THRESHOLD) {
+                    snapshotHogs.push({
+                        user: user,
+                        machines: stats.machines
+                    });
+                }
+            }
             
             if (snapshotHogs.length > 0) {
+                // Pick a random hog from the current snapshot
                 const randomEntry = snapshotHogs[Math.floor(Math.random() * snapshotHogs.length)];
                 const machineArray = Array.from(randomEntry.machines);
                 const chosenMachine = machineArray.length > 0 ? machineArray[Math.floor(Math.random() * machineArray.length)] : 'the cluster';
