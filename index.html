@@ -4,25 +4,125 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab GPU Dashboard</title>
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: #f4f4f4; margin: 20px; }
-        .dashboard { max-width: 1200px; margin: 0 auto; }
-        .server { background: #fff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px; }
-        .server-title { font-size: 1.5em; padding: 15px 20px; border-bottom: 1px solid #eee; }
-        .server-error { color: #d9534f; padding: 20px; }
-        .gpu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; padding: 20px; }
-        .gpu { border: 1px solid #ddd; border-radius: 6px; overflow: hidden; }
-        .gpu-header { padding: 10px; background: #f9f9f9; border-bottom: 1px solid #ddd; }
-        .gpu-title { font-weight: bold; }
+        /* 2.1: Color Scheme Variables */
+        :root {
+            --background: #191919;
+            --foreground: #ffffff;
+            --accent-green: rgb(100, 200, 100);
+            --accent-blue: rgb(50, 100, 200);
+            --accent-red: rgb(200, 50, 50);
+            --panel-bg: #2a2a2a;
+            --border-color: #444;
+        }
+
+        /* 2.2: Font and Body Styling */
+        body {
+            font-family: "Fira Code", "JetBrains Mono", Monaco, Consolas, "Ubuntu Mono", monospace;
+            font-weight: 400;
+            background-color: var(--background);
+            color: var(--foreground);
+            text-rendering: optimizeLegibility;
+            margin: 20px;
+        }
+
+        /* --- Component Theming --- */
+        .dashboard { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+        }
+
+        .server { 
+            background: var(--panel-bg); 
+            border-radius: 8px; 
+            border: 1px solid var(--border-color);
+            margin-bottom: 20px; 
+            overflow: hidden; /* Ensures radius clips content */
+        }
+        
+        .server-title { 
+            font-size: 1.5em; 
+            font-weight: 500;
+            padding: 15px 20px; 
+            border-bottom: 1px solid var(--border-color); 
+        }
+
+        .server-error { 
+            color: var(--accent-red); 
+            padding: 20px; 
+        }
+
+        .gpu-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+            gap: 20px; 
+            padding: 20px; 
+        }
+
+        .gpu { 
+            border: 1px solid var(--border-color); 
+            border-radius: 6px; 
+            overflow: hidden; 
+            background: var(--background); /* Darker than panel */
+        }
+
+        .gpu-header { 
+            padding: 10px; 
+            background: var(--panel-bg); 
+            border-bottom: 1px solid var(--border-color); 
+        }
+
+        .gpu-title { font-weight: 500; }
         .gpu-stats { padding: 10px; }
-        .stat { display: flex; justify-content: space-between; margin-bottom: 8px; }
+
+        .stat { 
+            display: flex; 
+            justify-content: space-between; 
+            margin-bottom: 8px; 
+        }
+        
         .stat-label { font-weight: 500; }
-        .progress-bar { background: #e9ecef; border-radius: 4px; height: 20px; overflow: hidden; }
-        .progress { background: #0275d8; height: 100%; width: 0; transition: width 0.3s ease; }
+
+        .progress-bar { 
+            background: #444; /* Darker bar background */
+            border-radius: 4px; 
+            height: 20px; 
+            overflow: hidden; 
+        }
+
+        .progress { 
+            height: 100%; 
+            width: 0; 
+            transition: width 0.3s ease, background-color 0.3s ease; 
+        }
+
         .processes { padding: 10px; }
-        .proc-list { list-style: none; padding: 0; margin: 0; font-family: monospace; font-size: 0.9em; }
-        .proc-list li { padding: 4px 0; border-bottom: 1px dashed #eee; }
-        #last-updated { text-align: center; color: #666; margin-bottom: 20px; }
+        .proc-list { 
+            list-style: none; 
+            padding: 0; 
+            margin: 0; 
+            font-size: 0.9em; 
+        }
+        .proc-list li { 
+            padding: 4px 0; 
+            border-bottom: 1px dashed var(--border-color); 
+        }
+        .proc-list li:last-child {
+            border-bottom: none;
+        }
+
+        #last-updated { 
+            text-align: center; 
+            color: #888; /* Muted text */
+            margin-bottom: 20px; 
+        }
     </style>
 </head>
 <body>
@@ -36,6 +136,11 @@
     <script>
         const container = document.getElementById('servers-container');
         const lastUpdatedEl = document.getElementById('last-updated');
+
+        // 2.1: Define colors for JS
+        const COLOR_UTIL = 'rgb(100, 200, 100)';
+        const COLOR_MEM = 'rgb(50, 100, 200)';
+        const COLOR_DANGER = 'rgb(200, 50, 50)';
 
         function renderDashboard(data) {
             container.innerHTML = ''; // Clear old data
@@ -53,31 +158,34 @@
                      serverHtml += `<div class="server-error">No GPUs found or nvidia-smi failed.</div>`;
                 } else {
                     serverHtml += `<div class="gpu-grid">`;
-                    // Sort GPUs by index
                     server.gpus.sort((a, b) => a.index - b.index);
 
                     for (const gpu of server.gpus) {
                         const memPercent = (gpu.mem_used / gpu.mem_total) * 100;
                         const utilPercent = gpu.util;
 
+                        // 2.1: Logic for 90% threshold
+                        const utilColor = utilPercent >= 90 ? COLOR_DANGER : COLOR_UTIL;
+                        const memColor = memPercent >= 90 ? COLOR_DANGER : COLOR_MEM;
+
                         serverHtml += `
                             <div class="gpu">
                                 <div class="gpu-header"><span class="gpu-title">GPU ${gpu.index}</span></div>
                                 <div class="gpu-stats">
                                     <div class="stat">
-                                        <span class="stat-label">Utilization</span>
+                                        <span class="stat-label">⚙️ Utilization</span>
                                         <span>${utilPercent}%</span>
                                     </div>
                                     <div class="progress-bar">
-                                        <div class="progress" style="width: ${utilPercent}%; background-color: #5cb85c;"></div>
+                                        <div class="progress" style="width: ${utilPercent}%; background-color: ${utilColor};"></div>
                                     </div>
                                     <br>
                                     <div class="stat">
-                                        <span class="stat-label">Memory</span>
+                                        <span class="stat-label">💾 Memory</span>
                                         <span>${gpu.mem_used} MiB / ${gpu.mem_total} MiB</span>
                                     </div>
                                     <div class="progress-bar">
-                                        <div class="progress" style="width: ${memPercent}%; background-color: #0275d8;"></div>
+                                        <div class="progress" style="width: ${memPercent}%; background-color: ${memColor};"></div>
                                     </div>
                                 </div>
                                 <div class="processes">
