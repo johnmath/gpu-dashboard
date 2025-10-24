@@ -3,16 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab GPU Dashboard</title>
+    <title>📊 GPU Dashboard</title> 
     
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 
     <style>
-        /* 2.1: Color Scheme Variables */
         :root {
             --background: #191919;
             --foreground: #ffffff;
@@ -23,7 +21,6 @@
             --border-color: #444;
         }
 
-        /* 2.2: Font and Body Styling */
         body {
             font-family: "Fira Code", "JetBrains Mono", Monaco, Consolas, "Ubuntu Mono", monospace;
             font-weight: 400;
@@ -33,76 +30,57 @@
             margin: 20px;
         }
 
-        /* --- Component Theming --- */
-        .dashboard { 
-            max-width: 1200px; 
-            margin: 0 auto; 
-        }
-
+        .dashboard { max-width: 1200px; margin: 0 auto; }
         .server { 
             background: var(--panel-bg); 
             border-radius: 8px; 
             border: 1px solid var(--border-color);
             margin-bottom: 20px; 
-            overflow: hidden; /* Ensures radius clips content */
+            overflow: hidden;
         }
-        
         .server-title { 
             font-size: 1.5em; 
             font-weight: 500;
             padding: 15px 20px; 
             border-bottom: 1px solid var(--border-color); 
         }
-
-        .server-error { 
-            color: var(--accent-red); 
-            padding: 20px; 
-        }
-
+        .server-error { color: var(--accent-red); padding: 20px; }
         .gpu-grid { 
             display: grid; 
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
             gap: 20px; 
             padding: 20px; 
         }
-
         .gpu { 
             border: 1px solid var(--border-color); 
             border-radius: 6px; 
             overflow: hidden; 
-            background: var(--background); /* Darker than panel */
+            background: var(--background);
         }
-
         .gpu-header { 
             padding: 10px; 
             background: var(--panel-bg); 
             border-bottom: 1px solid var(--border-color); 
         }
-
         .gpu-title { font-weight: 500; }
         .gpu-stats { padding: 10px; }
-
         .stat { 
             display: flex; 
             justify-content: space-between; 
             margin-bottom: 8px; 
         }
-        
         .stat-label { font-weight: 500; }
-
         .progress-bar { 
-            background: #444; /* Darker bar background */
+            background: #444;
             border-radius: 4px; 
             height: 20px; 
             overflow: hidden; 
         }
-
         .progress { 
             height: 100%; 
             width: 0; 
             transition: width 0.3s ease, background-color 0.3s ease; 
         }
-
         .processes { padding: 10px; }
         .proc-list { 
             list-style: none; 
@@ -114,14 +92,26 @@
             padding: 4px 0; 
             border-bottom: 1px dashed var(--border-color); 
         }
-        .proc-list li:last-child {
-            border-bottom: none;
-        }
-
+        .proc-list li:last-child { border-bottom: none; }
         #last-updated { 
             text-align: center; 
-            color: #888; /* Muted text */
+            color: #888;
             margin-bottom: 20px; 
+        }
+        
+        /* 1. Style for the new joke box */
+        #joke-box {
+            font-size: 1.1em;
+            font-weight: 500;
+            color: var(--accent-red);
+            background: #302020; /* Dark red bg */
+            border: 1px solid var(--accent-red);
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+            text-align: center;
+            /* Hide it by default, JS will show it */
+            display: none; 
         }
     </style>
 </head>
@@ -130,21 +120,39 @@
     <div class="dashboard">
         <h1>Lab GPU Dashboard</h1>
         <div id="last-updated">Loading...</div>
+        
+        <div id="joke-box"></div>
+        
         <div id="servers-container"></div>
     </div>
 
     <script>
         const container = document.getElementById('servers-container');
         const lastUpdatedEl = document.getElementById('last-updated');
+        const jokeBox = document.getElementById('joke-box'); // Get joke box
 
-        // 2.1: Define colors for JS
+        // 3. Joke templates
+        const JOKES = [
+            "{USER} is hogging all of the resources on {MACHINE}!!! 🐗",
+            "The RPMs on {MACHINE}'s fans are over 9000 thanks to {USER}! 🌀",
+            "🚨 WARNING: {MACHINE} is about to achieve liftoff thanks to {USER}. ✈️",
+            "{USER} has turned {MACHINE} into a space heater! 🔥",
+            "Is someone barbecuing or is {USER} running experiments on {MACHINE} again? 🍖"
+        ];
+
         const COLOR_UTIL = 'rgb(100, 200, 100)';
         const COLOR_MEM = 'rgb(50, 100, 200)';
         const COLOR_DANGER = 'rgb(200, 50, 50)';
+        const HOG_THRESHOLD = 50; // 50%
 
         function renderDashboard(data) {
-            container.innerHTML = ''; // Clear old data
+            container.innerHTML = ''; 
+            jokeBox.innerHTML = ''; // Clear old joke
+            jokeBox.style.display = 'none'; // Hide by default
             
+            // This will track all users who meet the hog threshold
+            const uniqueHogs = new Set(); // Stores "user@machine"
+
             const updatedTime = new Date(data.last_updated).toLocaleString();
             lastUpdatedEl.textContent = `Last Updated: ${updatedTime}`;
 
@@ -164,9 +172,32 @@
                         const memPercent = (gpu.mem_used / gpu.mem_total) * 100;
                         const utilPercent = gpu.util;
 
-                        // 2.1: Logic for 90% threshold
                         const utilColor = utilPercent >= 90 ? COLOR_DANGER : COLOR_UTIL;
                         const memColor = memPercent >= 90 ? COLOR_DANGER : COLOR_MEM;
+
+                        // --- Hog detection logic ---
+                        // Aggregate memory per user *on this GPU*
+                        const userMemOnGpu = {};
+                        for (const proc of gpu.processes) {
+                            if (!userMemOnGpu[proc.user]) userMemOnGpu[proc.user] = 0;
+                            userMemOnGpu[proc.user] += proc.mem;
+                        }
+
+                        // Check thresholds for each user on this GPU
+                        for (const [user, mem] of Object.entries(userMemOnGpu)) {
+                            const userMemPercent = (mem / gpu.mem_total) * 100;
+
+                            // Trigger 1: User's memory on this GPU > 50%
+                            if (userMemPercent > HOG_THRESHOLD) {
+                                uniqueHogs.add(`${user}@${server.name}`);
+                            }
+                            
+                            // Trigger 2: The GPU's total utilization > 50% (and this user is on it)
+                            if (utilPercent > HOG_THRESHOLD) {
+                                uniqueHogs.add(`${user}@${server.name}`);
+                            }
+                        }
+                        // --- End of hog logic ---
 
                         serverHtml += `
                             <div class="gpu">
@@ -205,11 +236,31 @@
                 serverHtml += `</div>`; // end .server
                 container.innerHTML += serverHtml;
             }
+
+            // --- Joke Display Logic ---
+            // After all loops, check if we found any hogs
+            if (uniqueHogs.size > 0) {
+                // Pick one random hog from the set to feature
+                const hogArray = Array.from(uniqueHogs);
+                const randomHog = hogArray[Math.floor(Math.random() * hogArray.length)];
+                const [user, machine] = randomHog.split('@');
+                
+                // Pick one random joke template
+                const jokeTemplate = JOKES[Math.floor(Math.random() * JOKES.length)];
+                
+                // Build the joke
+                const jokeText = jokeTemplate
+                    .replace('{USER}', user.toUpperCase())
+                    .replace('{MACHINE}', machine.toUpperCase());
+                
+                // Display the joke
+                jokeBox.textContent = jokeText;
+                jokeBox.style.display = 'block'; // Show the box
+            }
         }
 
         async function fetchData() {
             try {
-                // Add a cache-busting query parameter
                 const response = await fetch(`status.json?v=${new Date().getTime()}`);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
@@ -222,7 +273,6 @@
             }
         }
 
-        // Fetch data on load and then every 30 seconds
         fetchData();
         setInterval(fetchData, 30000); 
     </script>
