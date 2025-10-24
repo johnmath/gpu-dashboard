@@ -25,16 +25,16 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 31352,
+          "mem_used": 44604,
           "mem_total": 95830,
-          "util": 0,
+          "util": 100,
           "processes": []
         },
         {
           "index": 1,
           "mem_used": 92569,
           "mem_total": 95830,
-          "util": 89,
+          "util": 0,
           "processes": [
             {
               "pid": "3338428",
@@ -54,7 +54,7 @@
           "index": 2,
           "mem_used": 52022,
           "mem_total": 95830,
-          "util": 100,
+          "util": 80,
           "processes": [
             {
               "pid": "3927384",
@@ -66,7 +66,7 @@
         },
         {
           "index": 3,
-          "mem_used": 82453,
+          "mem_used": 82455,
           "mem_total": 95830,
           "util": 100,
           "processes": [
@@ -80,7 +80,7 @@
               "pid": "3914172",
               "name": "python",
               "user": "luzsun",
-              "mem": 28526
+              "mem": 28528
             },
             {
               "pid": "3923215",
@@ -92,7 +92,41 @@
         }
       ],
       "error": null
+    },
+    {
+      "name": "achtung-biggpu",
+      "gpus": [
+        {
+          "index": 0,
+          "mem_used": 43186,
+          "mem_total": 49140,
+          "util": 37,
+          "processes": [
+            {
+              "pid": "4045049",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 43176
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "mem_used": 42592,
+          "mem_total": 49140,
+          "util": 43,
+          "processes": [
+            {
+              "pid": "4045626",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 42582
+            }
+          ]
+        }
+      ],
+      "error": null
     }
   ],
-  "last_updated": "2025-10-24T15:52:01.626550Z"
+  "last_updated": "2025-10-24T15:53:01.693329Z"
 }
