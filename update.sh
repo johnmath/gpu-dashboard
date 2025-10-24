@@ -16,7 +16,7 @@ git add status.json
 # Check if there are changes to commit
 if ! git diff-index --quiet HEAD --; then
   git commit -m "Auto-update GPU stats: $(date)"
-  git push origin main # Or whatever your gh-pages branch is
+  git push origin updates  # Or whatever your gh-pages branch is
   echo "Stats pushed to GitHub."
 else
   echo "No changes detected."
