@@ -77,9 +77,7 @@ def fetch_server_stats(server_name):
         }
 
     # 3. Get Process stats (FIXED: query-processes and added 'elapsed_time')
-    proc_query = "nvidia-smi --query-processes=gpu_uuid,pid,process_name,used_gpu_memory,elapsed_time --format=csv,noheader,nounits"
-    proc_output = run_local_command(proc_query)
-    
+    proc_query = "nvidia-smi --query-compute-apps=gpu_uuid,pid,process_name,used_gpu_memory --format=csv,noheader,nounits"
     pid_to_gpu = {}
     pids_on_server = []
     
