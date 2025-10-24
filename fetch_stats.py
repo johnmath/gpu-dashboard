@@ -4,6 +4,7 @@ from datetime import datetime
 import os
 import glob # New import to scan for files
 import time # New import to check file age
+import achievements # Achievement system
 
 # --- Configuration ---
 script_dir = os.path.dirname(os.path.realpath(__file__))
@@ -21,6 +22,7 @@ except FileNotFoundError:
 OUTPUT_FILE = os.path.join(script_dir, 'status.json')
 AGGREGATE_FILE = os.path.join(script_dir, 'aggregate_stats.json')
 ALIAS_FILE = os.path.join(script_dir, 'user_aliases.json')
+ACHIEVEMENTS_FILE = os.path.join(script_dir, 'achievements.json')
 INCOMING_DIR = os.path.join(script_dir, 'incoming')
 STALE_THRESHOLD_SECONDS = 300 # 5 minutes
 # ---------------------
@@ -322,6 +324,36 @@ for file_path in spoke_files:
 # 3a. Update aggregate statistics before writing snapshot
 snapshot_totals, snapshot_capacity = compute_snapshot_totals(all_stats, alias_map)
 update_aggregate_file(snapshot_totals, snapshot_capacity)
+
+# 3b. Check and award achievements
+print("Checking for new achievements...")
+achievements_data = achievements.load_achievements(ACHIEVEMENTS_FILE)
+
+# Load aggregate stats for lifetime achievements
+aggregate_stats = {}
+if os.path.exists(AGGREGATE_FILE):
+    try:
+        with open(AGGREGATE_FILE) as f:
+            aggregate_stats = json.load(f)
+    except Exception as e:
+        print(f"Warning: failed to load aggregate stats for achievements: {e}")
+        aggregate_stats = {}
+
+achievements_data, new_achievements = achievements.check_achievements(
+    all_stats, aggregate_stats, alias_map, achievements_data
+)
+
+# Save updated achievements
+achievements.save_achievements(ACHIEVEMENTS_FILE, achievements_data)
+
+# Log new achievements
+if new_achievements:
+    print(f"\n🎉 NEW ACHIEVEMENTS EARNED! 🎉")
+    for achv in new_achievements:
+        icon = achv["achievement"].get("icon", "🏆")
+        name = achv["achievement"].get("name", "Unknown")
+        print(f"  {icon} {achv['user']} earned: {name}")
+    print()
 
 # 4. Write the final, combined file
 with open(OUTPUT_FILE, 'w') as f:
