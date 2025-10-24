@@ -18,7 +18,7 @@ if [ -z "$HUB_INFO" ]; then
 fi
 
 # 3. Run the local fetcher
-python3 fetch_local_stats.py
+python3 fetch_stats_local.py
 
 # 4. Securely copy the result to the 'hub' using the loaded info
 scp my_stats.json ${HUB_INFO}${MACHINE_NAME}.json
