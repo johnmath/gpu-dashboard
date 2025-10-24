@@ -4,23 +4,14 @@ import os
 import socket
 
 # --- Configuration ---
+# Get this machine's name to use as the key
+# This will get 'machine-2' from 'machine-2.mylab.edu'
 SERVER_NAME = socket.gethostname().split('.')[0]
 OUTPUT_FILE = "my_stats.json"
 # ---------------------
 
-def safe_int(value, default=0):
-    """Converts a value to int, returning default on failure."""
-    try:
-        return int(value)
-    except (ValueError, TypeError):
-        return default
-
-def safe_float(value, default=0.0):
-    """Converts a value to float, returning default on failure."""
-    try:
-        return float(value)
-    except (ValueError, TypeError):
-        return default
+# NOTE: We can't use the SSH functions here because we are local.
+# We have to run the commands directly.
 
 def run_local_command(command):
     """Runs a command locally."""
@@ -48,14 +39,21 @@ def get_username_from_pid(pids):
 def fetch_server_stats(server_name):
     """Fetches all GPU, CPU, and process stats from the local machine."""
     print(f"Querying local stats for {server_name}...")
+    # ADDED cpu_util
     server_data = {"name": server_name, "gpus": [], "cpu_util": 0, "error": None}
     
     # 1. Get CPU stats
+    # Gets user + system percent
     cpu_command = "top -bn1 | grep '%Cpu(s)' | awk '{print $2 + $4}'"
     cpu_output = run_local_command(cpu_command)
-    server_data["cpu_util"] = safe_float(cpu_output.strip()) if cpu_output else 0
+    try:
+        server_data["cpu_util"] = float(cpu_output.strip()) if cpu_output else 0
+    except Exception as e:
+        print(f"Could not parse CPU stats: {e}")
+        server_data["cpu_util"] = 0
 
     # 2. Get GPU stats
+    # ADDED 'name' to the query
     gpu_query = "nvidia-smi --query-gpu=index,memory.used,memory.total,utilization.gpu,uuid,name --format=csv,noheader,nounits"
     gpu_output = run_local_command(gpu_query)
     
@@ -65,19 +63,20 @@ def fetch_server_stats(server_name):
 
     gpus = {}
     for line in gpu_output.splitlines():
+        # Clean up whitespace and parse
         parts = [p.strip() for p in line.split(',')]
-        if len(parts) < 6: continue
         gpus[parts[4]] = { # uuid is parts[4]
-            "index": safe_int(parts[0]), 
-            "mem_used": safe_int(parts[1]),
-            "mem_total": safe_int(parts[2]), 
-            "util": safe_int(parts[3]),
-            "name": parts[5],
+            "index": int(parts[0]), 
+            "mem_used": int(parts[1]),
+            "mem_total": int(parts[2]), 
+            "util": int(parts[3]),
+            "name": parts[5], # ADDED
             "processes": []
         }
 
     # 3. Get Process stats
-    proc_query = "nvidia-smi --query-processes=gpu_uuid,pid,process_name,used_gpu_memory,elapsed_time --format=csv,noheader,nounits"
+    # ADDED 'elapsed_time' to the query
+    proc_query = "nvidia-smi --query-compute-apps=gpu_uuid,pid,process_name,used_gpu_memory,elapsed_time --format=csv,noheader,nounits"
     proc_output = run_local_command(proc_query)
     
     pid_to_gpu = {}
@@ -86,17 +85,13 @@ def fetch_server_stats(server_name):
     if proc_output:
         for line in proc_output.splitlines():
             parts = [p.strip() for p in line.split(',')]
-            if len(parts) < 5: continue
-            gpu_uuid, pid, proc_name = parts[:3]
-            mem_used = parts[3] # Can be 'N/A'
-            elapsed_time = parts[4]
-            
+            gpu_uuid, pid, proc_name, mem_used = parts[:4]
             pids_on_server.append(pid)
             pid_to_gpu[pid] = {
                 "uuid": gpu_uuid, 
                 "name": proc_name, 
-                "mem": safe_int(mem_used), 
-                "time": elapsed_time
+                "mem": int(mem_used),
+                "time": parts[4] # ADDED
             }
 
     # 4. Get Usernames
@@ -105,23 +100,20 @@ def fetch_server_stats(server_name):
     # 5. Combine all data
     for pid, proc_data in pid_to_gpu.items():
         gpu_uuid = proc_data["uuid"]
-        user = user_map.get(pid, "unknown")
-        
-        # --- NEW FILTER ---
-        # Ignore processes owned by root
-        if gpu_uuid in gpus and user != "root":
+        if gpu_uuid in gpus:
             gpus[gpu_uuid]["processes"].append({
                 "pid": pid, 
                 "name": proc_data["name"],
-                "user": user, 
+                "user": user_map.get(pid, "unknown"), 
                 "mem": proc_data["mem"],
-                "time": proc_data["time"]
+                "time": proc_data["time"] # ADDED
             })
             
     server_data["gpus"] = list(gpus.values())
     return server_data
 
 # --- Main execution ---
+# This just returns the data, doesn't put it in the "all_stats" wrapper
 final_data = fetch_server_stats(SERVER_NAME)
 
 with open(OUTPUT_FILE, 'w') as f:
