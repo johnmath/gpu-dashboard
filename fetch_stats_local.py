@@ -78,7 +78,6 @@ def fetch_server_stats(server_name):
 
     # 3. Get Process stats (FIXED: query-processes and added 'elapsed_time')
     proc_query = "nvidia-smi --query-compute-apps=gpu_uuid,pid,process_name,used_gpu_memory --format=csv,noheader,nounits"
-    proc_output = run_local_command(proc_query)
     pid_to_gpu = {}
     pids_on_server = []
     
@@ -95,7 +94,7 @@ def fetch_server_stats(server_name):
                 "uuid": gpu_uuid, 
                 "name": proc_name, 
                 "mem": safe_int(mem_used), 
-                "time": "N/A" # Indicate time is not available
+                "time": elapsed_time
             }
 
     # 4. Get Usernames
