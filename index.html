@@ -98,6 +98,59 @@
             color: #888;
             margin-bottom: 20px; 
         }
+
+        #leaderboard {
+            margin-bottom: 20px;
+        }
+        .leaderboard-panel {
+            background: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 16px;
+        }
+        .leaderboard-title {
+            font-size: 1.2em;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+        .leaderboard-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .leaderboard-entry {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        .leaderboard-rank {
+            font-weight: 500;
+            width: 1.5em;
+            text-align: right;
+        }
+        .leaderboard-meta {
+            color: #aaa;
+            font-size: 0.85em;
+        }
+        .leaderboard-bar {
+            flex: 1;
+            background: #333;
+            border-radius: 4px;
+            overflow: hidden;
+            height: 10px;
+        }
+        .leaderboard-bar-fill {
+            height: 100%;
+            background: var(--accent-blue);
+        }
+        .leaderboard-empty {
+            text-align: center;
+            color: #999;
+            font-style: italic;
+        }
         
         /* 1. Style for the new joke box */
         #joke-box {
@@ -120,6 +173,7 @@
     <div class="dashboard">
         <h1>nds2 gpu dashboard</h1>
         <div id="last-updated">Loading...</div>
+        <div id="leaderboard"></div>
         
         <div id="joke-box"></div>
         
@@ -130,6 +184,7 @@
         const container = document.getElementById('servers-container');
         const lastUpdatedEl = document.getElementById('last-updated');
         const jokeBox = document.getElementById('joke-box'); // Get joke box
+        const leaderboardEl = document.getElementById('leaderboard');
 
         // 3. Joke templates
         const JOKES = [
@@ -137,8 +192,154 @@
             "The RPMs on {MACHINE}'s fans are over 9000 thanks to {USER}! 🌀",
             "🚨 WARNING: {MACHINE} is about to achieve liftoff thanks to {USER}. ✈️",
             "{USER} has turned {MACHINE} into a space heater! 🔥",
-            "Is someone barbecuing or is {USER} running experiments on {MACHINE} again? 🍖"
+            "Is someone barbecuing or is {USER} running experiments on {MACHINE} again? 🍖",
+            "{USER} just made {MACHINE} cry in CUDA errors. 😭",
+            "{MACHINE} reports: 'Help, {USER} won't stop training models!' 🤖",
+            "{MACHINE} has entered meltdown mode courtesy of {USER}. ☢️",
+            "Rumor has it {USER} installed a fireplace in {MACHINE}. 🔥",
+            "{USER} renamed {MACHINE} to 'Sauna 3000'. 🧖",
+            "If you listen closely, you can hear {MACHINE} whisper 'please stop' to {USER}. 😩",
+            "NVIDIA called—they want their GPUs back from {USER}. 💸",
+            "{USER}'s code has achieved singularity on {MACHINE}. 🧠",
+            "Even Skynet thinks {USER} is pushing it on {MACHINE}. 🤯",
+            "{MACHINE} is now officially a fusion reactor thanks to {USER}. ☀️",
+            "{USER} just submitted a job so big it bent spacetime on {MACHINE}. 🕳️",
+            "Power grid spike detected — {USER} must be training again on {MACHINE}. ⚡",
+            "The fire alarm went off, but it was just {USER} maxing out {MACHINE}. 🔥"
         ];
+
+        let userAliasMap = {};
+        let aliasMapLoaded = false;
+        let aggregateStats = null;
+
+        async function loadAliasMap() {
+            try {
+                const response = await fetch(`user_aliases.json?v=${new Date().getTime()}`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const rawMap = await response.json();
+                userAliasMap = Object.fromEntries(
+                    Object.entries(rawMap).map(([key, value]) => [key.toLowerCase(), value])
+                );
+                aliasMapLoaded = true;
+            } catch (error) {
+                console.warn('Failed to load user alias map:', error);
+            }
+        }
+
+        async function loadAggregateStats() {
+            try {
+                const response = await fetch(`aggregate_stats.json?v=${new Date().getTime()}`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                aggregateStats = await response.json();
+            } catch (error) {
+                console.warn('Failed to load aggregate stats:', error);
+                aggregateStats = null;
+            }
+        }
+
+        function getCanonicalUser(rawUser) {
+            if (!rawUser) return 'unknown';
+            const normalized = rawUser.toLowerCase();
+            return userAliasMap[normalized] || rawUser;
+        }
+
+        function buildLeaderboardEntries(userTotals, totalMemCapacity) {
+            if (aggregateStats && aggregateStats.users) {
+                const clusterInfo = aggregateStats.cluster || {};
+                const totalTrackedCapacity = clusterInfo.total_capacity_accum || 0;
+
+                return Object.entries(aggregateStats.users).map(([user, stats]) => {
+                    const totalMem = stats.total_mem_accum || 0;
+                    const samples = stats.samples || 0;
+                    const machines = new Set(stats.all_machines || []);
+                    const lastSampleMachines = new Set(stats.last_sample_machines || []);
+                    const memPercent = totalTrackedCapacity ? (totalMem / totalTrackedCapacity) * 100 : 0;
+
+                    return {
+                        user,
+                        totalMem,
+                        samples,
+                        avgMem: stats.avg_mem || (samples ? totalMem / samples : 0),
+                        memPercent,
+                        machines,
+                        lastSampleMachines,
+                        lastSeen: stats.last_seen || null,
+                        lastSampleMem: stats.last_sample_mem || 0,
+                        scope: 'historical'
+                    };
+                }).sort((a, b) => b.totalMem - a.totalMem);
+            }
+
+            return Array.from(userTotals.entries()).map(([user, stats]) => ({
+                user,
+                totalMem: stats.totalMem,
+                samples: 1,
+                avgMem: stats.totalMem,
+                memPercent: totalMemCapacity ? (stats.totalMem / totalMemCapacity) * 100 : 0,
+                machines: stats.machines,
+                lastSampleMachines: stats.machines,
+                lastSeen: null,
+                lastSampleMem: stats.totalMem,
+                scope: 'snapshot'
+            })).sort((a, b) => b.totalMem - a.totalMem);
+        }
+
+        function renderLeaderboard(entries) {
+            if (!entries || entries.length === 0) {
+                leaderboardEl.innerHTML = `<div class="leaderboard-panel leaderboard-empty">No historical GPU usage tracked yet.</div>`;
+                return;
+            }
+
+            const topEntries = entries.slice(0, 5);
+            let leaderboardHtml = `<div class="leaderboard-panel"><div class="leaderboard-title">Top GPU Users</div><ol class="leaderboard-list">`;
+
+            topEntries.forEach((entry, index) => {
+                const machineCount = entry.machines.size;
+                const machineLabel = machineCount === 1 ? 'machine' : 'machines';
+                const scopePrefix = entry.scope === 'historical' ? 'lifetime' : 'current';
+                const percentLabel = entry.scope === 'historical' ? 'tracked usage' : 'cluster';
+                const samplesLabel = entry.scope === 'historical' ? ` • ${entry.samples} samples` : '';
+                const meta = `${entry.totalMem.toFixed(0)} ${scopePrefix} MiB • ${entry.memPercent.toFixed(1)}% of ${percentLabel}${samplesLabel} • ${machineCount} ${machineLabel}`;
+
+                leaderboardHtml += `
+                    <li class="leaderboard-entry">
+                        <span class="leaderboard-rank">${index + 1}.</span>
+                        <div style="flex: 1;">
+                            <div><strong>${entry.user}</strong></div>
+                            <div class="leaderboard-meta">${meta}</div>
+                            <div class="leaderboard-bar">
+                                <div class="leaderboard-bar-fill" style="width: ${Math.min(entry.memPercent, 100)}%;"></div>
+                            </div>
+                        </div>
+                    </li>
+                `;
+            });
+
+            leaderboardHtml += `</ol></div>`;
+            leaderboardEl.innerHTML = leaderboardHtml;
+        }
+
+        function selectHogCandidates(leaderboardEntries, userTotals) {
+            if (!leaderboardEntries || leaderboardEntries.length === 0) {
+                return [];
+            }
+
+            let candidates = leaderboardEntries.filter(entry => entry.memPercent > HOG_THRESHOLD && (!aggregateStats || userTotals.has(entry.user)));
+
+            if (candidates.length === 0) {
+                candidates = leaderboardEntries.filter(entry => entry.memPercent > HOG_THRESHOLD);
+            }
+
+            if (candidates.length === 0) {
+                candidates = leaderboardEntries.slice(0, Math.min(leaderboardEntries.length, 3));
+            }
+
+            return candidates;
+        }
 
         const COLOR_UTIL = 'rgb(100, 200, 100)';
         const COLOR_MEM = 'rgb(50, 100, 200)';
@@ -147,11 +348,13 @@
 
         function renderDashboard(data) {
             container.innerHTML = ''; 
+            leaderboardEl.innerHTML = '';
             jokeBox.innerHTML = ''; // Clear old joke
             jokeBox.style.display = 'none'; // Hide by default
-            
-            // This will track all users who meet the hog threshold
-            const uniqueHogs = new Set(); // Stores "user@machine"
+
+            // Aggregate usage across the fleet for leaderboard + jokes
+            const userTotals = new Map();
+            let totalMemCapacity = 0;
 
             const updatedTime = new Date(data.last_updated).toLocaleString();
             lastUpdatedEl.textContent = `Last Updated: ${updatedTime}`;
@@ -172,32 +375,29 @@
                         const memPercent = (gpu.mem_used / gpu.mem_total) * 100;
                         const utilPercent = gpu.util;
 
+                        totalMemCapacity += gpu.mem_total;
+
                         const utilColor = utilPercent >= 90 ? COLOR_DANGER : COLOR_UTIL;
                         const memColor = memPercent >= 90 ? COLOR_DANGER : COLOR_MEM;
 
-                        // --- Hog detection logic ---
-                        // Aggregate memory per user *on this GPU*
-                        const userMemOnGpu = {};
+                        // Track total usage per user across all machines for leaderboard + jokes
                         for (const proc of gpu.processes) {
-                            if (!userMemOnGpu[proc.user]) userMemOnGpu[proc.user] = 0;
-                            userMemOnGpu[proc.user] += proc.mem;
-                        }
-
-                        // Check thresholds for each user on this GPU
-                        for (const [user, mem] of Object.entries(userMemOnGpu)) {
-                            const userMemPercent = (mem / gpu.mem_total) * 100;
-
-                            // Trigger 1: User's memory on this GPU > 50%
-                            if (userMemPercent > HOG_THRESHOLD) {
-                                uniqueHogs.add(`${user}@${server.name}`);
+                            const rawUser = proc.user || 'unknown';
+                            const canonicalUser = getCanonicalUser(rawUser);
+                            if (!userTotals.has(canonicalUser)) {
+                                userTotals.set(canonicalUser, {
+                                    totalMem: 0,
+                                    processes: 0,
+                                    machines: new Set(),
+                                    aliases: new Set()
+                                });
                             }
-                            
-                            // Trigger 2: The GPU's total utilization > 50% (and this user is on it)
-                            if (utilPercent > HOG_THRESHOLD) {
-                                uniqueHogs.add(`${user}@${server.name}`);
-                            }
+                            const stats = userTotals.get(canonicalUser);
+                            stats.totalMem += proc.mem;
+                            stats.processes += 1;
+                            stats.machines.add(server.name);
+                            stats.aliases.add(rawUser);
                         }
-                        // --- End of hog logic ---
 
                         serverHtml += `
                             <div class="gpu">
@@ -237,30 +437,32 @@
                 container.innerHTML += serverHtml;
             }
 
-            // --- Joke Display Logic ---
-            // After all loops, check if we found any hogs
-            if (uniqueHogs.size > 0) {
-                // Pick one random hog from the set to feature
-                const hogArray = Array.from(uniqueHogs);
-                const randomHog = hogArray[Math.floor(Math.random() * hogArray.length)];
-                const [user, machine] = randomHog.split('@');
-                
-                // Pick one random joke template
+            const leaderboardEntries = buildLeaderboardEntries(userTotals, totalMemCapacity);
+            renderLeaderboard(leaderboardEntries);
+
+            const hogCandidates = selectHogCandidates(leaderboardEntries, userTotals);
+            if (hogCandidates.length > 0) {
+                const randomEntry = hogCandidates[Math.floor(Math.random() * hogCandidates.length)];
+                const machineSource = randomEntry.lastSampleMachines.size > 0 ? randomEntry.lastSampleMachines : randomEntry.machines;
+                const machineArray = Array.from(machineSource);
+                const chosenMachine = machineArray.length > 0 ? machineArray[Math.floor(Math.random() * machineArray.length)] : 'the cluster';
+
                 const jokeTemplate = JOKES[Math.floor(Math.random() * JOKES.length)];
-                
-                // Build the joke
                 const jokeText = jokeTemplate
-                    .replace('{USER}', user.toUpperCase())
-                    .replace('{MACHINE}', machine.toUpperCase());
-                
-                // Display the joke
+                    .replace('{USER}', randomEntry.user.toUpperCase())
+                    .replace('{MACHINE}', chosenMachine.toUpperCase());
+
                 jokeBox.textContent = jokeText;
-                jokeBox.style.display = 'block'; // Show the box
+                jokeBox.style.display = 'block';
             }
         }
 
         async function fetchData() {
             try {
+                if (!aliasMapLoaded) {
+                    await loadAliasMap();
+                }
+                await loadAggregateStats();
                 const response = await fetch(`status.json?v=${new Date().getTime()}`);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
@@ -274,7 +476,7 @@
         }
 
         fetchData();
-        setInterval(fetchData, 30000); 
+        setInterval(fetchData, 30000);
     </script>
 
 </body>
