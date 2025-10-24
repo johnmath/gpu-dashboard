@@ -37,11 +37,24 @@ def get_username_from_pid(pids):
     return users
 
 def fetch_server_stats(server_name):
-    """Fetches all GPU and process stats from the local machine."""
+    """Fetches all GPU, CPU, and process stats from the local machine."""
     print(f"Querying local stats for {server_name}...")
-    server_data = {"name": server_name, "gpus": [], "error": None}
+    # ADDED cpu_util
+    server_data = {"name": server_name, "gpus": [], "cpu_util": 0, "error": None}
     
-    gpu_query = "nvidia-smi --query-gpu=index,memory.used,memory.total,utilization.gpu,uuid --format=csv,noheader,nounits"
+    # 1. Get CPU stats
+    # Gets user + system percent
+    cpu_command = "top -bn1 | grep '%Cpu(s)' | awk '{print $2 + $4}'"
+    cpu_output = run_local_command(cpu_command)
+    try:
+        server_data["cpu_util"] = float(cpu_output.strip()) if cpu_output else 0
+    except Exception as e:
+        print(f"Could not parse CPU stats: {e}")
+        server_data["cpu_util"] = 0
+
+    # 2. Get GPU stats
+    # ADDED 'name' to the query
+    gpu_query = "nvidia-smi --query-gpu=index,memory.used,memory.total,utilization.gpu,uuid,name --format=csv,noheader,nounits"
     gpu_output = run_local_command(gpu_query)
     
     if gpu_output is None:
@@ -50,14 +63,20 @@ def fetch_server_stats(server_name):
 
     gpus = {}
     for line in gpu_output.splitlines():
-        parts = line.split(', ')
-        gpus[parts[4]] = {
-            "index": int(parts[0]), "mem_used": int(parts[1]),
-            "mem_total": int(parts[2]), "util": int(parts[3]),
+        # Clean up whitespace and parse
+        parts = [p.strip() for p in line.split(',')]
+        gpus[parts[4]] = { # uuid is parts[4]
+            "index": int(parts[0]), 
+            "mem_used": int(parts[1]),
+            "mem_total": int(parts[2]), 
+            "util": int(parts[3]),
+            "name": parts[5], # ADDED
             "processes": []
         }
 
-    proc_query = "nvidia-smi --query-compute-apps=gpu_uuid,pid,process_name,used_gpu_memory --format=csv,noheader,nounits"
+    # 3. Get Process stats
+    # ADDED 'elapsed_time' to the query
+    proc_query = "nvidia-smi --query-compute-apps=gpu_uuid,pid,process_name,used_gpu_memory,elapsed_time --format=csv,noheader,nounits"
     proc_output = run_local_command(proc_query)
     
     pid_to_gpu = {}
@@ -65,19 +84,29 @@ def fetch_server_stats(server_name):
     
     if proc_output:
         for line in proc_output.splitlines():
-            parts = line.split(', ')
-            gpu_uuid, pid, proc_name, mem_used = parts
+            parts = [p.strip() for p in line.split(',')]
+            gpu_uuid, pid, proc_name, mem_used = parts[:4]
             pids_on_server.append(pid)
-            pid_to_gpu[pid] = {"uuid": gpu_uuid, "name": proc_name, "mem": int(mem_used)}
+            pid_to_gpu[pid] = {
+                "uuid": gpu_uuid, 
+                "name": proc_name, 
+                "mem": int(mem_used),
+                "time": parts[4] # ADDED
+            }
 
+    # 4. Get Usernames
     user_map = get_username_from_pid(pids_on_server)
 
+    # 5. Combine all data
     for pid, proc_data in pid_to_gpu.items():
         gpu_uuid = proc_data["uuid"]
         if gpu_uuid in gpus:
             gpus[gpu_uuid]["processes"].append({
-                "pid": pid, "name": proc_data["name"],
-                "user": user_map.get(pid, "unknown"), "mem": proc_data["mem"]
+                "pid": pid, 
+                "name": proc_data["name"],
+                "user": user_map.get(pid, "unknown"), 
+                "mem": proc_data["mem"],
+                "time": proc_data["time"] # ADDED
             })
             
     server_data["gpus"] = list(gpus.values())

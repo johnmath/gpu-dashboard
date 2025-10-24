@@ -15,7 +15,9 @@
             --background: #191919;
             --foreground: #ffffff;
             --accent-green: rgb(100, 200, 100);
-            --accent-blue: rgb(50, 100, 200);
+            /* UPDATED Colors */
+            --accent-purple: rgb(150, 100, 250);
+            --accent-blue: rgb(50, 100, 200); 
             --accent-red: rgb(200, 50, 50);
             --panel-bg: #2a2a2a;
             --border-color: #444;
@@ -44,6 +46,12 @@
             padding: 15px 20px; 
             border-bottom: 1px solid var(--border-color); 
         }
+        
+        /* NEW Style for CPU bar */
+        .server-stats {
+            padding: 20px 20px 0 20px;
+        }
+        
         .server-error { color: var(--accent-red); padding: 20px; }
         .gpu-grid { 
             display: grid; 
@@ -62,7 +70,11 @@
             background: var(--panel-bg); 
             border-bottom: 1px solid var(--border-color); 
         }
-        .gpu-title { font-weight: 500; }
+        /* ADDED: Smaller font for long GPU names */
+        .gpu-title { 
+            font-weight: 500;
+            font-size: 0.9em;
+        }
         .gpu-stats { padding: 10px; }
         .stat { 
             display: flex; 
@@ -152,7 +164,6 @@
             font-style: italic;
         }
         
-        /* 1. Style for the new joke box */
         #joke-box {
             font-size: 1.1em;
             font-weight: 500;
@@ -163,7 +174,6 @@
             margin-bottom: 20px;
             border-radius: 6px;
             text-align: center;
-            /* Hide it by default, JS will show it */
             display: none; 
         }
     </style>
@@ -186,7 +196,6 @@
         const jokeBox = document.getElementById('joke-box'); // Get joke box
         const leaderboardEl = document.getElementById('leaderboard');
 
-        // 3. Joke templates
         const JOKES = [
             "{USER} is hogging all of the resources on {MACHINE}!!! 🐗",
             "The RPMs on {MACHINE}'s fans are over 9000 thanks to {USER}! 🌀",
@@ -327,7 +336,8 @@
             if (!leaderboardEntries || leaderboardEntries.length === 0) {
                 return [];
             }
-
+            
+            // HOG_THRESHOLD is defined below
             let candidates = leaderboardEntries.filter(entry => entry.memPercent > HOG_THRESHOLD && (!aggregateStats || userTotals.has(entry.user)));
 
             if (candidates.length === 0) {
@@ -341,8 +351,10 @@
             return candidates;
         }
 
+        // --- UPDATED COLORS ---
         const COLOR_UTIL = 'rgb(100, 200, 100)';
-        const COLOR_MEM = 'rgb(50, 100, 200)';
+        const COLOR_MEM = 'rgb(150, 100, 250)'; // Purple
+        const COLOR_CPU = 'rgb(50, 100, 200)';  // Blue
         const COLOR_DANGER = 'rgb(200, 50, 50)';
         const HOG_THRESHOLD = 50; // 50%
 
@@ -352,7 +364,6 @@
             jokeBox.innerHTML = ''; // Clear old joke
             jokeBox.style.display = 'none'; // Hide by default
 
-            // Aggregate usage across the fleet for leaderboard + jokes
             const userTotals = new Map();
             let totalMemCapacity = 0;
 
@@ -365,9 +376,28 @@
 
                 if (server.error) {
                     serverHtml += `<div class="server-error"><strong>Error:</strong> ${server.error}</div>`;
-                } else if (server.gpus.length === 0) {
-                     serverHtml += `<div class="server-error">No GPUs found or nvidia-smi failed.</div>`;
                 } else {
+                    
+                    // --- ADDED CPU BAR ---
+                    const cpuUtil = server.cpu_util || 0;
+                    const cpuColor = cpuUtil >= 90 ? COLOR_DANGER : COLOR_CPU;
+                    serverHtml += `
+                        <div class="server-stats">
+                            <div class="stat">
+                                <span class="stat-label">🖥️ CPU Utilization</span>
+                                <span>${cpuUtil.toFixed(1)}%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: ${cpuUtil}%; background-color: ${cpuColor};"></div>
+                            </div>
+                        </div>
+                    `;
+                    // --- End CPU Bar ---
+                    
+                    if (server.gpus.length === 0) {
+                         serverHtml += `<div class="server-error" style="padding-top: 0;">No GPUs found on this server.</div>`;
+                    }
+
                     serverHtml += `<div class="gpu-grid">`;
                     server.gpus.sort((a, b) => a.index - b.index);
 
@@ -378,9 +408,9 @@
                         totalMemCapacity += gpu.mem_total;
 
                         const utilColor = utilPercent >= 90 ? COLOR_DANGER : COLOR_UTIL;
-                        const memColor = memPercent >= 90 ? COLOR_DANGER : COLOR_MEM;
+                        const memColor = memPercent >= 90 ? COLOR_DANGER : COLOR_MEM; // Now uses purple
 
-                        // Track total usage per user across all machines for leaderboard + jokes
+                        // Track total usage per user
                         for (const proc of gpu.processes) {
                             const rawUser = proc.user || 'unknown';
                             const canonicalUser = getCanonicalUser(rawUser);
@@ -401,7 +431,7 @@
 
                         serverHtml += `
                             <div class="gpu">
-                                <div class="gpu-header"><span class="gpu-title">GPU ${gpu.index}</span></div>
+                                <div class="gpu-header"><span class="gpu-title">${gpu.name} (GPU ${gpu.index})</span></div>
                                 <div class="gpu-stats">
                                     <div class="stat">
                                         <span class="stat-label">⚙️ Utilization</span>
@@ -423,7 +453,7 @@
                                     <strong>Processes:</strong>
                                     <ul class="proc-list">
                                         ${gpu.processes.length > 0 ? 
-                                            gpu.processes.map(p => `<li><strong>${p.user}</strong> (${p.pid}): ${p.name} (${p.mem} MiB)</li>`).join('') : 
+                                            gpu.processes.map(p => `<li><strong>${p.user}</strong> (${p.pid}, ${p.time}): ${p.name} (${p.mem} MiB)</li>`).join('') : 
                                             `<li>No processes running.</li>`
                                         }
                                     </ul>
