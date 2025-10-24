@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab GPU Dashboard</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: #f4f4f4; margin: 20px; }
+        .dashboard { max-width: 1200px; margin: 0 auto; }
+        .server { background: #fff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        .server-title { font-size: 1.5em; padding: 15px 20px; border-bottom: 1px solid #eee; }
+        .server-error { color: #d9534f; padding: 20px; }
+        .gpu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; padding: 20px; }
+        .gpu { border: 1px solid #ddd; border-radius: 6px; overflow: hidden; }
+        .gpu-header { padding: 10px; background: #f9f9f9; border-bottom: 1px solid #ddd; }
+        .gpu-title { font-weight: bold; }
+        .gpu-stats { padding: 10px; }
+        .stat { display: flex; justify-content: space-between; margin-bottom: 8px; }
+        .stat-label { font-weight: 500; }
+        .progress-bar { background: #e9ecef; border-radius: 4px; height: 20px; overflow: hidden; }
+        .progress { background: #0275d8; height: 100%; width: 0; transition: width 0.3s ease; }
+        .processes { padding: 10px; }
+        .proc-list { list-style: none; padding: 0; margin: 0; font-family: monospace; font-size: 0.9em; }
+        .proc-list li { padding: 4px 0; border-bottom: 1px dashed #eee; }
+        #last-updated { text-align: center; color: #666; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard">
+        <h1>Lab GPU Dashboard</h1>
+        <div id="last-updated">Loading...</div>
+        <div id="servers-container"></div>
+    </div>
+
+    <script>
+        const container = document.getElementById('servers-container');
+        const lastUpdatedEl = document.getElementById('last-updated');
+
+        function renderDashboard(data) {
+            container.innerHTML = ''; // Clear old data
+            
+            const updatedTime = new Date(data.last_updated).toLocaleString();
+            lastUpdatedEl.textContent = `Last Updated: ${updatedTime}`;
+
+            for (const server of data.servers) {
+                let serverHtml = `<div class="server">`;
+                serverHtml += `<div class="server-title">${server.name}</div>`;
+
+                if (server.error) {
+                    serverHtml += `<div class="server-error"><strong>Error:</strong> ${server.error}</div>`;
+                } else if (server.gpus.length === 0) {
+                     serverHtml += `<div class="server-error">No GPUs found or nvidia-smi failed.</div>`;
+                } else {
+                    serverHtml += `<div class="gpu-grid">`;
+                    // Sort GPUs by index
+                    server.gpus.sort((a, b) => a.index - b.index);
+
+                    for (const gpu of server.gpus) {
+                        const memPercent = (gpu.mem_used / gpu.mem_total) * 100;
+                        const utilPercent = gpu.util;
+
+                        serverHtml += `
+                            <div class="gpu">
+                                <div class="gpu-header"><span class="gpu-title">GPU ${gpu.index}</span></div>
+                                <div class="gpu-stats">
+                                    <div class="stat">
+                                        <span class="stat-label">Utilization</span>
+                                        <span>${utilPercent}%</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: ${utilPercent}%; background-color: #5cb85c;"></div>
+                                    </div>
+                                    <br>
+                                    <div class="stat">
+                                        <span class="stat-label">Memory</span>
+                                        <span>${gpu.mem_used} MiB / ${gpu.mem_total} MiB</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: ${memPercent}%; background-color: #0275d8;"></div>
+                                    </div>
+                                </div>
+                                <div class="processes">
+                                    <strong>Processes:</strong>
+                                    <ul class="proc-list">
+                                        ${gpu.processes.length > 0 ? 
+                                            gpu.processes.map(p => `<li><strong>${p.user}</strong> (${p.pid}): ${p.name} (${p.mem} MiB)</li>`).join('') : 
+                                            `<li>No processes running.</li>`
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                        `;
+                    }
+                    serverHtml += `</div>`; // end .gpu-grid
+                }
+                serverHtml += `</div>`; // end .server
+                container.innerHTML += serverHtml;
+            }
+        }
+
+        async function fetchData() {
+            try {
+                // Add a cache-busting query parameter
+                const response = await fetch(`status.json?v=${new Date().getTime()}`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                renderDashboard(data);
+            } catch (e) {
+                console.error("Failed to load dashboard data:", e);
+                container.innerHTML = `<div class="server-error"><strong>Fatal Error:</strong> Could not load status.json.</div>`;
+            }
+        }
+
+        // Fetch data on load and then every 30 seconds
+        fetchData();
+        setInterval(fetchData, 30000); 
+    </script>
+
+</body>
+</html>
