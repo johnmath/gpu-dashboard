@@ -19,7 +19,74 @@
         }
       ],
       "error": null
+    },
+    {
+      "name": "achtung-gamma",
+      "gpus": [
+        {
+          "index": 0,
+          "mem_used": 31706,
+          "mem_total": 95830,
+          "util": 63,
+          "processes": []
+        },
+        {
+          "index": 1,
+          "mem_used": 92569,
+          "mem_total": 95830,
+          "util": 0,
+          "processes": [
+            {
+              "pid": "3338428",
+              "name": "python",
+              "user": "shuyilin",
+              "mem": 518
+            },
+            {
+              "pid": "3400520",
+              "name": "VLLM::EngineCore",
+              "user": "shuyilin",
+              "mem": 92036
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "mem_used": 81200,
+          "mem_total": 95830,
+          "util": 100,
+          "processes": [
+            {
+              "pid": "3505638",
+              "name": "python",
+              "user": "saefurukawa",
+              "mem": 81190
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "mem_used": 49561,
+          "mem_total": 95830,
+          "util": 89,
+          "processes": [
+            {
+              "pid": "3896443",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 24292
+            },
+            {
+              "pid": "3898059",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 25254
+            }
+          ]
+        }
+      ],
+      "error": null
     }
   ],
-  "last_updated": "2025-10-24T15:12:01.101916Z"
+  "last_updated": "2025-10-24T15:22:01.809279Z"
 }
