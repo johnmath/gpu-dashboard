@@ -25,16 +25,16 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 38038,
+          "mem_used": 31352,
           "mem_total": 95830,
-          "util": 93,
+          "util": 0,
           "processes": []
         },
         {
           "index": 1,
           "mem_used": 92569,
           "mem_total": 95830,
-          "util": 0,
+          "util": 68,
           "processes": [
             {
               "pid": "3338428",
@@ -54,7 +54,7 @@
           "index": 2,
           "mem_used": 58112,
           "mem_total": 95830,
-          "util": 100,
+          "util": 61,
           "processes": [
             {
               "pid": "3936508",
@@ -86,22 +86,29 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 5,
+          "mem_used": 42364,
           "mem_total": 49140,
           "util": 0,
-          "processes": []
+          "processes": [
+            {
+              "pid": "302138",
+              "name": "/home/simona/bin/ollama",
+              "user": "simona",
+              "mem": 42354
+            }
+          ]
         },
         {
           "index": 1,
-          "mem_used": 43174,
+          "mem_used": 42642,
           "mem_total": 49140,
-          "util": 60,
+          "util": 52,
           "processes": [
             {
               "pid": "4045626",
               "name": "python",
               "user": "luzsun",
-              "mem": 43164
+              "mem": 42648
             }
           ]
         }
@@ -109,5 +116,5 @@
       "error": null
     }
   ],
-  "last_updated": "2025-10-24T17:16:01.370696Z"
+  "last_updated": "2025-10-24T17:17:01.416739Z"
 }
