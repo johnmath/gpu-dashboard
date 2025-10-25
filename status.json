@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 5.6,
+      "cpu_util": 11.5,
       "error": null
     },
     {
@@ -43,7 +43,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 2.7,
+      "cpu_util": 2.3,
       "error": null
     },
     {
@@ -66,7 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 2.7,
+      "cpu_util": 2.3,
       "error": null
     },
     {
@@ -74,16 +74,16 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 17762,
+          "mem_used": 18166,
           "mem_total": 95830,
-          "util": 4,
+          "util": 29,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "311599",
               "name": "python",
               "user": "shuyilin",
-              "mem": 17752,
+              "mem": 18156,
               "time": "N/A"
             }
           ]
@@ -117,36 +117,28 @@
       "error": null
     },
     {
-      "name": "achtung-biggpu",
+      "name": "achtung-hood",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 43166,
-          "mem_total": 49140,
-          "util": 44,
-          "name": "NVIDIA RTX A6000",
-          "processes": [
-            {
-              "pid": "304885",
-              "name": "python",
-              "user": "luzsun",
-              "mem": 43156,
-              "time": "N/A"
-            }
-          ]
+          "mem_used": 2,
+          "mem_total": 12288,
+          "util": 0,
+          "name": "NVIDIA GeForce GTX TITAN X",
+          "processes": []
         },
         {
           "index": 1,
-          "mem_used": 2,
-          "mem_total": 49140,
+          "mem_used": 3,
+          "mem_total": 12288,
           "util": 0,
-          "name": "NVIDIA RTX A6000",
+          "name": "NVIDIA TITAN X (Pascal)",
           "processes": []
         }
       ],
-      "cpu_util": 2.2,
+      "cpu_util": 2.3,
       "error": null
     }
   ],
-  "last_updated": "2025-10-25T09:50:01.372828Z"
+  "last_updated": "2025-10-25T09:51:01.677821Z"
 }
