@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 5.0,
+      "cpu_util": 5.2,
       "error": null
     },
     {
@@ -29,9 +29,43 @@
       "error": "Data is stale. Machine may be offline."
     },
     {
-      "name": "achtung-dome",
-      "gpus": [],
-      "error": "Data is stale. Machine may be offline."
+      "name": "achtung-biggpu",
+      "gpus": [
+        {
+          "index": 0,
+          "mem_used": 42640,
+          "mem_total": 49140,
+          "util": 35,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "304885",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 42630,
+              "time": "N/A"
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "mem_used": 26556,
+          "mem_total": 49140,
+          "util": 61,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "511643",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 26546,
+              "time": "N/A"
+            }
+          ]
+        }
+      ],
+      "cpu_util": 3.8,
+      "error": null
     },
     {
       "name": "achtung-gamma",
@@ -40,9 +74,43 @@
     },
     {
       "name": "achtung-biggpu",
-      "gpus": [],
-      "error": "Data is stale. Machine may be offline."
+      "gpus": [
+        {
+          "index": 0,
+          "mem_used": 42664,
+          "mem_total": 49140,
+          "util": 41,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "304885",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 42632,
+              "time": "N/A"
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "mem_used": 26556,
+          "mem_total": 49140,
+          "util": 53,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "511643",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 26546,
+              "time": "N/A"
+            }
+          ]
+        }
+      ],
+      "cpu_util": 2.3,
+      "error": null
     }
   ],
-  "last_updated": "2025-10-25T04:50:01.862566Z"
+  "last_updated": "2025-10-25T04:51:01.288511Z"
 }
