@@ -26,6 +26,7 @@ def run_local_command(command):
     """Runs a command locally."""
     try:
         result = subprocess.run(command, capture_output=True, text=True, check=True, timeout=10, shell=True)
+#        print(result, result.stdout)
         return result.stdout.strip()
     except Exception as e:
         print(f"Error running command {command}: {e}")
@@ -78,23 +79,23 @@ def fetch_server_stats(server_name):
 
     # 3. Get Process stats (FIXED: query-processes and added 'elapsed_time')
     proc_query = "nvidia-smi --query-compute-apps=gpu_uuid,pid,process_name,used_gpu_memory --format=csv,noheader,nounits"
+    proc_output = run_local_command(proc_query)
     pid_to_gpu = {}
     pids_on_server = []
-    
+#    print(proc_output)
     if proc_output:
         for line in proc_output.splitlines():
             parts = [p.strip() for p in line.split(',')]
-            if len(parts) < 5: continue
+            # print(parts)
+            if len(parts) < 4: continue
             gpu_uuid, pid, proc_name = parts[:3]
-            mem_used = parts[3] # Can be 'N/A'
-            elapsed_time = parts[4]
-            
+            mem_used = parts[3] # Can be 'N/A'                       
             pids_on_server.append(pid)
             pid_to_gpu[pid] = {
                 "uuid": gpu_uuid, 
                 "name": proc_name, 
                 "mem": safe_int(mem_used), 
-                "time": elapsed_time
+                "time": "N/A" # Indicate time is not available
             }
 
     # 4. Get Usernames
@@ -116,6 +117,8 @@ def fetch_server_stats(server_name):
             })
             
     server_data["gpus"] = list(gpus.values())
+    formatted = json.dumps(server_data, indent=2)
+    print(formatted)
     return server_data
 
 # --- Main execution ---
@@ -125,3 +128,4 @@ with open(OUTPUT_FILE, 'w') as f:
     json.dump(final_data, f, indent=2)
 
 print(f"Successfully wrote local stats to {OUTPUT_FILE}")
+
