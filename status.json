@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 8.7,
+      "cpu_util": 5.2,
       "error": null
     },
     {
@@ -43,7 +43,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 5.7,
+      "cpu_util": 1.0,
       "error": null
     },
     {
@@ -66,7 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 5.7,
+      "cpu_util": 1.0,
       "error": null
     },
     {
@@ -74,9 +74,9 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 32418,
+          "mem_used": 32420,
           "mem_total": 95830,
-          "util": 0,
+          "util": 68,
           "name": "NVIDIA H100 NVL",
           "processes": []
         },
@@ -105,9 +105,9 @@
         },
         {
           "index": 2,
-          "mem_used": 31772,
+          "mem_used": 31666,
           "mem_total": 95830,
-          "util": 88,
+          "util": 27,
           "name": "NVIDIA H100 NVL",
           "processes": []
         },
@@ -135,40 +135,32 @@
           ]
         }
       ],
-      "cpu_util": 1.0,
+      "cpu_util": 15.4,
       "error": null
     },
     {
-      "name": "achtung-biggpu",
+      "name": "achtung-dome",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 42228,
-          "mem_total": 49140,
-          "util": 59,
-          "name": "NVIDIA RTX A6000",
-          "processes": [
-            {
-              "pid": "618189",
-              "name": "python",
-              "user": "luzsun",
-              "mem": 41998,
-              "time": "N/A"
-            }
-          ]
+          "mem_used": 3,
+          "mem_total": 12288,
+          "util": 0,
+          "name": "NVIDIA TITAN X (Pascal)",
+          "processes": []
         },
         {
           "index": 1,
-          "mem_used": 2,
-          "mem_total": 49140,
+          "mem_used": 3,
+          "mem_total": 12288,
           "util": 0,
-          "name": "NVIDIA RTX A6000",
+          "name": "NVIDIA TITAN X (Pascal)",
           "processes": []
         }
       ],
-      "cpu_util": 1.4,
+      "cpu_util": 1.0,
       "error": null
     }
   ],
-  "last_updated": "2025-10-26T00:09:01.399953Z"
+  "last_updated": "2025-10-26T00:10:01.664774Z"
 }
