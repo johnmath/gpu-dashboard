@@ -20,38 +20,30 @@
           "processes": []
         }
       ],
-      "cpu_util": 5.9,
+      "cpu_util": 5.2,
       "error": null
     },
     {
-      "name": "achtung-biggpu",
+      "name": "achtung-hood",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 42234,
-          "mem_total": 49140,
-          "util": 59,
-          "name": "NVIDIA RTX A6000",
-          "processes": [
-            {
-              "pid": "618189",
-              "name": "python",
-              "user": "luzsun",
-              "mem": 42224,
-              "time": "N/A"
-            }
-          ]
+          "mem_used": 2,
+          "mem_total": 12288,
+          "util": 0,
+          "name": "NVIDIA GeForce GTX TITAN X",
+          "processes": []
         },
         {
           "index": 1,
-          "mem_used": 2,
-          "mem_total": 49140,
+          "mem_used": 3,
+          "mem_total": 12288,
           "util": 0,
-          "name": "NVIDIA RTX A6000",
+          "name": "NVIDIA TITAN X (Pascal)",
           "processes": []
         }
       ],
-      "cpu_util": 3.5,
+      "cpu_util": 2.7,
       "error": null
     },
     {
@@ -74,7 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 5.3,
+      "cpu_util": 4.2,
       "error": null
     },
     {
@@ -82,19 +74,34 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 4,
+          "mem_used": 87300,
           "mem_total": 95830,
-          "util": 0,
+          "util": 100,
           "name": "NVIDIA H100 NVL",
           "processes": []
         },
         {
           "index": 1,
-          "mem_used": 4,
+          "mem_used": 92565,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "1245340",
+              "name": "python",
+              "user": "shuyilin",
+              "mem": 518,
+              "time": "N/A"
+            },
+            {
+              "pid": "1246148",
+              "name": "VLLM::EngineCore",
+              "user": "shuyilin",
+              "mem": 92032,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 2,
@@ -136,9 +143,9 @@
           "processes": []
         }
       ],
-      "cpu_util": 5.3,
+      "cpu_util": 4.2,
       "error": null
     }
   ],
-  "last_updated": "2025-10-26T04:02:01.933982Z"
+  "last_updated": "2025-10-26T04:03:01.088899Z"
 }
