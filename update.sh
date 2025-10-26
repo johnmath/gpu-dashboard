@@ -11,7 +11,7 @@ echo "Running GPU stat update..."
 python3 fetch_stats.py
 
 # Commit and push the changes
-git add status.json
+git add status.json aggregate_stats.json
 
 # Check if there are changes to commit
 if ! git diff-index --quiet HEAD --; then
