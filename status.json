@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 10.0,
+      "cpu_util": 4.8,
       "error": null
     },
     {
@@ -43,7 +43,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 4.1,
+      "cpu_util": 4.7,
       "error": null
     },
     {
@@ -76,7 +76,7 @@
           "index": 0,
           "mem_used": 71651,
           "mem_total": 95830,
-          "util": 82,
+          "util": 81,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -97,9 +97,9 @@
         },
         {
           "index": 1,
-          "mem_used": 4,
+          "mem_used": 59160,
           "mem_total": 95830,
-          "util": 0,
+          "util": 100,
           "name": "NVIDIA H100 NVL",
           "processes": []
         },
@@ -107,7 +107,7 @@
           "index": 2,
           "mem_used": 58064,
           "mem_total": 95830,
-          "util": 83,
+          "util": 100,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -121,14 +121,29 @@
         },
         {
           "index": 3,
-          "mem_used": 4,
+          "mem_used": 92565,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "1845727",
+              "name": "python",
+              "user": "shuyilin",
+              "mem": 518,
+              "time": "N/A"
+            },
+            {
+              "pid": "1846650",
+              "name": "VLLM::EngineCore",
+              "user": "shuyilin",
+              "mem": 92032,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 2.6,
+      "cpu_util": 6.0,
       "error": null
     },
     {
@@ -151,9 +166,9 @@
           "processes": []
         }
       ],
-      "cpu_util": 2.3,
+      "cpu_util": 2.4,
       "error": null
     }
   ],
-  "last_updated": "2025-10-26T19:13:01.879832Z"
+  "last_updated": "2025-10-26T19:14:01.334665Z"
 }
