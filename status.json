@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 11.5,
+      "cpu_util": 16.7,
       "error": null
     },
     {
@@ -28,25 +28,25 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 42140,
+          "mem_used": 43320,
           "mem_total": 49140,
-          "util": 97,
+          "util": 99,
           "name": "NVIDIA RTX A6000",
           "processes": [
             {
               "pid": "905933",
               "name": "python",
               "user": "luzsun",
-              "mem": 42130,
+              "mem": 43310,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 1,
-          "mem_used": 26312,
+          "mem_used": 41678,
           "mem_total": 49140,
-          "util": 53,
+          "util": 97,
           "name": "NVIDIA RTX A6000",
           "processes": [
             {
@@ -55,11 +55,18 @@
               "user": "luzsun",
               "mem": 26302,
               "time": "N/A"
+            },
+            {
+              "pid": "1091213",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 15360,
+              "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 2.4,
+      "cpu_util": 3.5,
       "error": null
     },
     {
@@ -90,16 +97,16 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 1566,
+          "mem_used": 11674,
           "mem_total": 95830,
-          "util": 0,
+          "util": 1,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "3303983",
               "name": "python",
               "user": "saefurukawa",
-              "mem": 1556,
+              "mem": 11664,
               "time": "N/A"
             }
           ]
@@ -122,34 +129,19 @@
         },
         {
           "index": 2,
-          "mem_used": 74456,
+          "mem_used": 4,
           "mem_total": 95830,
-          "util": 100,
+          "util": 0,
           "name": "NVIDIA H100 NVL",
           "processes": []
         },
         {
           "index": 3,
-          "mem_used": 92567,
+          "mem_used": 4,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
-          "processes": [
-            {
-              "pid": "3289238",
-              "name": "python",
-              "user": "shuyilin",
-              "mem": 518,
-              "time": "N/A"
-            },
-            {
-              "pid": "3289949",
-              "name": "VLLM::EngineCore",
-              "user": "shuyilin",
-              "mem": 92034,
-              "time": "N/A"
-            }
-          ]
+          "processes": []
         }
       ],
       "cpu_util": 2.3,
@@ -160,25 +152,25 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 42148,
+          "mem_used": 43320,
           "mem_total": 49140,
-          "util": 91,
+          "util": 99,
           "name": "NVIDIA RTX A6000",
           "processes": [
             {
               "pid": "905933",
               "name": "python",
               "user": "luzsun",
-              "mem": 42138,
+              "mem": 43310,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 1,
-          "mem_used": 26312,
+          "mem_used": 41678,
           "mem_total": 49140,
-          "util": 39,
+          "util": 97,
           "name": "NVIDIA RTX A6000",
           "processes": [
             {
@@ -187,13 +179,20 @@
               "user": "luzsun",
               "mem": 26302,
               "time": "N/A"
+            },
+            {
+              "pid": "1091213",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 15360,
+              "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 3.6,
+      "cpu_util": 3.5,
       "error": null
     }
   ],
-  "last_updated": "2025-10-27T22:56:01.141663Z"
+  "last_updated": "2025-10-27T22:57:01.676575Z"
 }
