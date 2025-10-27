@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 11.7,
+      "cpu_util": 16.9,
       "error": null
     },
     {
@@ -28,16 +28,16 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 42432,
+          "mem_used": 43316,
           "mem_total": 49140,
-          "util": 98,
+          "util": 28,
           "name": "NVIDIA RTX A6000",
           "processes": [
             {
               "pid": "905933",
               "name": "python",
               "user": "luzsun",
-              "mem": 42422,
+              "mem": 43306,
               "time": "N/A"
             }
           ]
@@ -46,7 +46,7 @@
           "index": 1,
           "mem_used": 26086,
           "mem_total": 49140,
-          "util": 39,
+          "util": 40,
           "name": "NVIDIA RTX A6000",
           "processes": [
             {
@@ -59,7 +59,7 @@
           ]
         }
       ],
-      "cpu_util": 2.6,
+      "cpu_util": 2.3,
       "error": null
     },
     {
@@ -67,32 +67,32 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 42162,
+          "mem_used": 43316,
           "mem_total": 49140,
-          "util": 61,
+          "util": 28,
           "name": "NVIDIA RTX A6000",
           "processes": [
             {
               "pid": "905933",
               "name": "python",
               "user": "luzsun",
-              "mem": 42422,
+              "mem": 43306,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 1,
-          "mem_used": 26084,
+          "mem_used": 26086,
           "mem_total": 49140,
-          "util": 100,
+          "util": 40,
           "name": "NVIDIA RTX A6000",
           "processes": [
             {
               "pid": "1077611",
               "name": "python",
               "user": "luzsun",
-              "mem": 26074,
+              "mem": 26076,
               "time": "N/A"
             }
           ]
@@ -116,7 +116,7 @@
           "index": 1,
           "mem_used": 58070,
           "mem_total": 95830,
-          "util": 77,
+          "util": 70,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -130,7 +130,7 @@
         },
         {
           "index": 2,
-          "mem_used": 4,
+          "mem_used": 31162,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
@@ -138,14 +138,29 @@
         },
         {
           "index": 3,
-          "mem_used": 4,
+          "mem_used": 7223,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "3286443",
+              "name": "python",
+              "user": "shuyilin",
+              "mem": 518,
+              "time": "N/A"
+            },
+            {
+              "pid": "3287272",
+              "name": "VLLM::EngineCore",
+              "user": "shuyilin",
+              "mem": 6690,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 1.5,
+      "cpu_util": 2.4,
       "error": null
     },
     {
@@ -153,32 +168,32 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 42162,
+          "mem_used": 43316,
           "mem_total": 49140,
-          "util": 61,
+          "util": 28,
           "name": "NVIDIA RTX A6000",
           "processes": [
             {
               "pid": "905933",
               "name": "python",
               "user": "luzsun",
-              "mem": 42422,
+              "mem": 43306,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 1,
-          "mem_used": 26084,
+          "mem_used": 26086,
           "mem_total": 49140,
-          "util": 100,
+          "util": 40,
           "name": "NVIDIA RTX A6000",
           "processes": [
             {
               "pid": "1077611",
               "name": "python",
               "user": "luzsun",
-              "mem": 26074,
+              "mem": 26076,
               "time": "N/A"
             }
           ]
@@ -188,5 +203,5 @@
       "error": null
     }
   ],
-  "last_updated": "2025-10-27T22:38:01.338819Z"
+  "last_updated": "2025-10-27T22:39:01.822226Z"
 }
