@@ -20,7 +20,30 @@
           "processes": []
         }
       ],
-      "cpu_util": 13.3,
+      "cpu_util": 14.0,
+      "error": null
+    },
+    {
+      "name": "achtung-hood",
+      "gpus": [
+        {
+          "index": 0,
+          "mem_used": 2,
+          "mem_total": 12288,
+          "util": 0,
+          "name": "NVIDIA GeForce GTX TITAN X",
+          "processes": []
+        },
+        {
+          "index": 1,
+          "mem_used": 3,
+          "mem_total": 12288,
+          "util": 0,
+          "name": "NVIDIA TITAN X (Pascal)",
+          "processes": []
+        }
+      ],
+      "cpu_util": 2.2,
       "error": null
     },
     {
@@ -43,30 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 6.6,
-      "error": null
-    },
-    {
-      "name": "achtung-dome",
-      "gpus": [
-        {
-          "index": 0,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
-        },
-        {
-          "index": 1,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
-        }
-      ],
-      "cpu_util": 7.9,
+      "cpu_util": 5.0,
       "error": null
     },
     {
@@ -74,16 +74,23 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 51692,
+          "mem_used": 88437,
           "mem_total": 95830,
-          "util": 99,
+          "util": 93,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "2668166",
               "name": "python",
               "user": "shuyilin",
-              "mem": 51682,
+              "mem": 706,
+              "time": "N/A"
+            },
+            {
+              "pid": "2896026",
+              "name": "VLLM::EngineCore",
+              "user": "shuyilin",
+              "mem": 87716,
               "time": "N/A"
             }
           ]
@@ -113,7 +120,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 1.8,
+      "cpu_util": 1.7,
       "error": null
     },
     {
@@ -140,5 +147,5 @@
       "error": null
     }
   ],
-  "last_updated": "2025-10-27T15:42:01.760537Z"
+  "last_updated": "2025-10-27T15:43:01.181221Z"
 }
