@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 18.6,
+      "cpu_util": 15.6,
       "error": null
     },
     {
@@ -43,7 +43,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 2.3,
+      "cpu_util": 6.6,
       "error": null
     },
     {
@@ -66,7 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 2.3,
+      "cpu_util": 6.6,
       "error": null
     },
     {
@@ -76,7 +76,7 @@
           "index": 0,
           "mem_used": 69106,
           "mem_total": 95830,
-          "util": 82,
+          "util": 72,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -106,11 +106,19 @@
         },
         {
           "index": 2,
-          "mem_used": 4,
+          "mem_used": 7302,
           "mem_total": 95830,
-          "util": 0,
+          "util": 1,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "734980",
+              "name": "python",
+              "user": "shuyilin",
+              "mem": 7596,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 3,
@@ -121,7 +129,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 3.4,
+      "cpu_util": 6.1,
       "error": null
     },
     {
@@ -131,7 +139,7 @@
           "index": 0,
           "mem_used": 48290,
           "mem_total": 49140,
-          "util": 28,
+          "util": 31,
           "name": "NVIDIA RTX A6000",
           "processes": []
         },
@@ -139,7 +147,7 @@
           "index": 1,
           "mem_used": 20434,
           "mem_total": 49140,
-          "util": 36,
+          "util": 28,
           "name": "NVIDIA RTX A6000",
           "processes": [
             {
@@ -152,9 +160,9 @@
           ]
         }
       ],
-      "cpu_util": 3.0,
+      "cpu_util": 3.4,
       "error": null
     }
   ],
-  "last_updated": "2025-10-28T21:14:01.088259Z"
+  "last_updated": "2025-10-28T21:15:01.577472Z"
 }
