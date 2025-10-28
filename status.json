@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 15.3,
+      "cpu_util": 11.4,
       "error": null
     },
     {
@@ -74,19 +74,11 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 85976,
+          "mem_used": 4,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
-          "processes": [
-            {
-              "pid": "162931",
-              "name": "/home/aglc/rfcllm/myvenv/bin/python3",
-              "user": "aglc",
-              "mem": 85966,
-              "time": "N/A"
-            }
-          ]
+          "processes": []
         },
         {
           "index": 1,
@@ -98,7 +90,7 @@
         },
         {
           "index": 2,
-          "mem_used": 31762,
+          "mem_used": 31566,
           "mem_total": 95830,
           "util": 96,
           "name": "NVIDIA H100 NVL",
@@ -128,32 +120,40 @@
           ]
         }
       ],
-      "cpu_util": 2.0,
+      "cpu_util": 2.7,
       "error": null
     },
     {
-      "name": "achtung-dome",
+      "name": "achtung-biggpu",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
+          "mem_used": 48290,
+          "mem_total": 49140,
+          "util": 40,
+          "name": "NVIDIA RTX A6000",
           "processes": []
         },
         {
           "index": 1,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
+          "mem_used": 20434,
+          "mem_total": 49140,
+          "util": 45,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "1336891",
+              "name": "python",
+              "user": "saefurukawa",
+              "mem": 20424,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 4.6,
+      "cpu_util": 3.8,
       "error": null
     }
   ],
-  "last_updated": "2025-10-28T18:03:01.644609Z"
+  "last_updated": "2025-10-28T18:04:01.098507Z"
 }
