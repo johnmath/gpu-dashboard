@@ -1,1 +1,3 @@
-http://johnabascal.com/gpu-dashboard/
+# NDS2 Lab Compute Resource Monitor
+
+### https://labcompute.dev/
