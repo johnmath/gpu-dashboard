@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 5.8,
+      "cpu_util": 5.1,
       "error": null
     },
     {
@@ -106,11 +106,19 @@
         },
         {
           "index": 2,
-          "mem_used": 4,
+          "mem_used": 60424,
           "mem_total": 95830,
-          "util": 0,
+          "util": 2,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "2013921",
+              "name": "VLLM::EngineCore",
+              "user": "roseev",
+              "mem": 60414,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 3,
@@ -129,7 +137,7 @@
           ]
         }
       ],
-      "cpu_util": 3.0,
+      "cpu_util": 45.0,
       "error": null
     },
     {
@@ -164,5 +172,5 @@
       "error": null
     }
   ],
-  "last_updated": "2025-10-29T16:57:01.241685Z"
+  "last_updated": "2025-10-29T16:58:01.697473Z"
 }
