@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>📊 GPU Dashboard</title> 
-    
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
+    <title>📊 GPU Dashboard</title>
+
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
@@ -15,8 +17,10 @@
             --background: #191919;
             --foreground: #ffffff;
             --accent-green: rgb(100, 200, 100);
-            --accent-purple: rgb(150, 100, 250); /* Memory color */
-            --accent-blue: rgb(50, 100, 200);   /* CPU color */
+            --accent-purple: rgb(150, 100, 250);
+            /* Memory color */
+            --accent-blue: rgb(50, 100, 200);
+            /* CPU color */
             --accent-red: rgb(200, 50, 50);
             --panel-bg: #2a2a2a;
             --border-color: #444;
@@ -31,98 +35,133 @@
             margin: 20px;
         }
 
-        .dashboard { max-width: 1200px; margin: 0 auto; }
-        .server { 
-            background: var(--panel-bg); 
-            border-radius: 8px; 
+        .dashboard {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .server {
+            background: var(--panel-bg);
+            border-radius: 8px;
             border: 1px solid var(--border-color);
-            margin-bottom: 20px; 
+            margin-bottom: 20px;
             overflow: hidden;
         }
-        .server-title { 
-            font-size: 1.5em; 
+
+        .server-title {
+            font-size: 1.5em;
             font-weight: 500;
-            padding: 15px 20px; 
-            border-bottom: 1px solid var(--border-color); 
+            padding: 15px 20px;
+            border-bottom: 1px solid var(--border-color);
         }
-        
+
         .server-stats {
             padding: 20px 20px 0 20px;
         }
-        
-        .server-error { color: var(--accent-red); padding: 20px; }
-        .gpu-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
-            gap: 20px; 
-            padding: 20px; 
+
+        .server-error {
+            color: var(--accent-red);
+            padding: 20px;
         }
-        .gpu { 
-            border: 1px solid var(--border-color); 
-            border-radius: 6px; 
-            overflow: hidden; 
+
+        .gpu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .gpu {
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            overflow: hidden;
             background: var(--background);
         }
-        .gpu-header { 
-            padding: 10px; 
-            background: var(--panel-bg); 
-            border-bottom: 1px solid var(--border-color); 
+
+        .gpu-header {
+            padding: 10px;
+            background: var(--panel-bg);
+            border-bottom: 1px solid var(--border-color);
         }
-        .gpu-title { 
+
+        .gpu-title {
             font-weight: 500;
-            font-size: 0.9em; /* Smaller to fit name */
+            font-size: 0.9em;
+            /* Smaller to fit name */
         }
-        .gpu-stats { padding: 10px; }
-        .stat { 
-            display: flex; 
-            justify-content: space-between; 
-            margin-bottom: 8px; 
+
+        .gpu-stats {
+            padding: 10px;
         }
-        .stat-label { font-weight: 500; }
-        .progress-bar { 
+
+        .stat {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-weight: 500;
+        }
+
+        .progress-bar {
             background: #444;
-            border-radius: 4px; 
-            height: 20px; 
-            overflow: hidden; 
+            border-radius: 4px;
+            height: 20px;
+            overflow: hidden;
         }
-        .progress { 
-            height: 100%; 
-            width: 0; 
-            transition: width 0.3s ease, background-color 0.3s ease; 
+
+        .progress {
+            height: 100%;
+            width: 0;
+            transition: width 0.3s ease, background-color 0.3s ease;
         }
-        .processes { padding: 10px; }
-        .proc-list { 
-            list-style: none; 
-            padding: 0; 
-            margin: 0; 
-            font-size: 0.9em; 
+
+        .processes {
+            padding: 10px;
         }
-        .proc-list li { 
-            padding: 4px 0; 
-            border-bottom: 1px dashed var(--border-color); 
-            word-break: break-all; /* Handle long process names */
+
+        .proc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.9em;
         }
-        .proc-list li:last-child { border-bottom: none; }
-        #last-updated { 
-            text-align: center; 
+
+        .proc-list li {
+            padding: 4px 0;
+            border-bottom: 1px dashed var(--border-color);
+            word-break: break-all;
+            /* Handle long process names */
+        }
+
+        .proc-list li:last-child {
+            border-bottom: none;
+        }
+
+        #last-updated {
+            text-align: center;
             color: #888;
-            margin-bottom: 20px; 
+            margin-bottom: 20px;
         }
 
         #leaderboard {
             margin-bottom: 20px;
         }
+
         .leaderboard-panel {
             background: var(--panel-bg);
             border: 1px solid var(--border-color);
             border-radius: 8px;
             padding: 16px;
         }
+
         .leaderboard-title {
             font-size: 1.2em;
             font-weight: 500;
             margin-bottom: 12px;
         }
+
         .leaderboard-list {
             list-style: none;
             padding: 0;
@@ -131,20 +170,24 @@
             flex-direction: column;
             gap: 10px;
         }
+
         .leaderboard-entry {
             display: flex;
             gap: 12px;
             align-items: center;
         }
+
         .leaderboard-rank {
             font-weight: 500;
             width: 1.5em;
             text-align: right;
         }
+
         .leaderboard-meta {
             color: #aaa;
             font-size: 0.85em;
         }
+
         .leaderboard-bar {
             flex: 1;
             background: #333;
@@ -152,39 +195,204 @@
             overflow: hidden;
             height: 10px;
         }
+
         .leaderboard-bar-fill {
             height: 100%;
-            background: var(--accent-purple); /* Leaderboard bar is purple */
+            background: var(--accent-purple);
+            /* Leaderboard bar is purple */
         }
+
         .leaderboard-empty {
             text-align: center;
             color: #999;
             font-style: italic;
         }
-        
+
+        /* Achievements Section */
+        #achievements {
+            margin-bottom: 20px;
+        }
+
+        .achievements-panel {
+            background: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        .achievements-title {
+            font-size: 1.2em;
+            font-weight: 500;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .achievements-filter {
+            font-size: 0.85em;
+            display: flex;
+            gap: 8px;
+        }
+
+        .filter-btn {
+            padding: 4px 10px;
+            background: var(--background);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            color: var(--foreground);
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.9em;
+        }
+
+        .filter-btn.active {
+            background: var(--accent-green);
+            border-color: var(--accent-green);
+            color: var(--background);
+        }
+
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .achievement-card {
+            background: var(--background);
+            border: 2px solid var(--border-color);
+            border-radius: 6px;
+            padding: 12px;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            transition: all 0.2s ease;
+        }
+
+        .achievement-card:hover {
+            border-color: var(--accent-green);
+            transform: translateY(-2px);
+        }
+
+        .achievement-card.tier-platinum {
+            border-color: rgba(150, 180, 220, 0.5);
+        }
+
+        .achievement-card.tier-gold {
+            border-color: rgba(255, 215, 0, 0.5);
+        }
+
+        .achievement-card.tier-silver {
+            border-color: rgba(192, 192, 192, 0.5);
+        }
+
+        .achievement-card.tier-bronze {
+            border-color: rgba(205, 127, 50, 0.5);
+        }
+
+        .achievement-icon {
+            font-size: 2em;
+            line-height: 1;
+        }
+
+        .achievement-details {
+            flex: 1;
+        }
+
+        .achievement-name {
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .achievement-description {
+            font-size: 0.85em;
+            color: #aaa;
+            margin-bottom: 4px;
+        }
+
+        .achievement-meta {
+            font-size: 0.75em;
+            color: #888;
+        }
+
+        .achievement-tier {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.7em;
+            font-weight: 500;
+            text-transform: uppercase;
+            margin-left: 4px;
+        }
+
+        .achievement-tier.platinum {
+            background: rgba(150, 180, 220, 0.3);
+            color: rgb(180, 210, 250);
+        }
+
+        .achievement-tier.gold {
+            background: rgba(255, 215, 0, 0.3);
+            color: rgb(255, 235, 100);
+        }
+
+        .achievement-tier.silver {
+            background: rgba(192, 192, 192, 0.3);
+            color: rgb(220, 220, 220);
+        }
+
+        .achievement-tier.bronze {
+            background: rgba(205, 127, 50, 0.3);
+            color: rgb(235, 167, 110);
+        }
+
+        .achievements-empty {
+            text-align: center;
+            color: #999;
+            font-style: italic;
+            padding: 20px;
+        }
+
+        .achievements-stats {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 12px;
+            font-size: 0.9em;
+            color: #aaa;
+        }
+
+        .achievements-stat {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
         #joke-box {
             font-size: 1.1em;
             font-weight: 500;
             color: var(--accent-red);
-            background: #302020; /* Dark red bg */
+            background: #302020;
+            /* Dark red bg */
             border: 1px solid var(--accent-red);
             padding: 15px;
             margin-bottom: 20px;
             border-radius: 6px;
             text-align: center;
-            display: none; 
+            display: none;
         }
     </style>
 </head>
+
 <body>
 
     <div class="dashboard">
         <h1>nds2 gpu dashboard</h1>
         <div id="last-updated">Loading...</div>
         <div id="leaderboard"></div>
-        
+        <div id="achievements"></div>
+
         <div id="joke-box"></div>
-        
+
         <div id="servers-container"></div>
     </div>
 
@@ -193,6 +401,7 @@
         const lastUpdatedEl = document.getElementById('last-updated');
         const jokeBox = document.getElementById('joke-box');
         const leaderboardEl = document.getElementById('leaderboard');
+        const achievementsEl = document.getElementById('achievements');
 
         const JOKES = [
             "{USER} is hogging all of the resources on {MACHINE}!!! 🐗",
@@ -218,6 +427,8 @@
         let userAliasMap = {};
         let aliasMapLoaded = false;
         let aggregateStats = null;
+        let achievementsData = null;
+        let selectedAchievementUser = null;
 
         async function loadAliasMap() {
             try {
@@ -248,6 +459,19 @@
             }
         }
 
+        async function loadAchievements() {
+            try {
+                const response = await fetch(`achievements.json?v=${new Date().getTime()}`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                achievementsData = await response.json();
+            } catch (error) {
+                console.warn('Failed to load achievements:', error);
+                achievementsData = null;
+            }
+        }
+
         function getCanonicalUser(rawUser) {
             if (!rawUser) return 'unknown';
             const normalized = rawUser.toLowerCase();
@@ -258,11 +482,11 @@
             if (aggregateStats && aggregateStats.users) {
                 return Object.entries(aggregateStats.users).map(([user, stats]) => {
                     // --- FIX: Read the correct total_gb_hours field ---
-                    const totalGbHours = stats.total_gb_hours || 0; 
+                    const totalGbHours = stats.total_gb_hours || 0;
                     const samples = stats.samples || 0;
                     const machines = new Set(stats.all_machines || []);
                     const lastSampleMachines = new Set(stats.last_sample_machines || []);
-                    
+
                     const lastMem = stats.last_sample_mem || 0;
                     const memPercent = totalMemCapacity > 0 ? (lastMem / totalMemCapacity) * 100 : 0;
 
@@ -302,7 +526,7 @@
             topEntries.forEach((entry, index) => {
                 const machineCount = entry.machines.size;
                 const machineLabel = machineCount === 1 ? 'machine' : 'machines';
-                
+
                 // --- FIX: Update labeling logic ---
                 let meta, unitLabel;
                 if (entry.scope === 'historical') {
@@ -331,6 +555,106 @@
             leaderboardEl.innerHTML = leaderboardHtml;
         }
 
+        function renderAchievements() {
+            if (!achievementsData || !achievementsData.users) {
+                achievementsEl.innerHTML = '';
+                return;
+            }
+
+            const users = Object.keys(achievementsData.users);
+            if (users.length === 0) {
+                achievementsEl.innerHTML = '';
+                return;
+            }
+
+            // Calculate stats
+            let totalAchievements = 0;
+            const userAchievementCounts = [];
+
+            for (const [user, achievements] of Object.entries(achievementsData.users)) {
+                const count = Object.keys(achievements).length;
+                totalAchievements += count;
+                userAchievementCounts.push({ user, count });
+            }
+
+            userAchievementCounts.sort((a, b) => b.count - a.count);
+
+            // Get current user or default to top achiever
+            const displayUser = selectedAchievementUser || userAchievementCounts[0].user;
+            const userAchievements = achievementsData.users[displayUser] || {};
+
+            // Convert to array and sort by tier and date
+            const tierOrder = { platinum: 0, gold: 1, silver: 2, bronze: 3 };
+            const achievementsList = Object.entries(userAchievements).map(([id, data]) => {
+                const achievement = data.achievement || {};
+                return {
+                    id,
+                    icon: achievement.icon || '🏆',
+                    name: achievement.name || 'Unknown',
+                    description: achievement.description || '',
+                    tier: achievement.tier || 'bronze',
+                    earned_at: data.earned_at
+                };
+            }).sort((a, b) => {
+                const tierDiff = tierOrder[a.tier] - tierOrder[b.tier];
+                if (tierDiff !== 0) return tierDiff;
+                return new Date(b.earned_at) - new Date(a.earned_at);
+            });
+
+            // Build HTML
+            let html = `<div class="achievements-panel">`;
+            html += `<div class="achievements-title">
+                <span>🏆 Achievements</span>
+                <div class="achievements-filter">`;
+
+            // User selector buttons (top 5)
+            const topUsers = userAchievementCounts.slice(0, 5);
+            topUsers.forEach(({ user, count }) => {
+                const active = user === displayUser ? 'active' : '';
+                html += `<button class="filter-btn ${active}" onclick="selectAchievementUser('${user}')">${user} (${count})</button>`;
+            });
+
+            html += `</div></div>`;
+
+            // Stats bar
+            html += `<div class="achievements-stats">`;
+            html += `<div class="achievements-stat"><span>👥</span><span>${users.length} users with achievements</span></div>`;
+            html += `<div class="achievements-stat"><span>🏅</span><span>${totalAchievements} total earned</span></div>`;
+            html += `<div class="achievements-stat"><span>⭐</span><span>${displayUser}: ${achievementsList.length} achievements</span></div>`;
+            html += `</div>`;
+
+            if (achievementsList.length === 0) {
+                html += `<div class="achievements-empty">No achievements earned yet. Start using GPUs to unlock achievements!</div>`;
+            } else {
+                html += `<div class="achievement-grid">`;
+                achievementsList.forEach(achievement => {
+                    const earnedDate = new Date(achievement.earned_at).toLocaleDateString();
+                    html += `
+                        <div class="achievement-card tier-${achievement.tier}">
+                            <div class="achievement-icon">${achievement.icon}</div>
+                            <div class="achievement-details">
+                                <div class="achievement-name">
+                                    ${achievement.name}
+                                    <span class="achievement-tier ${achievement.tier}">${achievement.tier}</span>
+                                </div>
+                                <div class="achievement-description">${achievement.description}</div>
+                                <div class="achievement-meta">Earned: ${earnedDate}</div>
+                            </div>
+                        </div>
+                    `;
+                });
+                html += `</div>`;
+            }
+
+            html += `</div>`;
+            achievementsEl.innerHTML = html;
+        }
+
+        window.selectAchievementUser = function (user) {
+            selectedAchievementUser = user;
+            renderAchievements();
+        };
+
         // --- UPDATED COLORS ---
         const COLOR_UTIL = 'rgb(100, 200, 100)';
         const COLOR_MEM = 'rgb(150, 100, 250)'; // Purple
@@ -339,7 +663,7 @@
         const HOG_THRESHOLD = 50; // 50%
 
         function renderDashboard(data) {
-            container.innerHTML = ''; 
+            container.innerHTML = '';
             leaderboardEl.innerHTML = '';
             jokeBox.innerHTML = '';
             jokeBox.style.display = 'none';
@@ -357,7 +681,7 @@
                 if (server.error) {
                     serverHtml += `<div class="server-error"><strong>Error:</strong> ${server.error}</div>`;
                 } else {
-                    
+
                     // --- ADDED CPU BAR ---
                     const cpuUtil = server.cpu_util || 0;
                     const cpuColor = cpuUtil >= 90 ? COLOR_DANGER : COLOR_CPU;
@@ -372,9 +696,9 @@
                             </div>
                         </div>
                     `;
-                    
+
                     if (!server.gpus || server.gpus.length === 0) {
-                         serverHtml += `<div class="server-error" style="padding-top: 15px;">No GPUs found on this server.</div>`;
+                        serverHtml += `<div class="server-error" style="padding-top: 15px;">No GPUs found on this server.</div>`;
                     } else {
                         serverHtml += `<div class="gpu-grid">`;
                         server.gpus.sort((a, b) => a.index - b.index);
@@ -392,8 +716,8 @@
                             for (const proc of gpu.processes) {
                                 const rawUser = proc.user || 'unknown';
                                 // Skip root user for totals
-                                if (rawUser === 'root') continue; 
-                                
+                                if (rawUser === 'root') continue;
+
                                 const canonicalUser = getCanonicalUser(rawUser);
                                 if (!userTotals.has(canonicalUser)) {
                                     userTotals.set(canonicalUser, {
@@ -409,7 +733,7 @@
                                 stats.machines.add(server.name);
                                 stats.aliases.add(rawUser);
                             }
-                            
+
                             // --- GB/MiB CHANGE ---
                             const memUsedGB = (gpu.mem_used / 1024).toFixed(1);
                             const memTotalGB = (gpu.mem_total / 1024).toFixed(1);
@@ -437,13 +761,13 @@
                                     <div class="processes">
                                         <strong>Processes:</strong>
                                         <ul class="proc-list">
-                                            ${gpu.processes.length > 0 ? 
-                                                gpu.processes.map(p => {
-                                                    const procMemGB = (p.mem / 1024).toFixed(1);
-                                                    return `<li><strong>${p.user}</strong> (${p.pid}, ${p.time}): ${p.name} (${procMemGB} GB)</li>`
-                                                }).join('') : 
-                                                `<li>No processes running.</li>`
-                                            }
+                                            ${gpu.processes.length > 0 ?
+                                    gpu.processes.map(p => {
+                                        const procMemGB = (p.mem / 1024).toFixed(1);
+                                        return `<li><strong>${p.user}</strong> (${p.pid}, ${p.time}): ${p.name} (${procMemGB} GB)</li>`
+                                    }).join('') :
+                                    `<li>No processes running.</li>`
+                                }
                                         </ul>
                                     </div>
                                 </div>
@@ -472,7 +796,7 @@
                     });
                 }
             }
-            
+
             if (snapshotHogs.length > 0) {
                 // Pick a random hog from the current snapshot
                 const randomEntry = snapshotHogs[Math.floor(Math.random() * snapshotHogs.length)];
@@ -495,12 +819,14 @@
                     await loadAliasMap();
                 }
                 await loadAggregateStats();
+                await loadAchievements();
                 const response = await fetch(`status.json?v=${new Date().getTime()}`);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const data = await response.json();
                 renderDashboard(data);
+                renderAchievements();
             } catch (e) {
                 console.error("Failed to load dashboard data:", e);
                 container.innerHTML = `<div class="server-error"><strong>Fatal Error:</strong> Could not load status.json.</div>`;
@@ -512,4 +838,5 @@
     </script>
 
 </body>
+
 </html>
