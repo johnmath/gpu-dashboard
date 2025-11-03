@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 13.1,
+      "cpu_util": 11.8,
       "error": null
     },
     {
@@ -43,7 +43,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 2.8,
+      "cpu_util": 0.4,
       "error": null
     },
     {
@@ -66,7 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 2.8,
+      "cpu_util": 0.4,
       "error": null
     },
     {
@@ -74,19 +74,35 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 4,
+          "mem_used": 31340,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "116966",
+              "name": "VLLM::Worker_TP0",
+              "user": "roseev",
+              "mem": 31330,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 1,
-          "mem_used": 4,
+          "mem_used": 31340,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "116967",
+              "name": "VLLM::Worker_TP1",
+              "user": "roseev",
+              "mem": 31330,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 2,
@@ -113,7 +129,7 @@
           ]
         }
       ],
-      "cpu_util": 2.8,
+      "cpu_util": 2.6,
       "error": null
     },
     {
@@ -136,9 +152,9 @@
           "processes": []
         }
       ],
-      "cpu_util": 2.8,
+      "cpu_util": 0.4,
       "error": null
     }
   ],
-  "last_updated": "2025-11-03T02:26:01.164553Z"
+  "last_updated": "2025-11-03T02:27:01.601309Z"
 }
