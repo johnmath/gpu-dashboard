@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 17.6,
+      "cpu_util": 12.0,
       "error": null
     },
     {
@@ -100,7 +100,7 @@
           "index": 2,
           "mem_used": 41860,
           "mem_total": 95830,
-          "util": 71,
+          "util": 70,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -116,7 +116,7 @@
           "index": 3,
           "mem_used": 93114,
           "mem_total": 95830,
-          "util": 89,
+          "util": 88,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -129,48 +129,32 @@
           ]
         }
       ],
-      "cpu_util": 8.9,
+      "cpu_util": 10.8,
       "error": null
     },
     {
-      "name": "achtung-biggpu",
+      "name": "achtung-dome",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 43154,
-          "mem_total": 49140,
+          "mem_used": 3,
+          "mem_total": 12288,
           "util": 0,
-          "name": "NVIDIA RTX A6000",
-          "processes": [
-            {
-              "pid": "3679446",
-              "name": "/home/aglc/rfcllm/myvenv/bin/python3",
-              "user": "aglc",
-              "mem": 43144,
-              "time": "N/A"
-            }
-          ]
+          "name": "NVIDIA TITAN X (Pascal)",
+          "processes": []
         },
         {
           "index": 1,
-          "mem_used": 43154,
-          "mem_total": 49140,
+          "mem_used": 3,
+          "mem_total": 12288,
           "util": 0,
-          "name": "NVIDIA RTX A6000",
-          "processes": [
-            {
-              "pid": "3679514",
-              "name": "/home/aglc/rfcllm/myvenv/bin/python3",
-              "user": "aglc",
-              "mem": 43144,
-              "time": "N/A"
-            }
-          ]
+          "name": "NVIDIA TITAN X (Pascal)",
+          "processes": []
         }
       ],
-      "cpu_util": 6.6,
+      "cpu_util": 6.8,
       "error": null
     }
   ],
-  "last_updated": "2025-11-03T21:37:01.637500Z"
+  "last_updated": "2025-11-03T21:38:01.084836Z"
 }
