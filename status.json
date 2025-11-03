@@ -20,7 +20,30 @@
           "processes": []
         }
       ],
-      "cpu_util": 12.8,
+      "cpu_util": 23.8,
+      "error": null
+    },
+    {
+      "name": "achtung-dome",
+      "gpus": [
+        {
+          "index": 0,
+          "mem_used": 3,
+          "mem_total": 12288,
+          "util": 0,
+          "name": "NVIDIA TITAN X (Pascal)",
+          "processes": []
+        },
+        {
+          "index": 1,
+          "mem_used": 3,
+          "mem_total": 12288,
+          "util": 0,
+          "name": "NVIDIA TITAN X (Pascal)",
+          "processes": []
+        }
+      ],
+      "cpu_util": 5.7,
       "error": null
     },
     {
@@ -43,30 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 6.9,
-      "error": null
-    },
-    {
-      "name": "achtung-biggpu",
-      "gpus": [
-        {
-          "index": 0,
-          "mem_used": 2,
-          "mem_total": 49140,
-          "util": 0,
-          "name": "NVIDIA RTX A6000",
-          "processes": []
-        },
-        {
-          "index": 1,
-          "mem_used": 2,
-          "mem_total": 49140,
-          "util": 0,
-          "name": "NVIDIA RTX A6000",
-          "processes": []
-        }
-      ],
-      "cpu_util": 6.9,
+      "cpu_util": 1.1,
       "error": null
     },
     {
@@ -90,7 +90,7 @@
         },
         {
           "index": 1,
-          "mem_used": 14848,
+          "mem_used": 16110,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
@@ -100,7 +100,7 @@
           "index": 2,
           "mem_used": 34680,
           "mem_total": 95830,
-          "util": 71,
+          "util": 81,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -114,22 +114,22 @@
         },
         {
           "index": 3,
-          "mem_used": 16280,
+          "mem_used": 18646,
           "mem_total": 95830,
-          "util": 13,
+          "util": 0,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "427086",
               "name": "python",
               "user": "anshumansuri",
-              "mem": 16270,
+              "mem": 18636,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 3.3,
+      "cpu_util": 6.8,
       "error": null
     },
     {
@@ -152,9 +152,9 @@
           "processes": []
         }
       ],
-      "cpu_util": 6.9,
+      "cpu_util": 1.1,
       "error": null
     }
   ],
-  "last_updated": "2025-11-03T19:22:01.058757Z"
+  "last_updated": "2025-11-03T19:23:01.530162Z"
 }
