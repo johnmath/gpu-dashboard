@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 26.9,
+      "cpu_util": 15.4,
       "error": null
     },
     {
@@ -43,7 +43,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 2.0,
+      "cpu_util": 0.6,
       "error": null
     },
     {
@@ -66,7 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 2.0,
+      "cpu_util": 0.6,
       "error": null
     },
     {
@@ -90,7 +90,7 @@
         },
         {
           "index": 1,
-          "mem_used": 4,
+          "mem_used": 7838,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
@@ -114,14 +114,22 @@
         },
         {
           "index": 3,
-          "mem_used": 4,
+          "mem_used": 9470,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "309513",
+              "name": "/home/anshumansuri/miniconda3/envs/pd/bin/python",
+              "user": "anshumansuri",
+              "mem": 9460,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 2.8,
+      "cpu_util": 1.9,
       "error": null
     },
     {
@@ -144,9 +152,9 @@
           "processes": []
         }
       ],
-      "cpu_util": 2.0,
+      "cpu_util": 0.6,
       "error": null
     }
   ],
-  "last_updated": "2025-11-03T15:07:01.214751Z"
+  "last_updated": "2025-11-03T15:08:01.723602Z"
 }
