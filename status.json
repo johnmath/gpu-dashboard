@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 8.1,
+      "cpu_util": 11.9,
       "error": null
     },
     {
@@ -100,11 +100,11 @@
           "index": 1,
           "mem_used": 836,
           "mem_total": 95830,
-          "util": 36,
+          "util": 37,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
-              "pid": "2787241",
+              "pid": "2792503",
               "name": "python",
               "user": "anshumansuri",
               "mem": 826,
@@ -145,32 +145,48 @@
           ]
         }
       ],
-      "cpu_util": 10.6,
+      "cpu_util": 4.3,
       "error": null
     },
     {
-      "name": "achtung-hood",
+      "name": "achtung-biggpu",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 2,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA GeForce GTX TITAN X",
-          "processes": []
+          "mem_used": 23882,
+          "mem_total": 49140,
+          "util": 66,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "1323208",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 23872,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 1,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
+          "mem_used": 43316,
+          "mem_total": 49140,
+          "util": 27,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "885557",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 43306,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 3.5,
+      "cpu_util": 5.4,
       "error": null
     }
   ],
-  "last_updated": "2025-11-06T22:49:02.020073Z"
+  "last_updated": "2025-11-06T22:50:01.279149Z"
 }
