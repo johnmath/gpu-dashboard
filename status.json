@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 12.3,
+      "cpu_util": 11.9,
       "error": null
     },
     {
@@ -106,11 +106,19 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 4,
+          "mem_used": 530,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "185779",
+              "name": "/home/harshch1803/miniconda3/envs/s1poison/bin/python",
+              "user": "harshch1803",
+              "mem": 520,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 1,
@@ -188,5 +196,5 @@
       "error": null
     }
   ],
-  "last_updated": "2025-11-09T23:37:01.242964Z"
+  "last_updated": "2025-11-09T23:38:01.643365Z"
 }
