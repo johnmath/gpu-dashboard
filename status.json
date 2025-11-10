@@ -7,7 +7,7 @@
           "index": 0,
           "mem_used": 19413,
           "mem_total": 24564,
-          "util": 0,
+          "util": 1,
           "name": "NVIDIA GeForce RTX 4090",
           "processes": []
         },
@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 18.0,
+      "cpu_util": 13.2,
       "error": null
     },
     {
@@ -108,7 +108,7 @@
           "index": 2,
           "mem_used": 65502,
           "mem_total": 95830,
-          "util": 80,
+          "util": 99,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -124,7 +124,7 @@
           "index": 3,
           "mem_used": 86126,
           "mem_total": 95830,
-          "util": 91,
+          "util": 0,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -137,32 +137,48 @@
           ]
         }
       ],
-      "cpu_util": 3.4,
+      "cpu_util": 2.9,
       "error": null
     },
     {
-      "name": "achtung-dome",
+      "name": "achtung-biggpu",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
+          "mem_used": 42582,
+          "mem_total": 49140,
+          "util": 34,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "1984896",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 42572,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 1,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
+          "mem_used": 42230,
+          "mem_total": 49140,
+          "util": 56,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "1799743",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 42220,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 3.4,
+      "cpu_util": 14.0,
       "error": null
     }
   ],
-  "last_updated": "2025-11-10T20:51:01.599410Z"
+  "last_updated": "2025-11-10T20:52:01.068842Z"
 }
