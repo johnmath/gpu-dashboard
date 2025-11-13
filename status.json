@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 10.4,
+      "cpu_util": 12.2,
       "error": null
     },
     {
@@ -82,7 +82,7 @@
         },
         {
           "index": 1,
-          "mem_used": 64222,
+          "mem_used": 62278,
           "mem_total": 95830,
           "util": 100,
           "name": "NVIDIA H100 NVL",
@@ -91,7 +91,7 @@
               "pid": "4131862",
               "name": "python",
               "user": "luzsun",
-              "mem": 64212,
+              "mem": 62268,
               "time": "N/A"
             }
           ]
@@ -106,14 +106,22 @@
         },
         {
           "index": 3,
-          "mem_used": 4,
+          "mem_used": 41954,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "44412",
+              "name": "python",
+              "user": "anshumansuri",
+              "mem": 41944,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 4.3,
+      "cpu_util": 3.8,
       "error": null
     },
     {
@@ -123,7 +131,7 @@
           "index": 0,
           "mem_used": 46732,
           "mem_total": 49140,
-          "util": 82,
+          "util": 97,
           "name": "NVIDIA RTX A6000",
           "processes": [
             {
@@ -137,24 +145,24 @@
         },
         {
           "index": 1,
-          "mem_used": 17996,
+          "mem_used": 17776,
           "mem_total": 49140,
-          "util": 82,
+          "util": 87,
           "name": "NVIDIA RTX A6000",
           "processes": [
             {
               "pid": "2739599",
               "name": "python",
               "user": "luzsun",
-              "mem": 17986,
+              "mem": 17766,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 10.3,
+      "cpu_util": 6.2,
       "error": null
     }
   ],
-  "last_updated": "2025-11-13T22:03:01.946631Z"
+  "last_updated": "2025-11-13T22:04:01.205241Z"
 }
