@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 11.9,
+      "cpu_util": 7.0,
       "error": null
     },
     {
@@ -30,8 +30,26 @@
     },
     {
       "name": "achtung-dome",
-      "gpus": [],
-      "error": "Data is stale. Machine may be offline."
+      "gpus": [
+        {
+          "index": 0,
+          "mem_used": 3,
+          "mem_total": 12288,
+          "util": 0,
+          "name": "NVIDIA TITAN X (Pascal)",
+          "processes": []
+        },
+        {
+          "index": 1,
+          "mem_used": 3,
+          "mem_total": 12288,
+          "util": 0,
+          "name": "NVIDIA TITAN X (Pascal)",
+          "processes": []
+        }
+      ],
+      "cpu_util": 4.4,
+      "error": null
     },
     {
       "name": "achtung-gamma",
@@ -44,5 +62,5 @@
       "error": "Data is stale. Machine may be offline."
     }
   ],
-  "last_updated": "2025-11-14T15:20:02.021488Z"
+  "last_updated": "2025-11-14T15:21:01.471398Z"
 }
