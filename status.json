@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 15.3,
+      "cpu_util": 11.7,
       "error": null
     },
     {
@@ -74,95 +74,103 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 85852,
+          "mem_used": 84872,
           "mem_total": 95830,
-          "util": 5,
+          "util": 77,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
-              "pid": "3332366",
-              "name": "[No data]",
+              "pid": "3337356",
+              "name": "/home/harshch1803/miniconda3/envs/s1poison/bin/python",
               "user": "harshch1803",
-              "mem": 85842,
+              "mem": 84852,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 1,
-          "mem_used": 85774,
+          "mem_used": 84794,
           "mem_total": 95830,
-          "util": 0,
+          "util": 65,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
-              "pid": "3335291",
-              "name": "[No data]",
+              "pid": "3337736",
+              "name": "/home/harshch1803/miniconda3/envs/s1poison/bin/python",
               "user": "harshch1803",
-              "mem": 85764,
+              "mem": 84774,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 2,
-          "mem_used": 85774,
+          "mem_used": 84794,
           "mem_total": 95830,
-          "util": 5,
+          "util": 65,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
-              "pid": "3335292",
-              "name": "[No data]",
+              "pid": "3337737",
+              "name": "/home/harshch1803/miniconda3/envs/s1poison/bin/python",
               "user": "harshch1803",
-              "mem": 85764,
+              "mem": 84774,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 3,
-          "mem_used": 85774,
+          "mem_used": 84794,
           "mem_total": 95830,
-          "util": 5,
+          "util": 65,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
-              "pid": "3335293",
-              "name": "[No data]",
+              "pid": "3337738",
+              "name": "/home/harshch1803/miniconda3/envs/s1poison/bin/python",
               "user": "harshch1803",
-              "mem": 85764,
+              "mem": 84774,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 5.3,
+      "cpu_util": 4.0,
       "error": null
     },
     {
-      "name": "achtung-hood",
+      "name": "achtung-biggpu",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 2,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA GeForce GTX TITAN X",
+          "mem_used": 13306,
+          "mem_total": 49140,
+          "util": 4,
+          "name": "NVIDIA RTX A6000",
           "processes": []
         },
         {
           "index": 1,
-          "mem_used": 3,
-          "mem_total": 12288,
+          "mem_used": 13922,
+          "mem_total": 49140,
           "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "2824606",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 13912,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 2.3,
+      "cpu_util": 8.0,
       "error": null
     }
   ],
-  "last_updated": "2025-11-15T02:04:01.662279Z"
+  "last_updated": "2025-11-15T02:05:01.089215Z"
 }
