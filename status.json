@@ -20,18 +20,49 @@
           "processes": []
         }
       ],
-      "cpu_util": 14.7,
+      "cpu_util": 12.0,
       "error": null
     },
     {
-      "name": "achtung-hood",
+      "name": "achtung-biggpu",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 2,
+          "mem_used": 26490,
+          "mem_total": 49140,
+          "util": 3,
+          "name": "NVIDIA RTX A6000",
+          "processes": []
+        },
+        {
+          "index": 1,
+          "mem_used": 23710,
+          "mem_total": 49140,
+          "util": 100,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "3608637",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 23700,
+              "time": "N/A"
+            }
+          ]
+        }
+      ],
+      "cpu_util": 9.1,
+      "error": null
+    },
+    {
+      "name": "achtung-dome",
+      "gpus": [
+        {
+          "index": 0,
+          "mem_used": 3,
           "mem_total": 12288,
           "util": 0,
-          "name": "NVIDIA GeForce GTX TITAN X",
+          "name": "NVIDIA TITAN X (Pascal)",
           "processes": []
         },
         {
@@ -43,38 +74,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 2.6,
-      "error": null
-    },
-    {
-      "name": "achtung-biggpu",
-      "gpus": [
-        {
-          "index": 0,
-          "mem_used": 26532,
-          "mem_total": 49140,
-          "util": 0,
-          "name": "NVIDIA RTX A6000",
-          "processes": []
-        },
-        {
-          "index": 1,
-          "mem_used": 23606,
-          "mem_total": 49140,
-          "util": 100,
-          "name": "NVIDIA RTX A6000",
-          "processes": [
-            {
-              "pid": "3608637",
-              "name": "python",
-              "user": "luzsun",
-              "mem": 23596,
-              "time": "N/A"
-            }
-          ]
-        }
-      ],
-      "cpu_util": 8.8,
+      "cpu_util": 4.8,
       "error": null
     },
     {
@@ -98,26 +98,11 @@
         },
         {
           "index": 1,
-          "mem_used": 54741,
+          "mem_used": 4,
           "mem_total": 95830,
-          "util": 75,
+          "util": 0,
           "name": "NVIDIA H100 NVL",
-          "processes": [
-            {
-              "pid": "1666773",
-              "name": "python",
-              "user": "shuyilin",
-              "mem": 31454,
-              "time": "N/A"
-            },
-            {
-              "pid": "1667495",
-              "name": "VLLM::EngineCore",
-              "user": "shuyilin",
-              "mem": 23272,
-              "time": "N/A"
-            }
-          ]
+          "processes": []
         },
         {
           "index": 2,
@@ -152,32 +137,40 @@
           ]
         }
       ],
-      "cpu_util": 32.1,
+      "cpu_util": 5.7,
       "error": null
     },
     {
-      "name": "achtung-hood",
+      "name": "achtung-biggpu",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 2,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA GeForce GTX TITAN X",
+          "mem_used": 26490,
+          "mem_total": 49140,
+          "util": 3,
+          "name": "NVIDIA RTX A6000",
           "processes": []
         },
         {
           "index": 1,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
+          "mem_used": 23710,
+          "mem_total": 49140,
+          "util": 100,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "3608637",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 23700,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 2.6,
+      "cpu_util": 9.1,
       "error": null
     }
   ],
-  "last_updated": "2025-11-21T23:51:01.719656Z"
+  "last_updated": "2025-11-21T23:52:01.179284Z"
 }
