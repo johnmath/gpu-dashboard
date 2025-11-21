@@ -20,7 +20,38 @@
           "processes": []
         }
       ],
-      "cpu_util": 14.1,
+      "cpu_util": 12.7,
+      "error": null
+    },
+    {
+      "name": "achtung-biggpu",
+      "gpus": [
+        {
+          "index": 0,
+          "mem_used": 36958,
+          "mem_total": 49140,
+          "util": 100,
+          "name": "NVIDIA RTX A6000",
+          "processes": []
+        },
+        {
+          "index": 1,
+          "mem_used": 16344,
+          "mem_total": 49140,
+          "util": 0,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "3608637",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 16334,
+              "time": "N/A"
+            }
+          ]
+        }
+      ],
+      "cpu_util": 9.2,
       "error": null
     },
     {
@@ -90,32 +121,40 @@
           "processes": []
         }
       ],
-      "cpu_util": 8.3,
+      "cpu_util": 5.1,
       "error": null
     },
     {
-      "name": "achtung-dome",
+      "name": "achtung-biggpu",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 3,
-          "mem_total": 12288,
+          "mem_used": 36536,
+          "mem_total": 49140,
           "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
+          "name": "NVIDIA RTX A6000",
           "processes": []
         },
         {
           "index": 1,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
+          "mem_used": 35164,
+          "mem_total": 49140,
+          "util": 100,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "3608637",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 35154,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 5.5,
+      "cpu_util": 8.2,
       "error": null
     }
   ],
-  "last_updated": "2025-11-21T07:06:01.199986Z"
+  "last_updated": "2025-11-21T07:07:01.648315Z"
 }
