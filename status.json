@@ -20,18 +20,18 @@
           "processes": []
         }
       ],
-      "cpu_util": 11.7,
+      "cpu_util": 12.0,
       "error": null
     },
     {
-      "name": "achtung-dome",
+      "name": "achtung-hood",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 3,
+          "mem_used": 2,
           "mem_total": 12288,
           "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
+          "name": "NVIDIA GeForce GTX TITAN X",
           "processes": []
         },
         {
@@ -43,18 +43,18 @@
           "processes": []
         }
       ],
-      "cpu_util": 5.0,
+      "cpu_util": 2.1,
       "error": null
     },
     {
-      "name": "achtung-dome",
+      "name": "achtung-hood",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 3,
+          "mem_used": 2,
           "mem_total": 12288,
           "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
+          "name": "NVIDIA GeForce GTX TITAN X",
           "processes": []
         },
         {
@@ -66,7 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 5.0,
+      "cpu_util": 2.1,
       "error": null
     },
     {
@@ -106,17 +106,25 @@
         },
         {
           "index": 2,
-          "mem_used": 4,
+          "mem_used": 95016,
           "mem_total": 95830,
-          "util": 0,
+          "util": 100,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "1304754",
+              "name": "/home/harshch1803/miniconda3/envs/s1poison/bin/python3.10",
+              "user": "harshch1803",
+              "mem": 95006,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 3,
-          "mem_used": 1588,
+          "mem_used": 27331,
           "mem_total": 95830,
-          "util": 0,
+          "util": 100,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -125,22 +133,29 @@
               "user": "saefurukawa",
               "mem": 1578,
               "time": "N/A"
+            },
+            {
+              "pid": "1304755",
+              "name": "/home/harshch1803/miniconda3/envs/s1poison/bin/python3.10",
+              "user": "harshch1803",
+              "mem": 25738,
+              "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 2.7,
+      "cpu_util": 3.7,
       "error": null
     },
     {
-      "name": "achtung-dome",
+      "name": "achtung-hood",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 3,
+          "mem_used": 2,
           "mem_total": 12288,
           "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
+          "name": "NVIDIA GeForce GTX TITAN X",
           "processes": []
         },
         {
@@ -152,9 +167,9 @@
           "processes": []
         }
       ],
-      "cpu_util": 5.0,
+      "cpu_util": 2.1,
       "error": null
     }
   ],
-  "last_updated": "2025-11-21T15:44:01.055071Z"
+  "last_updated": "2025-11-21T15:45:01.496846Z"
 }
