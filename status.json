@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 10.3,
+      "cpu_util": 7.2,
       "error": null
     },
     {
@@ -28,24 +28,24 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 71780,
+          "mem_used": 62700,
           "mem_total": 95830,
-          "util": 0,
+          "util": 88,
           "name": "NVIDIA H100 NVL",
           "processes": []
         },
         {
           "index": 1,
-          "mem_used": 33294,
+          "mem_used": 30182,
           "mem_total": 95830,
-          "util": 29,
+          "util": 0,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "4046440",
               "name": "python",
               "user": "luzsun",
-              "mem": 33284,
+              "mem": 30172,
               "time": "N/A"
             }
           ]
@@ -79,28 +79,36 @@
       "error": null
     },
     {
-      "name": "achtung-dome",
+      "name": "achtung-biggpu",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
+          "mem_used": 29882,
+          "mem_total": 49140,
+          "util": 7,
+          "name": "NVIDIA RTX A6000",
           "processes": []
         },
         {
           "index": 1,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
+          "mem_used": 29900,
+          "mem_total": 49140,
+          "util": 7,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "3125333",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 29890,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 6.3,
+      "cpu_util": 4.9,
       "error": null
     }
   ],
-  "last_updated": "2025-12-01T03:26:01.735081Z"
+  "last_updated": "2025-12-01T03:27:01.109762Z"
 }
