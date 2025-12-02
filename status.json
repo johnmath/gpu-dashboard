@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 20.5,
+      "cpu_util": 12.4,
       "error": null
     },
     {
@@ -43,7 +43,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 5.9,
+      "cpu_util": 5.5,
       "error": null
     },
     {
@@ -66,7 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 5.9,
+      "cpu_util": 5.5,
       "error": null
     },
     {
@@ -74,7 +74,7 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 87136,
+          "mem_used": 87733,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
@@ -90,15 +90,15 @@
         },
         {
           "index": 1,
-          "mem_used": 4,
+          "mem_used": 7854,
           "mem_total": 95830,
-          "util": 0,
+          "util": 14,
           "name": "NVIDIA H100 NVL",
           "processes": []
         },
         {
           "index": 2,
-          "mem_used": 70254,
+          "mem_used": 70851,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
@@ -114,14 +114,22 @@
         },
         {
           "index": 3,
-          "mem_used": 4,
+          "mem_used": 602,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "1605002",
+              "name": "python",
+              "user": "shuyilin",
+              "mem": 590,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 2.7,
+      "cpu_util": 5.8,
       "error": null
     },
     {
@@ -144,9 +152,9 @@
           "processes": []
         }
       ],
-      "cpu_util": 5.9,
+      "cpu_util": 5.5,
       "error": null
     }
   ],
-  "last_updated": "2025-12-02T09:26:01.597213Z"
+  "last_updated": "2025-12-02T09:27:01.054867Z"
 }
