@@ -20,30 +20,38 @@
           "processes": []
         }
       ],
-      "cpu_util": 14.8,
+      "cpu_util": 11.4,
       "error": null
     },
     {
-      "name": "achtung-dome",
+      "name": "achtung-biggpu",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
+          "mem_used": 10748,
+          "mem_total": 49140,
+          "util": 23,
+          "name": "NVIDIA RTX A6000",
           "processes": []
         },
         {
           "index": 1,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
+          "mem_used": 16220,
+          "mem_total": 49140,
+          "util": 32,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "3506497",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 16210,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 7.5,
+      "cpu_util": 4.5,
       "error": null
     },
     {
@@ -137,32 +145,40 @@
           ]
         }
       ],
-      "cpu_util": 3.5,
+      "cpu_util": 4.7,
       "error": null
     },
     {
-      "name": "achtung-dome",
+      "name": "achtung-biggpu",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
+          "mem_used": 10748,
+          "mem_total": 49140,
+          "util": 23,
+          "name": "NVIDIA RTX A6000",
           "processes": []
         },
         {
           "index": 1,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
+          "mem_used": 16220,
+          "mem_total": 49140,
+          "util": 32,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "3506497",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 16210,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 7.5,
+      "cpu_util": 4.5,
       "error": null
     }
   ],
-  "last_updated": "2025-12-02T22:06:01.611017Z"
+  "last_updated": "2025-12-02T22:07:01.029948Z"
 }
