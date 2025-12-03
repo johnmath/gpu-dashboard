@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 11.4,
+      "cpu_util": 15.6,
       "error": null
     },
     {
@@ -47,26 +47,34 @@
       "error": null
     },
     {
-      "name": "achtung-dome",
+      "name": "achtung-biggpu",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
+          "mem_used": 11688,
+          "mem_total": 49140,
+          "util": 15,
+          "name": "NVIDIA RTX A6000",
           "processes": []
         },
         {
           "index": 1,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
+          "mem_used": 19262,
+          "mem_total": 49140,
+          "util": 23,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "3555215",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 19252,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 6.9,
+      "cpu_util": 5.1,
       "error": null
     },
     {
@@ -129,7 +137,7 @@
           ]
         }
       ],
-      "cpu_util": 2.6,
+      "cpu_util": 2.5,
       "error": null
     },
     {
@@ -139,7 +147,7 @@
           "index": 0,
           "mem_used": 11688,
           "mem_total": 49140,
-          "util": 16,
+          "util": 15,
           "name": "NVIDIA RTX A6000",
           "processes": []
         },
@@ -147,7 +155,7 @@
           "index": 1,
           "mem_used": 19262,
           "mem_total": 49140,
-          "util": 26,
+          "util": 23,
           "name": "NVIDIA RTX A6000",
           "processes": [
             {
@@ -160,9 +168,9 @@
           ]
         }
       ],
-      "cpu_util": 4.9,
+      "cpu_util": 5.1,
       "error": null
     }
   ],
-  "last_updated": "2025-12-03T00:19:01.126607Z"
+  "last_updated": "2025-12-03T00:20:01.523895Z"
 }
