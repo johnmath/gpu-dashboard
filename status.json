@@ -20,7 +20,53 @@
           "processes": []
         }
       ],
-      "cpu_util": 7.0,
+      "cpu_util": 15.1,
+      "error": null
+    },
+    {
+      "name": "achtung-biggpu",
+      "gpus": [
+        {
+          "index": 0,
+          "mem_used": 2,
+          "mem_total": 49140,
+          "util": 0,
+          "name": "NVIDIA RTX A6000",
+          "processes": []
+        },
+        {
+          "index": 1,
+          "mem_used": 2,
+          "mem_total": 49140,
+          "util": 0,
+          "name": "NVIDIA RTX A6000",
+          "processes": []
+        }
+      ],
+      "cpu_util": 3.5,
+      "error": null
+    },
+    {
+      "name": "achtung-biggpu",
+      "gpus": [
+        {
+          "index": 0,
+          "mem_used": 2,
+          "mem_total": 49140,
+          "util": 0,
+          "name": "NVIDIA RTX A6000",
+          "processes": []
+        },
+        {
+          "index": 1,
+          "mem_used": 2,
+          "mem_total": 49140,
+          "util": 0,
+          "name": "NVIDIA RTX A6000",
+          "processes": []
+        }
+      ],
+      "cpu_util": 3.5,
       "error": null
     },
     {
@@ -75,174 +121,32 @@
           ]
         }
       ],
-      "cpu_util": 1.4,
+      "cpu_util": 1.9,
       "error": null
     },
     {
-      "name": "achtung-gamma",
+      "name": "achtung-biggpu",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 94248,
-          "mem_total": 95830,
+          "mem_used": 2,
+          "mem_total": 49140,
           "util": 0,
-          "name": "NVIDIA H100 NVL",
-          "processes": [
-            {
-              "pid": "1978646",
-              "name": "VLLM::EngineCore",
-              "user": "georgios",
-              "mem": 94236,
-              "time": "N/A"
-            }
-          ]
+          "name": "NVIDIA RTX A6000",
+          "processes": []
         },
         {
           "index": 1,
-          "mem_used": 4,
-          "mem_total": 95830,
+          "mem_used": 2,
+          "mem_total": 49140,
           "util": 0,
-          "name": "NVIDIA H100 NVL",
+          "name": "NVIDIA RTX A6000",
           "processes": []
-        },
-        {
-          "index": 2,
-          "mem_used": 4,
-          "mem_total": 95830,
-          "util": 0,
-          "name": "NVIDIA H100 NVL",
-          "processes": []
-        },
-        {
-          "index": 3,
-          "mem_used": 87356,
-          "mem_total": 95830,
-          "util": 0,
-          "name": "NVIDIA H100 NVL",
-          "processes": [
-            {
-              "pid": "2991956",
-              "name": "VLLM::EngineCore",
-              "user": "georgios",
-              "mem": 87344,
-              "time": "N/A"
-            }
-          ]
         }
       ],
-      "cpu_util": 1.4,
-      "error": null
-    },
-    {
-      "name": "achtung-gamma",
-      "gpus": [
-        {
-          "index": 0,
-          "mem_used": 94248,
-          "mem_total": 95830,
-          "util": 0,
-          "name": "NVIDIA H100 NVL",
-          "processes": [
-            {
-              "pid": "1978646",
-              "name": "VLLM::EngineCore",
-              "user": "georgios",
-              "mem": 94236,
-              "time": "N/A"
-            }
-          ]
-        },
-        {
-          "index": 1,
-          "mem_used": 4,
-          "mem_total": 95830,
-          "util": 0,
-          "name": "NVIDIA H100 NVL",
-          "processes": []
-        },
-        {
-          "index": 2,
-          "mem_used": 4,
-          "mem_total": 95830,
-          "util": 0,
-          "name": "NVIDIA H100 NVL",
-          "processes": []
-        },
-        {
-          "index": 3,
-          "mem_used": 87356,
-          "mem_total": 95830,
-          "util": 0,
-          "name": "NVIDIA H100 NVL",
-          "processes": [
-            {
-              "pid": "2991956",
-              "name": "VLLM::EngineCore",
-              "user": "georgios",
-              "mem": 87344,
-              "time": "N/A"
-            }
-          ]
-        }
-      ],
-      "cpu_util": 1.4,
-      "error": null
-    },
-    {
-      "name": "achtung-gamma",
-      "gpus": [
-        {
-          "index": 0,
-          "mem_used": 94248,
-          "mem_total": 95830,
-          "util": 0,
-          "name": "NVIDIA H100 NVL",
-          "processes": [
-            {
-              "pid": "1978646",
-              "name": "VLLM::EngineCore",
-              "user": "georgios",
-              "mem": 94236,
-              "time": "N/A"
-            }
-          ]
-        },
-        {
-          "index": 1,
-          "mem_used": 4,
-          "mem_total": 95830,
-          "util": 0,
-          "name": "NVIDIA H100 NVL",
-          "processes": []
-        },
-        {
-          "index": 2,
-          "mem_used": 4,
-          "mem_total": 95830,
-          "util": 0,
-          "name": "NVIDIA H100 NVL",
-          "processes": []
-        },
-        {
-          "index": 3,
-          "mem_used": 87356,
-          "mem_total": 95830,
-          "util": 0,
-          "name": "NVIDIA H100 NVL",
-          "processes": [
-            {
-              "pid": "2991956",
-              "name": "VLLM::EngineCore",
-              "user": "georgios",
-              "mem": 87344,
-              "time": "N/A"
-            }
-          ]
-        }
-      ],
-      "cpu_util": 1.4,
+      "cpu_util": 3.3,
       "error": null
     }
   ],
-  "last_updated": "2025-12-06T07:43:01.133023Z"
+  "last_updated": "2025-12-06T07:44:01.384118Z"
 }
