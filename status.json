@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 15.7,
+      "cpu_util": 12.3,
       "error": null
     },
     {
@@ -47,26 +47,26 @@
       "error": null
     },
     {
-      "name": "achtung-dome",
+      "name": "achtung-biggpu",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 3,
-          "mem_total": 12288,
+          "mem_used": 5,
+          "mem_total": 49140,
           "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
+          "name": "NVIDIA RTX A6000",
           "processes": []
         },
         {
           "index": 1,
-          "mem_used": 3,
-          "mem_total": 12288,
+          "mem_used": 5,
+          "mem_total": 49140,
           "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
+          "name": "NVIDIA RTX A6000",
           "processes": []
         }
       ],
-      "cpu_util": 2.0,
+      "cpu_util": 4.4,
       "error": null
     },
     {
@@ -74,7 +74,7 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 77092,
+          "mem_used": 77709,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
@@ -83,7 +83,7 @@
               "pid": "1853711",
               "name": "VLLM::EngineCore",
               "user": "shuyilin",
-              "mem": 77082,
+              "mem": 77086,
               "time": "N/A"
             }
           ]
@@ -106,9 +106,9 @@
         },
         {
           "index": 3,
-          "mem_used": 86607,
+          "mem_used": 92565,
           "mem_total": 95830,
-          "util": 2,
+          "util": 59,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -122,13 +122,13 @@
               "pid": "1854500",
               "name": "VLLM::EngineCore",
               "user": "shuyilin",
-              "mem": 86078,
+              "mem": 92032,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 3.0,
+      "cpu_util": 3.7,
       "error": null
     },
     {
@@ -155,5 +155,5 @@
       "error": null
     }
   ],
-  "last_updated": "2025-12-07T10:05:01.085153Z"
+  "last_updated": "2025-12-07T10:06:01.497803Z"
 }
