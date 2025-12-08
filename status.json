@@ -20,7 +20,46 @@
           "processes": []
         }
       ],
-      "cpu_util": 13.1,
+      "cpu_util": 12.5,
+      "error": null
+    },
+    {
+      "name": "achtung-biggpu",
+      "gpus": [
+        {
+          "index": 0,
+          "mem_used": 19896,
+          "mem_total": 49140,
+          "util": 98,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "1972758",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 19886,
+              "time": "N/A"
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "mem_used": 17674,
+          "mem_total": 49140,
+          "util": 70,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "1972265",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 17664,
+              "time": "N/A"
+            }
+          ]
+        }
+      ],
+      "cpu_util": 6.0,
       "error": null
     },
     {
@@ -69,7 +108,7 @@
           "index": 0,
           "mem_used": 73708,
           "mem_total": 95830,
-          "util": 46,
+          "util": 45,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -122,9 +161,48 @@
           ]
         }
       ],
-      "cpu_util": 5.6,
+      "cpu_util": 5.4,
+      "error": null
+    },
+    {
+      "name": "achtung-biggpu",
+      "gpus": [
+        {
+          "index": 0,
+          "mem_used": 19896,
+          "mem_total": 49140,
+          "util": 98,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "1972758",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 19886,
+              "time": "N/A"
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "mem_used": 17674,
+          "mem_total": 49140,
+          "util": 70,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "1972265",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 17664,
+              "time": "N/A"
+            }
+          ]
+        }
+      ],
+      "cpu_util": 6.0,
       "error": null
     }
   ],
-  "last_updated": "2025-12-08T22:10:01.746777Z"
+  "last_updated": "2025-12-08T22:11:01.245143Z"
 }
