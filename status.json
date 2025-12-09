@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 16.1,
+      "cpu_util": 13.1,
       "error": null
     },
     {
@@ -43,7 +43,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 3.4,
+      "cpu_util": 2.4,
       "error": null
     },
     {
@@ -66,7 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 3.4,
+      "cpu_util": 2.4,
       "error": null
     },
     {
@@ -74,9 +74,9 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 632,
+          "mem_used": 45763,
           "mem_total": 95830,
-          "util": 0,
+          "util": 3,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -84,6 +84,13 @@
               "name": "/home/aglc/rfcllm/myvenv/bin/python3",
               "user": "aglc",
               "mem": 622,
+              "time": "N/A"
+            },
+            {
+              "pid": "3293918",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 45216,
               "time": "N/A"
             }
           ]
@@ -137,7 +144,7 @@
           ]
         }
       ],
-      "cpu_util": 7.2,
+      "cpu_util": 6.2,
       "error": null
     },
     {
@@ -164,5 +171,5 @@
       "error": null
     }
   ],
-  "last_updated": "2025-12-09T03:12:01.776322Z"
+  "last_updated": "2025-12-09T03:13:01.121097Z"
 }
