@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 14.1,
+      "cpu_util": 12.2,
       "error": null
     },
     {
@@ -108,7 +108,7 @@
           "index": 0,
           "mem_used": 58240,
           "mem_total": 95830,
-          "util": 85,
+          "util": 58,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -124,7 +124,7 @@
           "index": 1,
           "mem_used": 73708,
           "mem_total": 95830,
-          "util": 43,
+          "util": 44,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -138,23 +138,15 @@
         },
         {
           "index": 2,
-          "mem_used": 526,
+          "mem_used": 4,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
-          "processes": [
-            {
-              "pid": "3311001",
-              "name": "/home/aglc/rfcllm/myvenv/bin/python3",
-              "user": "aglc",
-              "mem": 516,
-              "time": "N/A"
-            }
-          ]
+          "processes": []
         },
         {
           "index": 3,
-          "mem_used": 526,
+          "mem_used": 17287,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
@@ -163,13 +155,20 @@
               "pid": "3312976",
               "name": "/home/aglc/rfcllm/myvenv/bin/python3",
               "user": "aglc",
-              "mem": 516,
+              "mem": 16754,
+              "time": "N/A"
+            },
+            {
+              "pid": "3314564",
+              "name": "/home/saefurukawa/miniconda3/envs/newenv/bin/python",
+              "user": "saefurukawa",
+              "mem": 518,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 4.5,
+      "cpu_util": 4.9,
       "error": null
     },
     {
@@ -212,5 +211,5 @@
       "error": null
     }
   ],
-  "last_updated": "2025-12-09T03:32:01.866898Z"
+  "last_updated": "2025-12-09T03:33:01.279783Z"
 }
