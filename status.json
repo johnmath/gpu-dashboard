@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 18.8,
+      "cpu_util": 12.1,
       "error": null
     },
     {
@@ -43,7 +43,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 3.4,
+      "cpu_util": 2.4,
       "error": null
     },
     {
@@ -74,16 +74,16 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 20703,
+          "mem_used": 30479,
           "mem_total": 95830,
-          "util": 99,
+          "util": 64,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "3289693",
               "name": "python",
               "user": "luzsun",
-              "mem": 21696,
+              "mem": 29842,
               "time": "N/A"
             },
             {
@@ -99,7 +99,7 @@
           "index": 1,
           "mem_used": 73708,
           "mem_total": 95830,
-          "util": 43,
+          "util": 44,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -144,7 +144,7 @@
           ]
         }
       ],
-      "cpu_util": 5.9,
+      "cpu_util": 6.1,
       "error": null
     },
     {
@@ -152,24 +152,32 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 5,
+          "mem_used": 24216,
           "mem_total": 49140,
-          "util": 0,
+          "util": 40,
           "name": "NVIDIA RTX A6000",
-          "processes": []
+          "processes": [
+            {
+              "pid": "2125000",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 24206,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 1,
-          "mem_used": 2,
+          "mem_used": 5,
           "mem_total": 49140,
           "util": 0,
           "name": "NVIDIA RTX A6000",
           "processes": []
         }
       ],
-      "cpu_util": 4.2,
+      "cpu_util": 6.3,
       "error": null
     }
   ],
-  "last_updated": "2025-12-09T03:08:01.615962Z"
+  "last_updated": "2025-12-09T03:09:01.060688Z"
 }
