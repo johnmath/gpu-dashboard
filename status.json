@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 12.4,
+      "cpu_util": 7.6,
       "error": null
     },
     {
@@ -43,7 +43,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 3.5,
+      "cpu_util": 3.3,
       "error": null
     },
     {
@@ -74,7 +74,7 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 70002,
+          "mem_used": 67278,
           "mem_total": 95830,
           "util": 100,
           "name": "NVIDIA H100 NVL",
@@ -83,21 +83,37 @@
               "pid": "3956295",
               "name": "python",
               "user": "luzsun",
-              "mem": 69992,
+              "mem": 67268,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 1,
-          "mem_used": 47364,
+          "mem_used": 60372,
           "mem_total": 95830,
-          "util": 10,
+          "util": 9,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "260977",
               "name": "/home/saefurukawa/miniconda3/envs/newenv/bin/python",
+              "user": "saefurukawa",
+              "mem": 60362,
+              "time": "N/A"
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "mem_used": 47364,
+          "mem_total": 95830,
+          "util": 12,
+          "name": "NVIDIA H100 NVL",
+          "processes": [
+            {
+              "pid": "262047",
+              "name": "python",
               "user": "saefurukawa",
               "mem": 47354,
               "time": "N/A"
@@ -105,16 +121,8 @@
           ]
         },
         {
-          "index": 2,
-          "mem_used": 4,
-          "mem_total": 95830,
-          "util": 0,
-          "name": "NVIDIA H100 NVL",
-          "processes": []
-        },
-        {
           "index": 3,
-          "mem_used": 94554,
+          "mem_used": 53292,
           "mem_total": 95830,
           "util": 100,
           "name": "NVIDIA H100 NVL",
@@ -123,13 +131,13 @@
               "pid": "3955844",
               "name": "python",
               "user": "luzsun",
-              "mem": 94544,
+              "mem": 53282,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 5.1,
+      "cpu_util": 5.5,
       "error": null
     },
     {
@@ -152,9 +160,9 @@
           "processes": []
         }
       ],
-      "cpu_util": 3.5,
+      "cpu_util": 3.3,
       "error": null
     }
   ],
-  "last_updated": "2025-12-10T18:25:01.813101Z"
+  "last_updated": "2025-12-10T18:26:01.398669Z"
 }
