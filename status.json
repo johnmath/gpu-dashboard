@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 7.9,
+      "cpu_util": 6.2,
       "error": null
     },
     {
@@ -43,7 +43,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 3.9,
+      "cpu_util": 4.8,
       "error": null
     },
     {
@@ -66,7 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 3.9,
+      "cpu_util": 4.8,
       "error": null
     },
     {
@@ -92,7 +92,7 @@
           "index": 1,
           "mem_used": 59394,
           "mem_total": 95830,
-          "util": 57,
+          "util": 50,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -106,30 +106,38 @@
         },
         {
           "index": 2,
-          "mem_used": 53788,
+          "mem_used": 49446,
           "mem_total": 95830,
-          "util": 63,
+          "util": 95,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "1971048",
               "name": "python",
               "user": "luzsun",
-              "mem": 63136,
+              "mem": 49436,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 3,
-          "mem_used": 4,
+          "mem_used": 47368,
           "mem_total": 95830,
-          "util": 0,
+          "util": 10,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "2040058",
+              "name": "/home/saefurukawa/miniconda3/envs/newenv/bin/python",
+              "user": "saefurukawa",
+              "mem": 47358,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 6.1,
+      "cpu_util": 5.4,
       "error": null
     },
     {
@@ -152,9 +160,9 @@
           "processes": []
         }
       ],
-      "cpu_util": 3.9,
+      "cpu_util": 4.8,
       "error": null
     }
   ],
-  "last_updated": "2025-12-13T02:12:01.669914Z"
+  "last_updated": "2025-12-13T02:13:01.128419Z"
 }
