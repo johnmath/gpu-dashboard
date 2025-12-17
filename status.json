@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 5.9,
+      "cpu_util": 4.7,
       "error": null
     },
     {
@@ -106,9 +106,9 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 73708,
+          "mem_used": 74335,
           "mem_total": 95830,
-          "util": 46,
+          "util": 95,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -117,51 +117,66 @@
               "user": "saefurukawa",
               "mem": 73698,
               "time": "N/A"
+            },
+            {
+              "pid": "1014942",
+              "name": "/home/aglc/rfcllm/myvenv/bin/python3",
+              "user": "aglc",
+              "mem": 622,
+              "time": "N/A"
             }
           ]
         },
         {
           "index": 1,
-          "mem_used": 86222,
+          "mem_used": 86224,
           "mem_total": 95830,
-          "util": 0,
+          "util": 35,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "1011731",
               "name": "/home/aglc/rfcllm/myvenv/bin/python3",
               "user": "aglc",
-              "mem": 86212,
+              "mem": 86214,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 2,
-          "mem_used": 86222,
+          "mem_used": 86224,
           "mem_total": 95830,
-          "util": 0,
+          "util": 55,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "1011828",
               "name": "/home/aglc/rfcllm/myvenv/bin/python3",
               "user": "aglc",
-              "mem": 86212,
+              "mem": 86214,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 3,
-          "mem_used": 4,
+          "mem_used": 18384,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "1014258",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 18384,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 5.1,
+      "cpu_util": 55.1,
       "error": null
     },
     {
@@ -204,5 +219,5 @@
       "error": null
     }
   ],
-  "last_updated": "2025-12-17T03:12:01.645629Z"
+  "last_updated": "2025-12-17T03:13:01.089914Z"
 }
