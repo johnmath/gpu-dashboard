@@ -5,22 +5,22 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 19388,
+          "mem_used": 21122,
           "mem_total": 24564,
-          "util": 97,
+          "util": 100,
           "name": "NVIDIA GeForce RTX 4090",
           "processes": []
         },
         {
           "index": 1,
-          "mem_used": 20020,
+          "mem_used": 22198,
           "mem_total": 24564,
-          "util": 94,
+          "util": 83,
           "name": "NVIDIA GeForce RTX 4090",
           "processes": []
         }
       ],
-      "cpu_util": 12.3,
+      "cpu_util": 9.5,
       "error": null
     },
     {
@@ -59,7 +59,7 @@
           ]
         }
       ],
-      "cpu_util": 2.0,
+      "cpu_util": 4.3,
       "error": null
     },
     {
@@ -98,7 +98,7 @@
           ]
         }
       ],
-      "cpu_util": 2.0,
+      "cpu_util": 4.3,
       "error": null
     },
     {
@@ -153,32 +153,48 @@
           ]
         }
       ],
-      "cpu_util": 3.0,
+      "cpu_util": 2.4,
       "error": null
     },
     {
-      "name": "achtung-hood",
+      "name": "achtung-biggpu",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 2,
-          "mem_total": 12288,
+          "mem_used": 24868,
+          "mem_total": 49140,
           "util": 0,
-          "name": "NVIDIA GeForce GTX TITAN X",
-          "processes": []
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "1130385",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 24858,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 1,
-          "mem_used": 3,
-          "mem_total": 12288,
+          "mem_used": 24528,
+          "mem_total": 49140,
           "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "1130126",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 24518,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 2.8,
+      "cpu_util": 4.3,
       "error": null
     }
   ],
-  "last_updated": "2025-12-18T21:55:01.263626Z"
+  "last_updated": "2025-12-18T21:56:01.862795Z"
 }
