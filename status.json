@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 6.4,
+      "cpu_util": 7.2,
       "error": null
     },
     {
@@ -29,9 +29,27 @@
       "error": "Data is stale. Machine may be offline."
     },
     {
-      "name": "achtung-dome",
-      "gpus": [],
-      "error": "Data is stale. Machine may be offline."
+      "name": "achtung-biggpu",
+      "gpus": [
+        {
+          "index": 0,
+          "mem_used": 2,
+          "mem_total": 49140,
+          "util": 0,
+          "name": "NVIDIA RTX A6000",
+          "processes": []
+        },
+        {
+          "index": 1,
+          "mem_used": 2,
+          "mem_total": 49140,
+          "util": 0,
+          "name": "NVIDIA RTX A6000",
+          "processes": []
+        }
+      ],
+      "cpu_util": 0.6,
+      "error": null
     },
     {
       "name": "achtung-gamma",
@@ -44,5 +62,5 @@
       "error": "Data is stale. Machine may be offline."
     }
   ],
-  "last_updated": "2025-12-22T19:52:01.182955Z"
+  "last_updated": "2025-12-22T19:53:01.621800Z"
 }
