@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 8.1,
+      "cpu_util": 5.8,
       "error": null
     },
     {
@@ -43,7 +43,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 4.3,
+      "cpu_util": 4.6,
       "error": null
     },
     {
@@ -90,16 +90,16 @@
         },
         {
           "index": 1,
-          "mem_used": 53156,
+          "mem_used": 53172,
           "mem_total": 95830,
-          "util": 80,
+          "util": 70,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "728695",
               "name": "python",
               "user": "luzsun",
-              "mem": 53146,
+              "mem": 53162,
               "time": "N/A"
             }
           ]
@@ -121,40 +121,32 @@
           "processes": []
         }
       ],
-      "cpu_util": 2.1,
+      "cpu_util": 2.5,
       "error": null
     },
     {
-      "name": "achtung-biggpu",
+      "name": "achtung-dome",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 5,
-          "mem_total": 49140,
+          "mem_used": 3,
+          "mem_total": 12288,
           "util": 0,
-          "name": "NVIDIA RTX A6000",
+          "name": "NVIDIA TITAN X (Pascal)",
           "processes": []
         },
         {
           "index": 1,
-          "mem_used": 20294,
-          "mem_total": 49140,
-          "util": 39,
-          "name": "NVIDIA RTX A6000",
-          "processes": [
-            {
-              "pid": "2283533",
-              "name": "python",
-              "user": "luzsun",
-              "mem": 20284,
-              "time": "N/A"
-            }
-          ]
+          "mem_used": 3,
+          "mem_total": 12288,
+          "util": 0,
+          "name": "NVIDIA TITAN X (Pascal)",
+          "processes": []
         }
       ],
-      "cpu_util": 3.9,
+      "cpu_util": 4.6,
       "error": null
     }
   ],
-  "last_updated": "2025-12-23T18:39:01.243250Z"
+  "last_updated": "2025-12-23T18:40:01.693343Z"
 }
