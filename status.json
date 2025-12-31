@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 11.1,
+      "cpu_util": 7.7,
       "error": null
     },
     {
@@ -43,7 +43,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 0.7,
+      "cpu_util": 0.3,
       "error": null
     },
     {
@@ -66,7 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 0.7,
+      "cpu_util": 0.3,
       "error": null
     },
     {
@@ -76,7 +76,7 @@
           "index": 0,
           "mem_used": 65602,
           "mem_total": 95830,
-          "util": 100,
+          "util": 99,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -108,7 +108,7 @@
           "index": 2,
           "mem_used": 65602,
           "mem_total": 95830,
-          "util": 97,
+          "util": 98,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -122,11 +122,19 @@
         },
         {
           "index": 3,
-          "mem_used": 4,
+          "mem_used": 47362,
           "mem_total": 95830,
-          "util": 0,
+          "util": 1,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "419549",
+              "name": "/home/saefurukawa/miniconda3/envs/newenv/bin/python",
+              "user": "saefurukawa",
+              "mem": 47352,
+              "time": "N/A"
+            }
+          ]
         }
       ],
       "cpu_util": 4.0,
@@ -152,9 +160,9 @@
           "processes": []
         }
       ],
-      "cpu_util": 0.7,
+      "cpu_util": 0.3,
       "error": null
     }
   ],
-  "last_updated": "2025-12-31T03:03:01.989498Z"
+  "last_updated": "2025-12-31T03:04:01.344189Z"
 }
