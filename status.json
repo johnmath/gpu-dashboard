@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 10.0,
+      "cpu_util": 8.7,
       "error": null
     },
     {
@@ -98,22 +98,38 @@
         },
         {
           "index": 2,
-          "mem_used": 4,
+          "mem_used": 11934,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "3166407",
+              "name": "/home/aglc/rfcllm/myvenv/bin/python3",
+              "user": "aglc",
+              "mem": 11924,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 3,
-          "mem_used": 4,
+          "mem_used": 11934,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "3166478",
+              "name": "/home/aglc/rfcllm/myvenv/bin/python3",
+              "user": "aglc",
+              "mem": 11924,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 0.7,
+      "cpu_util": 2.6,
       "error": null
     },
     {
@@ -140,5 +156,5 @@
       "error": null
     }
   ],
-  "last_updated": "2026-01-04T23:48:01.586896Z"
+  "last_updated": "2026-01-04T23:49:01.091453Z"
 }
