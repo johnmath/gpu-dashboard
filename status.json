@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 8.3,
+      "cpu_util": 5.8,
       "error": null
     },
     {
@@ -74,11 +74,19 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 4,
+          "mem_used": 59954,
           "mem_total": 95830,
-          "util": 0,
+          "util": 72,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "1958353",
+              "name": "python",
+              "user": "saefurukawa",
+              "mem": 59944,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 1,
@@ -105,7 +113,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 0.8,
+      "cpu_util": 2.1,
       "error": null
     },
     {
@@ -132,5 +140,5 @@
       "error": null
     }
   ],
-  "last_updated": "2026-01-08T04:30:01.750050Z"
+  "last_updated": "2026-01-08T04:31:01.185710Z"
 }
