@@ -7,7 +7,7 @@
           "index": 0,
           "mem_used": 22673,
           "mem_total": 24564,
-          "util": 89,
+          "util": 32,
           "name": "NVIDIA GeForce RTX 4090",
           "processes": []
         },
@@ -15,12 +15,12 @@
           "index": 1,
           "mem_used": 22248,
           "mem_total": 24564,
-          "util": 90,
+          "util": 73,
           "name": "NVIDIA GeForce RTX 4090",
           "processes": []
         }
       ],
-      "cpu_util": 19.3,
+      "cpu_util": 21.9,
       "error": null
     },
     {
@@ -47,26 +47,42 @@
       "error": null
     },
     {
-      "name": "achtung-dome",
+      "name": "achtung-biggpu",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
+          "mem_used": 44802,
+          "mem_total": 49140,
+          "util": 51,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "2259995",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 44792,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 1,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
+          "mem_used": 41918,
+          "mem_total": 49140,
+          "util": 55,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "2314323",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 42178,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 5.7,
+      "cpu_util": 3.0,
       "error": null
     },
     {
@@ -74,7 +90,7 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 89185,
+          "mem_used": 88139,
           "mem_total": 95830,
           "util": 99,
           "name": "NVIDIA H100 NVL",
@@ -83,7 +99,7 @@
               "pid": "2375314",
               "name": "python",
               "user": "luzsun",
-              "mem": 48320,
+              "mem": 47014,
               "time": "N/A"
             }
           ]
@@ -113,7 +129,7 @@
         },
         {
           "index": 2,
-          "mem_used": 69841,
+          "mem_used": 79361,
           "mem_total": 95830,
           "util": 100,
           "name": "NVIDIA H100 NVL",
@@ -122,7 +138,7 @@
               "pid": "2337315",
               "name": "python",
               "user": "luzsun",
-              "mem": 50466,
+              "mem": 59788,
               "time": "N/A"
             }
           ]
@@ -151,7 +167,7 @@
           ]
         }
       ],
-      "cpu_util": 3.8,
+      "cpu_util": 3.9,
       "error": null
     },
     {
@@ -159,40 +175,40 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 43316,
+          "mem_used": 44802,
           "mem_total": 49140,
-          "util": 50,
+          "util": 51,
           "name": "NVIDIA RTX A6000",
           "processes": [
             {
               "pid": "2259995",
               "name": "python",
               "user": "luzsun",
-              "mem": 43306,
+              "mem": 44792,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 1,
-          "mem_used": 43316,
+          "mem_used": 41918,
           "mem_total": 49140,
-          "util": 54,
+          "util": 55,
           "name": "NVIDIA RTX A6000",
           "processes": [
             {
               "pid": "2314323",
               "name": "python",
               "user": "luzsun",
-              "mem": 43306,
+              "mem": 42178,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 4.1,
+      "cpu_util": 3.0,
       "error": null
     }
   ],
-  "last_updated": "2026-01-14T20:20:01.374120Z"
+  "last_updated": "2026-01-14T20:21:01.883399Z"
 }
