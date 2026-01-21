@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 19.7,
+      "cpu_util": 20.7,
       "error": null
     },
     {
@@ -43,7 +43,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 2.5,
+      "cpu_util": 0.8,
       "error": null
     },
     {
@@ -66,7 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 2.8,
+      "cpu_util": 0.8,
       "error": null
     },
     {
@@ -76,7 +76,7 @@
           "index": 0,
           "mem_used": 29818,
           "mem_total": 95830,
-          "util": 79,
+          "util": 81,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -90,19 +90,35 @@
         },
         {
           "index": 1,
-          "mem_used": 4,
+          "mem_used": 28750,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "2724316",
+              "name": "/home/johnabascal/projects/distillation-extraction/.venv/bin/python3",
+              "user": "johnabascal",
+              "mem": 28740,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 2,
-          "mem_used": 4,
+          "mem_used": 28750,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "2724317",
+              "name": "/home/johnabascal/projects/distillation-extraction/.venv/bin/python3",
+              "user": "johnabascal",
+              "mem": 28740,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 3,
@@ -121,7 +137,7 @@
           ]
         }
       ],
-      "cpu_util": 2.5,
+      "cpu_util": 5.2,
       "error": null
     },
     {
@@ -144,9 +160,9 @@
           "processes": []
         }
       ],
-      "cpu_util": 2.8,
+      "cpu_util": 0.8,
       "error": null
     }
   ],
-  "last_updated": "2026-01-21T04:16:01.521156Z"
+  "last_updated": "2026-01-21T04:17:01.987483Z"
 }
