@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 11.8,
+      "cpu_util": 14.7,
       "error": null
     },
     {
@@ -43,7 +43,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 0.4,
+      "cpu_util": 2.0,
       "error": null
     },
     {
@@ -66,7 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 0.4,
+      "cpu_util": 2.0,
       "error": null
     },
     {
@@ -74,27 +74,35 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 63508,
+          "mem_used": 68662,
           "mem_total": 95830,
-          "util": 0,
+          "util": 1,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "257887",
               "name": "/home/saefurukawa/miniconda3/envs/newenv/bin/python",
               "user": "saefurukawa",
-              "mem": 63498,
+              "mem": 68652,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 1,
-          "mem_used": 4,
+          "mem_used": 1696,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "267683",
+              "name": "python",
+              "user": "johnabascal",
+              "mem": 1686,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 2,
@@ -106,7 +114,7 @@
         },
         {
           "index": 3,
-          "mem_used": 80112,
+          "mem_used": 83918,
           "mem_total": 95830,
           "util": 100,
           "name": "NVIDIA H100 NVL",
@@ -115,7 +123,7 @@
               "pid": "230468",
               "name": "python",
               "user": "luzsun",
-              "mem": 80102,
+              "mem": 83908,
               "time": "N/A"
             }
           ]
@@ -144,9 +152,9 @@
           "processes": []
         }
       ],
-      "cpu_util": 0.4,
+      "cpu_util": 2.0,
       "error": null
     }
   ],
-  "last_updated": "2026-01-23T22:06:01.321024Z"
+  "last_updated": "2026-01-23T22:07:01.819515Z"
 }
