@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 14.7,
+      "cpu_util": 14.5,
       "error": null
     },
     {
@@ -43,7 +43,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 2.0,
+      "cpu_util": 0.4,
       "error": null
     },
     {
@@ -66,7 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 2.0,
+      "cpu_util": 0.4,
       "error": null
     },
     {
@@ -74,47 +74,47 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 68662,
+          "mem_used": 73568,
           "mem_total": 95830,
-          "util": 1,
+          "util": 0,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "257887",
               "name": "/home/saefurukawa/miniconda3/envs/newenv/bin/python",
               "user": "saefurukawa",
-              "mem": 68652,
+              "mem": 73558,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 1,
-          "mem_used": 1696,
+          "mem_used": 85518,
           "mem_total": 95830,
-          "util": 0,
+          "util": 100,
+          "name": "NVIDIA H100 NVL",
+          "processes": []
+        },
+        {
+          "index": 2,
+          "mem_used": 16048,
+          "mem_total": 95830,
+          "util": 100,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "267683",
               "name": "python",
               "user": "johnabascal",
-              "mem": 1686,
+              "mem": 16036,
               "time": "N/A"
             }
           ]
         },
         {
-          "index": 2,
-          "mem_used": 4,
-          "mem_total": 95830,
-          "util": 0,
-          "name": "NVIDIA H100 NVL",
-          "processes": []
-        },
-        {
           "index": 3,
-          "mem_used": 83918,
+          "mem_used": 80906,
           "mem_total": 95830,
           "util": 100,
           "name": "NVIDIA H100 NVL",
@@ -123,13 +123,13 @@
               "pid": "230468",
               "name": "python",
               "user": "luzsun",
-              "mem": 83908,
+              "mem": 80896,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 1.8,
+      "cpu_util": 5.3,
       "error": null
     },
     {
@@ -152,9 +152,9 @@
           "processes": []
         }
       ],
-      "cpu_util": 2.0,
+      "cpu_util": 0.4,
       "error": null
     }
   ],
-  "last_updated": "2026-01-23T22:07:01.819515Z"
+  "last_updated": "2026-01-23T22:08:01.302321Z"
 }
