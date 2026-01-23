@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 19.3,
+      "cpu_util": 19.4,
       "error": null
     },
     {
@@ -43,7 +43,30 @@
           "processes": []
         }
       ],
-      "cpu_util": 2.3,
+      "cpu_util": 2.8,
+      "error": null
+    },
+    {
+      "name": "achtung-biggpu",
+      "gpus": [
+        {
+          "index": 0,
+          "mem_used": 2,
+          "mem_total": 49140,
+          "util": 0,
+          "name": "NVIDIA RTX A6000",
+          "processes": []
+        },
+        {
+          "index": 1,
+          "mem_used": 2,
+          "mem_total": 49140,
+          "util": 0,
+          "name": "NVIDIA RTX A6000",
+          "processes": []
+        }
+      ],
+      "cpu_util": 1.2,
       "error": null
     },
     {
@@ -67,7 +90,7 @@
         },
         {
           "index": 2,
-          "mem_used": 70256,
+          "mem_used": 78358,
           "mem_total": 95830,
           "util": 100,
           "name": "NVIDIA H100 NVL",
@@ -76,14 +99,14 @@
               "pid": "3940771",
               "name": "python",
               "user": "luzsun",
-              "mem": 70246,
+              "mem": 78348,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 3,
-          "mem_used": 46172,
+          "mem_used": 79408,
           "mem_total": 95830,
           "util": 100,
           "name": "NVIDIA H100 NVL",
@@ -92,15 +115,38 @@
               "pid": "3939510",
               "name": "python",
               "user": "luzsun",
-              "mem": 46162,
+              "mem": 79398,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 2.3,
+      "cpu_util": 3.7,
+      "error": null
+    },
+    {
+      "name": "achtung-biggpu",
+      "gpus": [
+        {
+          "index": 0,
+          "mem_used": 2,
+          "mem_total": 49140,
+          "util": 0,
+          "name": "NVIDIA RTX A6000",
+          "processes": []
+        },
+        {
+          "index": 1,
+          "mem_used": 2,
+          "mem_total": 49140,
+          "util": 0,
+          "name": "NVIDIA RTX A6000",
+          "processes": []
+        }
+      ],
+      "cpu_util": 1.2,
       "error": null
     }
   ],
-  "last_updated": "2026-01-23T10:20:01.792394Z"
+  "last_updated": "2026-01-23T10:21:01.592231Z"
 }
