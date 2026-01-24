@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 9.7,
+      "cpu_util": 8.2,
       "error": null
     },
     {
@@ -43,7 +43,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 1.5,
+      "cpu_util": 4.3,
       "error": null
     },
     {
@@ -66,13 +66,70 @@
           "processes": []
         }
       ],
-      "cpu_util": 4.6,
+      "cpu_util": 8.3,
       "error": null
     },
     {
       "name": "achtung-gamma",
-      "gpus": [],
-      "error": "Data is stale. Machine may be offline."
+      "gpus": [
+        {
+          "index": 0,
+          "mem_used": 77605,
+          "mem_total": 95830,
+          "util": 83,
+          "name": "NVIDIA H100 NVL",
+          "processes": [
+            {
+              "pid": "272629",
+              "name": "/home/saefurukawa/miniconda3/envs/newenv/bin/python",
+              "user": "10093",
+              "mem": 47546,
+              "time": "N/A"
+            },
+            {
+              "pid": "282703",
+              "name": "python",
+              "user": "10093",
+              "mem": 30044,
+              "time": "N/A"
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "mem_used": 4,
+          "mem_total": 95830,
+          "util": 0,
+          "name": "NVIDIA H100 NVL",
+          "processes": []
+        },
+        {
+          "index": 2,
+          "mem_used": 4,
+          "mem_total": 95830,
+          "util": 0,
+          "name": "NVIDIA H100 NVL",
+          "processes": []
+        },
+        {
+          "index": 3,
+          "mem_used": 93450,
+          "mem_total": 95830,
+          "util": 100,
+          "name": "NVIDIA H100 NVL",
+          "processes": [
+            {
+              "pid": "230468",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 93440,
+              "time": "N/A"
+            }
+          ]
+        }
+      ],
+      "cpu_util": 5.1,
+      "error": null
     },
     {
       "name": "achtung-biggpu",
@@ -98,5 +155,5 @@
       "error": null
     }
   ],
-  "last_updated": "2026-01-24T03:01:01.854412Z"
+  "last_updated": "2026-01-24T03:02:01.153803Z"
 }
