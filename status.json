@@ -7,7 +7,7 @@
           "index": 0,
           "mem_used": 22673,
           "mem_total": 24564,
-          "util": 0,
+          "util": 64,
           "name": "NVIDIA GeForce RTX 4090",
           "processes": []
         },
@@ -15,12 +15,12 @@
           "index": 1,
           "mem_used": 22248,
           "mem_total": 24564,
-          "util": 0,
+          "util": 66,
           "name": "NVIDIA GeForce RTX 4090",
           "processes": []
         }
       ],
-      "cpu_util": 20.8,
+      "cpu_util": 18.1,
       "error": null
     },
     {
@@ -43,7 +43,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 1.0,
+      "cpu_util": 0.3,
       "error": null
     },
     {
@@ -66,7 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 1.0,
+      "cpu_util": 0.3,
       "error": null
     },
     {
@@ -74,17 +74,25 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 4,
+          "mem_used": 2462,
           "mem_total": 95830,
-          "util": 0,
+          "util": 1,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "2911494",
+              "name": "python",
+              "user": "johnabascal",
+              "mem": 2460,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 1,
           "mem_used": 68572,
           "mem_total": 95830,
-          "util": 16,
+          "util": 94,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -129,7 +137,7 @@
           ]
         }
       ],
-      "cpu_util": 4.7,
+      "cpu_util": 4.2,
       "error": null
     },
     {
@@ -152,9 +160,9 @@
           "processes": []
         }
       ],
-      "cpu_util": 1.0,
+      "cpu_util": 0.3,
       "error": null
     }
   ],
-  "last_updated": "2026-01-26T21:36:01.923956Z"
+  "last_updated": "2026-01-26T21:37:01.396335Z"
 }
