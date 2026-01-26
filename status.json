@@ -20,30 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 15.2,
-      "error": null
-    },
-    {
-      "name": "achtung-hood",
-      "gpus": [
-        {
-          "index": 0,
-          "mem_used": 2,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA GeForce GTX TITAN X",
-          "processes": []
-        },
-        {
-          "index": 1,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
-        }
-      ],
-      "cpu_util": 2.8,
+      "cpu_util": 13.5,
       "error": null
     },
     {
@@ -66,7 +43,30 @@
           "processes": []
         }
       ],
-      "cpu_util": 1.6,
+      "cpu_util": 2.2,
+      "error": null
+    },
+    {
+      "name": "achtung-biggpu",
+      "gpus": [
+        {
+          "index": 0,
+          "mem_used": 2,
+          "mem_total": 49140,
+          "util": 0,
+          "name": "NVIDIA RTX A6000",
+          "processes": []
+        },
+        {
+          "index": 1,
+          "mem_used": 2,
+          "mem_total": 49140,
+          "util": 0,
+          "name": "NVIDIA RTX A6000",
+          "processes": []
+        }
+      ],
+      "cpu_util": 2.2,
       "error": null
     },
     {
@@ -98,7 +98,7 @@
         },
         {
           "index": 2,
-          "mem_used": 31162,
+          "mem_used": 31352,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
@@ -106,7 +106,7 @@
         },
         {
           "index": 3,
-          "mem_used": 528,
+          "mem_used": 87813,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
@@ -117,11 +117,18 @@
               "user": "shuyilin",
               "mem": 518,
               "time": "N/A"
+            },
+            {
+              "pid": "2382546",
+              "name": "VLLM::EngineCore",
+              "user": "shuyilin",
+              "mem": 87280,
+              "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 4.4,
+      "cpu_util": 3.3,
       "error": null
     },
     {
@@ -148,5 +155,5 @@
       "error": null
     }
   ],
-  "last_updated": "2026-01-26T06:03:01.131132Z"
+  "last_updated": "2026-01-26T06:04:01.578363Z"
 }
