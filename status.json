@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 13.2,
+      "cpu_util": 12.4,
       "error": null
     },
     {
@@ -74,7 +74,7 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 620,
+          "mem_used": 4,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
@@ -84,7 +84,7 @@
           "index": 1,
           "mem_used": 30866,
           "mem_total": 95830,
-          "util": 19,
+          "util": 0,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -98,45 +98,22 @@
         },
         {
           "index": 2,
-          "mem_used": 77094,
-          "mem_total": 95830,
-          "util": 91,
-          "name": "NVIDIA H100 NVL",
-          "processes": [
-            {
-              "pid": "2211375",
-              "name": "VLLM::EngineCore",
-              "user": "shuyilin",
-              "mem": 77084,
-              "time": "N/A"
-            }
-          ]
-        },
-        {
-          "index": 3,
-          "mem_used": 87813,
+          "mem_used": 4,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
-          "processes": [
-            {
-              "pid": "2210756",
-              "name": "python",
-              "user": "shuyilin",
-              "mem": 518,
-              "time": "N/A"
-            },
-            {
-              "pid": "2212165",
-              "name": "VLLM::EngineCore",
-              "user": "shuyilin",
-              "mem": 87280,
-              "time": "N/A"
-            }
-          ]
+          "processes": []
+        },
+        {
+          "index": 3,
+          "mem_used": 4,
+          "mem_total": 95830,
+          "util": 0,
+          "name": "NVIDIA H100 NVL",
+          "processes": []
         }
       ],
-      "cpu_util": 2.8,
+      "cpu_util": 0.7,
       "error": null
     },
     {
@@ -163,5 +140,5 @@
       "error": null
     }
   ],
-  "last_updated": "2026-01-26T03:02:01.627205Z"
+  "last_updated": "2026-01-26T03:03:01.124085Z"
 }
