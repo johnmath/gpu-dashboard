@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 15.0,
+      "cpu_util": 12.8,
       "error": null
     },
     {
@@ -99,7 +99,7 @@
           "index": 1,
           "mem_used": 31652,
           "mem_total": 95830,
-          "util": 95,
+          "util": 94,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -113,11 +113,19 @@
         },
         {
           "index": 2,
-          "mem_used": 4,
+          "mem_used": 1394,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "4135418",
+              "name": "/home/ethanr/miniconda3/envs/groot/bin/python3",
+              "user": "ethanr",
+              "mem": 1384,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 3,
@@ -128,7 +136,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 3.2,
+      "cpu_util": 3.4,
       "error": null
     },
     {
@@ -155,5 +163,5 @@
       "error": null
     }
   ],
-  "last_updated": "2026-01-27T22:54:01.160386Z"
+  "last_updated": "2026-01-27T22:55:01.603623Z"
 }
