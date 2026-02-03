@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 16.3,
+      "cpu_util": 18.2,
       "error": null
     },
     {
@@ -43,7 +43,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 3.1,
+      "cpu_util": 5.1,
       "error": null
     },
     {
@@ -66,7 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 3.1,
+      "cpu_util": 5.1,
       "error": null
     },
     {
@@ -92,7 +92,7 @@
           "index": 1,
           "mem_used": 61141,
           "mem_total": 95830,
-          "util": 99,
+          "util": 100,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -113,18 +113,11 @@
         },
         {
           "index": 2,
-          "mem_used": 62977,
+          "mem_used": 28782,
           "mem_total": 95830,
-          "util": 100,
+          "util": 99,
           "name": "NVIDIA H100 NVL",
           "processes": [
-            {
-              "pid": "1039708",
-              "name": "python",
-              "user": "luzsun",
-              "mem": 34190,
-              "time": "N/A"
-            },
             {
               "pid": "1045364",
               "name": "python",
@@ -151,7 +144,7 @@
           ]
         }
       ],
-      "cpu_util": 6.4,
+      "cpu_util": 6.2,
       "error": null
     },
     {
@@ -159,7 +152,7 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 29206,
+          "mem_used": 27920,
           "mem_total": 49140,
           "util": 99,
           "name": "NVIDIA RTX A6000",
@@ -168,23 +161,31 @@
               "pid": "138498",
               "name": "python",
               "user": "luzsun",
-              "mem": 29196,
+              "mem": 27910,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 1,
-          "mem_used": 5,
+          "mem_used": 18294,
           "mem_total": 49140,
-          "util": 0,
+          "util": 75,
           "name": "NVIDIA RTX A6000",
-          "processes": []
+          "processes": [
+            {
+              "pid": "142039",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 18284,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 4.8,
+      "cpu_util": 3.5,
       "error": null
     }
   ],
-  "last_updated": "2026-02-03T23:16:01.105248Z"
+  "last_updated": "2026-02-03T23:17:01.609760Z"
 }
