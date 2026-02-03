@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 16.8,
+      "cpu_util": 20.1,
       "error": null
     },
     {
@@ -43,7 +43,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 0.4,
+      "cpu_util": 5.5,
       "error": null
     },
     {
@@ -66,7 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 0.4,
+      "cpu_util": 5.5,
       "error": null
     },
     {
@@ -113,32 +113,55 @@
           "processes": []
         }
       ],
-      "cpu_util": 1.8,
+      "cpu_util": 3.8,
       "error": null
     },
     {
-      "name": "achtung-dome",
+      "name": "achtung-biggpu",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 3,
-          "mem_total": 12288,
+          "mem_used": 46786,
+          "mem_total": 49140,
           "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "4145733",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 24282,
+              "time": "N/A"
+            },
+            {
+              "pid": "4145980",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 22488,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 1,
-          "mem_used": 3,
-          "mem_total": 12288,
+          "mem_used": 22486,
+          "mem_total": 49140,
           "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "4132983",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 22476,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 0.4,
+      "cpu_util": 79.2,
       "error": null
     }
   ],
-  "last_updated": "2026-02-03T02:14:01.054216Z"
+  "last_updated": "2026-02-03T02:15:01.524317Z"
 }
