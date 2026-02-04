@@ -20,30 +20,46 @@
           "processes": []
         }
       ],
-      "cpu_util": 20.5,
+      "cpu_util": 14.3,
       "error": null
     },
     {
-      "name": "achtung-dome",
+      "name": "achtung-biggpu",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
+          "mem_used": 22604,
+          "mem_total": 49140,
+          "util": 99,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "220102",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 22594,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 1,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
+          "mem_used": 24358,
+          "mem_total": 49140,
+          "util": 85,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "217238",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 24348,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 6.5,
+      "cpu_util": 3.8,
       "error": null
     },
     {
@@ -90,16 +106,16 @@
         },
         {
           "index": 1,
-          "mem_used": 29746,
+          "mem_used": 25146,
           "mem_total": 95830,
-          "util": 69,
+          "util": 57,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
-              "pid": "1298966",
+              "pid": "1326723",
               "name": "python",
               "user": "luzsun",
-              "mem": 29736,
+              "mem": 25136,
               "time": "N/A"
             }
           ]
@@ -108,7 +124,7 @@
           "index": 2,
           "mem_used": 59019,
           "mem_total": 95830,
-          "util": 96,
+          "util": 100,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -131,7 +147,7 @@
           "index": 3,
           "mem_used": 71696,
           "mem_total": 95830,
-          "util": 100,
+          "util": 97,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -144,7 +160,7 @@
           ]
         }
       ],
-      "cpu_util": 6.3,
+      "cpu_util": 6.0,
       "error": null
     },
     {
@@ -171,5 +187,5 @@
       "error": null
     }
   ],
-  "last_updated": "2026-02-04T02:46:01.235627Z"
+  "last_updated": "2026-02-04T02:47:01.662512Z"
 }
