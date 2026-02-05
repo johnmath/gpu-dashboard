@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 12.8,
+      "cpu_util": 12.6,
       "error": null
     },
     {
@@ -108,7 +108,7 @@
           "index": 0,
           "mem_used": 92784,
           "mem_total": 95830,
-          "util": 100,
+          "util": 98,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -122,9 +122,9 @@
         },
         {
           "index": 1,
-          "mem_used": 1002,
+          "mem_used": 27505,
           "mem_total": 95830,
-          "util": 0,
+          "util": 59,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -133,14 +133,21 @@
               "user": "ethanr",
               "mem": 992,
               "time": "N/A"
+            },
+            {
+              "pid": "2199072",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 26498,
+              "time": "N/A"
             }
           ]
         },
         {
           "index": 2,
-          "mem_used": 83867,
+          "mem_used": 86757,
           "mem_total": 95830,
-          "util": 60,
+          "util": 93,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -154,7 +161,7 @@
               "pid": "2174477",
               "name": "python",
               "user": "luzsun",
-              "mem": 16142,
+              "mem": 18256,
               "time": "N/A"
             },
             {
@@ -168,22 +175,22 @@
         },
         {
           "index": 3,
-          "mem_used": 28720,
+          "mem_used": 28782,
           "mem_total": 95830,
-          "util": 0,
+          "util": 98,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "2190555",
               "name": "python",
               "user": "luzsun",
-              "mem": 28710,
+              "mem": 28772,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 3.5,
+      "cpu_util": 4.3,
       "error": null
     },
     {
@@ -226,5 +233,5 @@
       "error": null
     }
   ],
-  "last_updated": "2026-02-05T02:13:01.102086Z"
+  "last_updated": "2026-02-05T02:14:01.619227Z"
 }
