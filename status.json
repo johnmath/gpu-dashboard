@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 18.6,
+      "cpu_util": 12.1,
       "error": null
     },
     {
@@ -122,9 +122,9 @@
         },
         {
           "index": 1,
-          "mem_used": 25976,
+          "mem_used": 42143,
           "mem_total": 95830,
-          "util": 59,
+          "util": 65,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -133,12 +133,19 @@
               "user": "luzsun",
               "mem": 25966,
               "time": "N/A"
+            },
+            {
+              "pid": "3454930",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 16174,
+              "time": "N/A"
             }
           ]
         },
         {
           "index": 2,
-          "mem_used": 42885,
+          "mem_used": 36413,
           "mem_total": 95830,
           "util": 100,
           "name": "NVIDIA H100 NVL",
@@ -147,36 +154,28 @@
               "pid": "3442442",
               "name": "python",
               "user": "luzsun",
-              "mem": 10418,
+              "mem": 12716,
               "time": "N/A"
             },
             {
               "pid": "3452072",
               "name": "python",
               "user": "luzsun",
-              "mem": 32452,
+              "mem": 23860,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 3,
-          "mem_used": 35016,
+          "mem_used": 4,
           "mem_total": 95830,
-          "util": 98,
+          "util": 0,
           "name": "NVIDIA H100 NVL",
-          "processes": [
-            {
-              "pid": "3450953",
-              "name": "python",
-              "user": "luzsun",
-              "mem": 35006,
-              "time": "N/A"
-            }
-          ]
+          "processes": []
         }
       ],
-      "cpu_util": 4.8,
+      "cpu_util": 3.9,
       "error": null
     },
     {
@@ -219,5 +218,5 @@
       "error": null
     }
   ],
-  "last_updated": "2026-02-06T03:04:01.567491Z"
+  "last_updated": "2026-02-06T03:05:01.064556Z"
 }
