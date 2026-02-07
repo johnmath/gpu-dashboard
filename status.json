@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 12.9,
+      "cpu_util": 12.0,
       "error": null
     },
     {
@@ -66,7 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 3.0,
+      "cpu_util": 5.6,
       "error": null
     },
     {
@@ -74,16 +74,16 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 33194,
+          "mem_used": 43746,
           "mem_total": 95830,
-          "util": 98,
+          "util": 11,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "1091017",
               "name": "python",
               "user": "luzsun",
-              "mem": 33558,
+              "mem": 43736,
               "time": "N/A"
             }
           ]
@@ -92,7 +92,7 @@
           "index": 1,
           "mem_used": 58426,
           "mem_total": 95830,
-          "util": 69,
+          "util": 79,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -106,17 +106,25 @@
         },
         {
           "index": 2,
-          "mem_used": 4,
+          "mem_used": 38688,
           "mem_total": 95830,
-          "util": 0,
+          "util": 99,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "1092007",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 38678,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 3,
           "mem_used": 37296,
           "mem_total": 95830,
-          "util": 39,
+          "util": 24,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -129,7 +137,7 @@
           ]
         }
       ],
-      "cpu_util": 3.4,
+      "cpu_util": 3.9,
       "error": null
     },
     {
@@ -152,9 +160,9 @@
           "processes": []
         }
       ],
-      "cpu_util": 3.0,
+      "cpu_util": 5.6,
       "error": null
     }
   ],
-  "last_updated": "2026-02-07T21:48:01.690656Z"
+  "last_updated": "2026-02-07T21:49:01.127953Z"
 }
