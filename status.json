@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 13.4,
+      "cpu_util": 15.9,
       "error": null
     },
     {
@@ -74,32 +74,32 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 50816,
+          "mem_used": 57698,
           "mem_total": 95830,
-          "util": 2,
+          "util": 99,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "999618",
               "name": "python",
               "user": "luzsun",
-              "mem": 50806,
+              "mem": 57688,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 1,
-          "mem_used": 34634,
+          "mem_used": 34178,
           "mem_total": 95830,
-          "util": 99,
+          "util": 98,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "988650",
               "name": "python",
               "user": "luzsun",
-              "mem": 34624,
+              "mem": 34168,
               "time": "N/A"
             }
           ]
@@ -108,7 +108,7 @@
           "index": 2,
           "mem_used": 42954,
           "mem_total": 95830,
-          "util": 87,
+          "util": 54,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -122,14 +122,22 @@
         },
         {
           "index": 3,
-          "mem_used": 4,
+          "mem_used": 63846,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "1004013",
+              "name": "[No data]",
+              "user": "luzsun",
+              "mem": 63836,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 3.4,
+      "cpu_util": 5.0,
       "error": null
     },
     {
@@ -156,5 +164,5 @@
       "error": null
     }
   ],
-  "last_updated": "2026-02-07T20:30:01.549193Z"
+  "last_updated": "2026-02-07T20:31:01.987707Z"
 }
