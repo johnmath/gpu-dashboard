@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 17.2,
+      "cpu_util": 12.0,
       "error": null
     },
     {
@@ -74,32 +74,24 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 42798,
+          "mem_used": 4,
           "mem_total": 95830,
-          "util": 68,
+          "util": 0,
           "name": "NVIDIA H100 NVL",
-          "processes": [
-            {
-              "pid": "846941",
-              "name": "python",
-              "user": "luzsun",
-              "mem": 42788,
-              "time": "N/A"
-            }
-          ]
+          "processes": []
         },
         {
           "index": 1,
-          "mem_used": 55962,
+          "mem_used": 36072,
           "mem_total": 95830,
-          "util": 12,
+          "util": 99,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "865687",
               "name": "python",
               "user": "luzsun",
-              "mem": 55952,
+              "mem": 36062,
               "time": "N/A"
             }
           ]
@@ -108,7 +100,7 @@
           "index": 2,
           "mem_used": 44344,
           "mem_total": 95830,
-          "util": 81,
+          "util": 58,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -129,18 +121,18 @@
           "processes": []
         }
       ],
-      "cpu_util": 3.3,
+      "cpu_util": 3.2,
       "error": null
     },
     {
-      "name": "achtung-hood",
+      "name": "achtung-dome",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 2,
+          "mem_used": 3,
           "mem_total": 12288,
           "util": 0,
-          "name": "NVIDIA GeForce GTX TITAN X",
+          "name": "NVIDIA TITAN X (Pascal)",
           "processes": []
         },
         {
@@ -152,9 +144,9 @@
           "processes": []
         }
       ],
-      "cpu_util": 2.3,
+      "cpu_util": 0.6,
       "error": null
     }
   ],
-  "last_updated": "2026-02-07T18:18:01.977306Z"
+  "last_updated": "2026-02-07T18:19:01.405036Z"
 }
