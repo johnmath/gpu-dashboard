@@ -20,54 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 19.3,
-      "error": null
-    },
-    {
-      "name": "achtung-gamma",
-      "gpus": [
-        {
-          "index": 0,
-          "mem_used": 4,
-          "mem_total": 95830,
-          "util": 0,
-          "name": "NVIDIA H100 NVL",
-          "processes": []
-        },
-        {
-          "index": 1,
-          "mem_used": 4,
-          "mem_total": 95830,
-          "util": 0,
-          "name": "NVIDIA H100 NVL",
-          "processes": []
-        },
-        {
-          "index": 2,
-          "mem_used": 4,
-          "mem_total": 95830,
-          "util": 0,
-          "name": "NVIDIA H100 NVL",
-          "processes": []
-        },
-        {
-          "index": 3,
-          "mem_used": 43240,
-          "mem_total": 95830,
-          "util": 24,
-          "name": "NVIDIA H100 NVL",
-          "processes": [
-            {
-              "pid": "1233062",
-              "name": "python",
-              "user": "luzsun",
-              "mem": 43230,
-              "time": "N/A"
-            }
-          ]
-        }
-      ],
-      "cpu_util": 2.4,
+      "cpu_util": 12.4,
       "error": null
     },
     {
@@ -98,9 +51,126 @@
           ]
         }
       ],
-      "cpu_util": 50.5,
+      "cpu_util": 40.1,
+      "error": null
+    },
+    {
+      "name": "achtung-biggpu",
+      "gpus": [
+        {
+          "index": 0,
+          "mem_used": 352,
+          "mem_total": 49140,
+          "util": 0,
+          "name": "NVIDIA RTX A6000",
+          "processes": []
+        },
+        {
+          "index": 1,
+          "mem_used": 350,
+          "mem_total": 49140,
+          "util": 0,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "941056",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 340,
+              "time": "N/A"
+            }
+          ]
+        }
+      ],
+      "cpu_util": 40.1,
+      "error": null
+    },
+    {
+      "name": "achtung-gamma",
+      "gpus": [
+        {
+          "index": 0,
+          "mem_used": 4,
+          "mem_total": 95830,
+          "util": 0,
+          "name": "NVIDIA H100 NVL",
+          "processes": []
+        },
+        {
+          "index": 1,
+          "mem_used": 38526,
+          "mem_total": 95830,
+          "util": 99,
+          "name": "NVIDIA H100 NVL",
+          "processes": [
+            {
+              "pid": "1502046",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 38516,
+              "time": "N/A"
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "mem_used": 4,
+          "mem_total": 95830,
+          "util": 0,
+          "name": "NVIDIA H100 NVL",
+          "processes": []
+        },
+        {
+          "index": 3,
+          "mem_used": 41754,
+          "mem_total": 95830,
+          "util": 24,
+          "name": "NVIDIA H100 NVL",
+          "processes": [
+            {
+              "pid": "1233062",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 41744,
+              "time": "N/A"
+            }
+          ]
+        }
+      ],
+      "cpu_util": 2.7,
+      "error": null
+    },
+    {
+      "name": "achtung-biggpu",
+      "gpus": [
+        {
+          "index": 0,
+          "mem_used": 352,
+          "mem_total": 49140,
+          "util": 0,
+          "name": "NVIDIA RTX A6000",
+          "processes": []
+        },
+        {
+          "index": 1,
+          "mem_used": 350,
+          "mem_total": 49140,
+          "util": 0,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "941056",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 340,
+              "time": "N/A"
+            }
+          ]
+        }
+      ],
+      "cpu_util": 40.1,
       "error": null
     }
   ],
-  "last_updated": "2026-02-08T05:16:01.361875Z"
+  "last_updated": "2026-02-08T05:17:01.835196Z"
 }
