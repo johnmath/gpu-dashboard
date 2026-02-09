@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 13.0,
+      "cpu_util": 12.3,
       "error": null
     },
     {
@@ -90,9 +90,9 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 61166,
+          "mem_used": 61191,
           "mem_total": 95830,
-          "util": 100,
+          "util": 96,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -100,6 +100,13 @@
               "name": "python",
               "user": "saefurukawa",
               "mem": 61156,
+              "time": "N/A"
+            },
+            {
+              "pid": "2320678",
+              "name": "/home/aglc/rfcllm/.venv/bin/python3",
+              "user": "aglc",
+              "mem": 564,
               "time": "N/A"
             }
           ]
@@ -122,38 +129,38 @@
         },
         {
           "index": 2,
-          "mem_used": 67260,
+          "mem_used": 70232,
           "mem_total": 95830,
-          "util": 61,
+          "util": 13,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "2300021",
               "name": "python",
               "user": "luzsun",
-              "mem": 67250,
+              "mem": 70222,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 3,
-          "mem_used": 44002,
+          "mem_used": 43930,
           "mem_total": 95830,
-          "util": 5,
+          "util": 20,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "2233181",
               "name": "python",
               "user": "luzsun",
-              "mem": 43992,
+              "mem": 44478,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 3.7,
+      "cpu_util": 3.6,
       "error": null
     },
     {
@@ -188,5 +195,5 @@
       "error": null
     }
   ],
-  "last_updated": "2026-02-09T04:29:01.179660Z"
+  "last_updated": "2026-02-09T04:30:01.607151Z"
 }
