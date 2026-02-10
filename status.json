@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 12.8,
+      "cpu_util": 11.8,
       "error": null
     },
     {
@@ -43,7 +43,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 0.7,
+      "cpu_util": 0.3,
       "error": null
     },
     {
@@ -66,7 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 0.7,
+      "cpu_util": 0.3,
       "error": null
     },
     {
@@ -74,9 +74,9 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 87836,
+          "mem_used": 88651,
           "mem_total": 95830,
-          "util": 0,
+          "util": 98,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -85,6 +85,13 @@
               "user": "aglc",
               "mem": 87824,
               "time": "N/A"
+            },
+            {
+              "pid": "3685425",
+              "name": "/home/aglc/rfcllm/.venv/bin/python3",
+              "user": "aglc",
+              "mem": 810,
+              "time": "N/A"
             }
           ]
         },
@@ -92,7 +99,7 @@
           "index": 1,
           "mem_used": 87836,
           "mem_total": 95830,
-          "util": 0,
+          "util": 98,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -106,38 +113,38 @@
         },
         {
           "index": 2,
-          "mem_used": 36174,
+          "mem_used": 36282,
           "mem_total": 95830,
-          "util": 5,
+          "util": 1,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "3623765",
               "name": "python",
               "user": "luzsun",
-              "mem": 36164,
+              "mem": 37488,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 3,
-          "mem_used": 40788,
+          "mem_used": 41164,
           "mem_total": 95830,
-          "util": 17,
+          "util": 1,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "3558006",
               "name": "python",
               "user": "luzsun",
-              "mem": 40778,
+              "mem": 41512,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 4.1,
+      "cpu_util": 3.7,
       "error": null
     },
     {
@@ -160,9 +167,9 @@
           "processes": []
         }
       ],
-      "cpu_util": 0.7,
+      "cpu_util": 0.3,
       "error": null
     }
   ],
-  "last_updated": "2026-02-10T20:00:01.851141Z"
+  "last_updated": "2026-02-10T20:01:01.432903Z"
 }
