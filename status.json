@@ -20,30 +20,38 @@
           "processes": []
         }
       ],
-      "cpu_util": 11.0,
+      "cpu_util": 6.2,
       "error": null
     },
     {
-      "name": "achtung-hood",
+      "name": "achtung-biggpu",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 2,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA GeForce GTX TITAN X",
+          "mem_used": 48234,
+          "mem_total": 49140,
+          "util": 13,
+          "name": "NVIDIA RTX A6000",
           "processes": []
         },
         {
           "index": 1,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
+          "mem_used": 48494,
+          "mem_total": 49140,
+          "util": 79,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "1251029",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 48484,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 2.3,
+      "cpu_util": 2.2,
       "error": null
     },
     {
@@ -100,7 +108,7 @@
           "index": 1,
           "mem_used": 67740,
           "mem_total": 95830,
-          "util": 96,
+          "util": 97,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -122,16 +130,16 @@
         },
         {
           "index": 3,
-          "mem_used": 38782,
+          "mem_used": 39152,
           "mem_total": 95830,
-          "util": 2,
+          "util": 25,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "3102570",
               "name": "python",
               "user": "luzsun",
-              "mem": 39042,
+              "mem": 39142,
               "time": "N/A"
             }
           ]
@@ -172,5 +180,5 @@
       "error": null
     }
   ],
-  "last_updated": "2026-02-10T05:25:01.287626Z"
+  "last_updated": "2026-02-10T05:26:01.403180Z"
 }
