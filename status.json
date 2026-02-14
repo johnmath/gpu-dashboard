@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 6.0,
+      "cpu_util": 5.2,
       "error": null
     },
     {
@@ -43,7 +43,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 0.3,
+      "cpu_util": 0.4,
       "error": null
     },
     {
@@ -74,24 +74,32 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 4,
+          "mem_used": 2530,
           "mem_total": 95830,
-          "util": 0,
+          "util": 22,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "2163449",
+              "name": "python",
+              "user": "roseev",
+              "mem": 2520,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 1,
-          "mem_used": 2538,
+          "mem_used": 2642,
           "mem_total": 95830,
-          "util": 83,
+          "util": 55,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "2150560",
               "name": "python",
               "user": "roseev",
-              "mem": 2528,
+              "mem": 2632,
               "time": "N/A"
             }
           ]
@@ -106,7 +114,7 @@
         },
         {
           "index": 3,
-          "mem_used": 42330,
+          "mem_used": 42498,
           "mem_total": 95830,
           "util": 98,
           "name": "NVIDIA H100 NVL",
@@ -115,13 +123,13 @@
               "pid": "2156909",
               "name": "python",
               "user": "shuyilin",
-              "mem": 42320,
+              "mem": 42488,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 5.3,
+      "cpu_util": 5.4,
       "error": null
     },
     {
@@ -144,9 +152,9 @@
           "processes": []
         }
       ],
-      "cpu_util": 0.3,
+      "cpu_util": 0.4,
       "error": null
     }
   ],
-  "last_updated": "2026-02-14T08:05:01.292805Z"
+  "last_updated": "2026-02-14T08:06:01.742447Z"
 }
