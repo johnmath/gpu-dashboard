@@ -5,68 +5,68 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 5,
+          "mem_used": 17370,
           "mem_total": 24564,
-          "util": 0,
+          "util": 100,
           "name": "NVIDIA GeForce RTX 4090",
           "processes": []
         },
         {
           "index": 1,
-          "mem_used": 4,
+          "mem_used": 17718,
           "mem_total": 24564,
           "util": 0,
           "name": "NVIDIA GeForce RTX 4090",
           "processes": []
         }
       ],
-      "cpu_util": 12.0,
+      "cpu_util": 8.8,
       "error": null
     },
     {
-      "name": "achtung-dome",
+      "name": "achtung-biggpu",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 3,
-          "mem_total": 12288,
+          "mem_used": 2,
+          "mem_total": 49140,
           "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
+          "name": "NVIDIA RTX A6000",
           "processes": []
         },
         {
           "index": 1,
-          "mem_used": 3,
-          "mem_total": 12288,
+          "mem_used": 2,
+          "mem_total": 49140,
           "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
+          "name": "NVIDIA RTX A6000",
           "processes": []
         }
       ],
-      "cpu_util": 2.4,
+      "cpu_util": 0.3,
       "error": null
     },
     {
-      "name": "achtung-dome",
+      "name": "achtung-biggpu",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 3,
-          "mem_total": 12288,
+          "mem_used": 2,
+          "mem_total": 49140,
           "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
+          "name": "NVIDIA RTX A6000",
           "processes": []
         },
         {
           "index": 1,
-          "mem_used": 3,
-          "mem_total": 12288,
+          "mem_used": 2,
+          "mem_total": 49140,
           "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
+          "name": "NVIDIA RTX A6000",
           "processes": []
         }
       ],
-      "cpu_util": 2.4,
+      "cpu_util": 0.3,
       "error": null
     },
     {
@@ -74,11 +74,19 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 4,
+          "mem_used": 14034,
           "mem_total": 95830,
-          "util": 0,
+          "util": 89,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "999182",
+              "name": "python",
+              "user": "saefurukawa",
+              "mem": 14024,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 1,
@@ -92,7 +100,7 @@
           "index": 2,
           "mem_used": 31404,
           "mem_total": 95830,
-          "util": 90,
+          "util": 89,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -108,7 +116,7 @@
           "index": 3,
           "mem_used": 29818,
           "mem_total": 95830,
-          "util": 79,
+          "util": 69,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -121,32 +129,32 @@
           ]
         }
       ],
-      "cpu_util": 3.6,
+      "cpu_util": 41.0,
       "error": null
     },
     {
-      "name": "achtung-dome",
+      "name": "achtung-biggpu",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 3,
-          "mem_total": 12288,
+          "mem_used": 2,
+          "mem_total": 49140,
           "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
+          "name": "NVIDIA RTX A6000",
           "processes": []
         },
         {
           "index": 1,
-          "mem_used": 3,
-          "mem_total": 12288,
+          "mem_used": 2,
+          "mem_total": 49140,
           "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
+          "name": "NVIDIA RTX A6000",
           "processes": []
         }
       ],
-      "cpu_util": 2.4,
+      "cpu_util": 0.3,
       "error": null
     }
   ],
-  "last_updated": "2026-02-17T03:19:02.006400Z"
+  "last_updated": "2026-02-17T03:20:01.297791Z"
 }
