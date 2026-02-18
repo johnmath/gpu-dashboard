@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 8.5,
+      "cpu_util": 5.9,
       "error": null
     },
     {
@@ -74,13 +74,13 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 820,
+          "mem_used": 4639,
           "mem_total": 95830,
-          "util": 0,
+          "util": 1,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
-              "pid": "1951285",
+              "pid": "1959436",
               "name": "/home/aglc/rfcllm/.venv/bin/python3",
               "user": "aglc",
               "mem": 810,
@@ -90,9 +90,9 @@
         },
         {
           "index": 1,
-          "mem_used": 87692,
+          "mem_used": 92571,
           "mem_total": 95830,
-          "util": 100,
+          "util": 99,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -106,19 +106,26 @@
         },
         {
           "index": 2,
-          "mem_used": 4,
+          "mem_used": 4884,
           "mem_total": 95830,
-          "util": 0,
+          "util": 3,
           "name": "NVIDIA H100 NVL",
           "processes": []
         },
         {
           "index": 3,
-          "mem_used": 87692,
+          "mem_used": 92345,
           "mem_total": 95830,
-          "util": 100,
+          "util": 98,
           "name": "NVIDIA H100 NVL",
           "processes": [
+            {
+              "pid": "1959868",
+              "name": "python",
+              "user": "shuyilin",
+              "mem": 4648,
+              "time": "N/A"
+            },
             {
               "pid": "1732530",
               "name": "python3",
@@ -129,7 +136,7 @@
           ]
         }
       ],
-      "cpu_util": 3.8,
+      "cpu_util": 3.6,
       "error": null
     },
     {
@@ -152,9 +159,9 @@
           "processes": []
         }
       ],
-      "cpu_util": 0.3,
+      "cpu_util": 0.4,
       "error": null
     }
   ],
-  "last_updated": "2026-02-18T09:52:01.755033Z"
+  "last_updated": "2026-02-18T09:53:01.194738Z"
 }
