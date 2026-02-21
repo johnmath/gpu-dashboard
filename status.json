@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 9.9,
+      "cpu_util": 5.9,
       "error": null
     },
     {
@@ -90,15 +90,23 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 4,
+          "mem_used": 70470,
           "mem_total": 95830,
-          "util": 0,
+          "util": 14,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "3897440",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 71276,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 1,
-          "mem_used": 39380,
+          "mem_used": 39258,
           "mem_total": 95830,
           "util": 11,
           "name": "NVIDIA H100 NVL",
@@ -107,7 +115,7 @@
               "pid": "3882771",
               "name": "python",
               "user": "luzsun",
-              "mem": 39140,
+              "mem": 39248,
               "time": "N/A"
             }
           ]
@@ -116,7 +124,7 @@
           "index": 2,
           "mem_used": 70998,
           "mem_total": 95830,
-          "util": 98,
+          "util": 96,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -130,22 +138,22 @@
         },
         {
           "index": 3,
-          "mem_used": 32840,
+          "mem_used": 40316,
           "mem_total": 95830,
-          "util": 51,
+          "util": 85,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "3894472",
               "name": "python",
               "user": "luzsun",
-              "mem": 32830,
+              "mem": 40678,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 3.7,
+      "cpu_util": 3.4,
       "error": null
     },
     {
@@ -180,5 +188,5 @@
       "error": null
     }
   ],
-  "last_updated": "2026-02-21T05:59:01.604573Z"
+  "last_updated": "2026-02-21T06:00:01.032083Z"
 }
