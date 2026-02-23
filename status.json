@@ -20,38 +20,30 @@
           "processes": []
         }
       ],
-      "cpu_util": 9.2,
+      "cpu_util": 11.9,
       "error": null
     },
     {
-      "name": "achtung-biggpu",
+      "name": "achtung-hood",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 12830,
-          "mem_total": 49140,
-          "util": 96,
-          "name": "NVIDIA RTX A6000",
-          "processes": [
-            {
-              "pid": "2600957",
-              "name": "python",
-              "user": "luzsun",
-              "mem": 12820,
-              "time": "N/A"
-            }
-          ]
+          "mem_used": 2,
+          "mem_total": 12288,
+          "util": 0,
+          "name": "NVIDIA GeForce GTX TITAN X",
+          "processes": []
         },
         {
           "index": 1,
-          "mem_used": 5,
-          "mem_total": 49140,
+          "mem_used": 3,
+          "mem_total": 12288,
           "util": 0,
-          "name": "NVIDIA RTX A6000",
+          "name": "NVIDIA TITAN X (Pascal)",
           "processes": []
         }
       ],
-      "cpu_util": 2.3,
+      "cpu_util": 2.6,
       "error": null
     },
     {
@@ -114,11 +106,19 @@
         },
         {
           "index": 1,
-          "mem_used": 4,
+          "mem_used": 18942,
           "mem_total": 95830,
-          "util": 0,
+          "util": 96,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "1984753",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 18932,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 2,
@@ -138,22 +138,22 @@
         },
         {
           "index": 3,
-          "mem_used": 35808,
+          "mem_used": 37294,
           "mem_total": 95830,
-          "util": 24,
+          "util": 17,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "1884655",
               "name": "python",
               "user": "luzsun",
-              "mem": 35798,
+              "mem": 37284,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 3.0,
+      "cpu_util": 2.5,
       "error": null
     },
     {
@@ -196,5 +196,5 @@
       "error": null
     }
   ],
-  "last_updated": "2026-02-23T19:03:01.581753Z"
+  "last_updated": "2026-02-23T19:04:01.052999Z"
 }
