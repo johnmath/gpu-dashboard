@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 5.4,
+      "cpu_util": 7.0,
       "error": null
     },
     {
@@ -108,7 +108,7 @@
           "index": 0,
           "mem_used": 83740,
           "mem_total": 95830,
-          "util": 93,
+          "util": 100,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -146,22 +146,22 @@
         },
         {
           "index": 3,
-          "mem_used": 64396,
+          "mem_used": 65180,
           "mem_total": 95830,
-          "util": 89,
+          "util": 98,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "2841336",
               "name": "python",
               "user": "luzsun",
-              "mem": 64386,
+              "mem": 65170,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 3.4,
+      "cpu_util": 3.5,
       "error": null
     },
     {
@@ -169,32 +169,40 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 8524,
+          "mem_used": 13068,
           "mem_total": 49140,
-          "util": 97,
+          "util": 98,
           "name": "NVIDIA RTX A6000",
           "processes": [
             {
               "pid": "2763263",
               "name": "python",
               "user": "luzsun",
-              "mem": 8834,
+              "mem": 13058,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 1,
-          "mem_used": 5,
+          "mem_used": 10138,
           "mem_total": 49140,
-          "util": 0,
+          "util": 97,
           "name": "NVIDIA RTX A6000",
-          "processes": []
+          "processes": [
+            {
+              "pid": "2763889",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 10128,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 2.8,
+      "cpu_util": 2.7,
       "error": null
     }
   ],
-  "last_updated": "2026-02-24T14:31:01.663553Z"
+  "last_updated": "2026-02-24T14:32:01.155885Z"
 }
