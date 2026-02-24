@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 5.2,
+      "cpu_util": 10.4,
       "error": null
     },
     {
@@ -66,7 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 4.5,
+      "cpu_util": 0.6,
       "error": null
     },
     {
@@ -90,24 +90,32 @@
         },
         {
           "index": 1,
-          "mem_used": 4,
+          "mem_used": 28756,
           "mem_total": 95830,
-          "util": 0,
+          "util": 99,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "2210995",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 28746,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 2,
           "mem_used": 81697,
           "mem_total": 95830,
-          "util": 97,
+          "util": 100,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "2207545",
               "name": "python",
               "user": "shuyilin",
-              "mem": 37242,
+              "mem": 38730,
               "time": "N/A"
             },
             {
@@ -121,22 +129,22 @@
         },
         {
           "index": 3,
-          "mem_used": 37872,
+          "mem_used": 38048,
           "mem_total": 95830,
-          "util": 17,
+          "util": 8,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "1884655",
               "name": "python",
               "user": "luzsun",
-              "mem": 37862,
+              "mem": 38038,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 3.8,
+      "cpu_util": 5.6,
       "error": null
     },
     {
@@ -159,9 +167,9 @@
           "processes": []
         }
       ],
-      "cpu_util": 2.3,
+      "cpu_util": 2.7,
       "error": null
     }
   ],
-  "last_updated": "2026-02-24T00:42:01.287421Z"
+  "last_updated": "2026-02-24T00:43:01.741838Z"
 }
