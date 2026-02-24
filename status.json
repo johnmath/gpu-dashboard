@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 5.8,
+      "cpu_util": 6.3,
       "error": null
     },
     {
@@ -76,7 +76,7 @@
           "index": 0,
           "mem_used": 83740,
           "mem_total": 95830,
-          "util": 87,
+          "util": 100,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -122,55 +122,47 @@
         },
         {
           "index": 3,
-          "mem_used": 33096,
+          "mem_used": 33074,
           "mem_total": 95830,
-          "util": 29,
+          "util": 19,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "2841336",
               "name": "python",
               "user": "luzsun",
-              "mem": 33086,
+              "mem": 33064,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 4.1,
+      "cpu_util": 4.8,
       "error": null
     },
     {
-      "name": "achtung-biggpu",
+      "name": "achtung-dome",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 12372,
-          "mem_total": 49140,
-          "util": 97,
-          "name": "NVIDIA RTX A6000",
-          "processes": [
-            {
-              "pid": "2793839",
-              "name": "python",
-              "user": "luzsun",
-              "mem": 12362,
-              "time": "N/A"
-            }
-          ]
+          "mem_used": 3,
+          "mem_total": 12288,
+          "util": 0,
+          "name": "NVIDIA TITAN X (Pascal)",
+          "processes": []
         },
         {
           "index": 1,
-          "mem_used": 2,
-          "mem_total": 49140,
+          "mem_used": 3,
+          "mem_total": 12288,
           "util": 0,
-          "name": "NVIDIA RTX A6000",
+          "name": "NVIDIA TITAN X (Pascal)",
           "processes": []
         }
       ],
-      "cpu_util": 1.4,
+      "cpu_util": 0.8,
       "error": null
     }
   ],
-  "last_updated": "2026-02-24T18:58:01.072160Z"
+  "last_updated": "2026-02-24T18:59:01.506539Z"
 }
