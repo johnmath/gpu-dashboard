@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 4.5,
+      "cpu_util": 5.7,
       "error": null
     },
     {
@@ -104,16 +104,16 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 52213,
+          "mem_used": 45237,
           "mem_total": 95830,
-          "util": 98,
+          "util": 43,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "3425018",
               "name": "python",
               "user": "shuyilin",
-              "mem": 38428,
+              "mem": 34456,
               "time": "N/A"
             },
             {
@@ -143,7 +143,7 @@
         },
         {
           "index": 3,
-          "mem_used": 31698,
+          "mem_used": 31988,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
@@ -152,13 +152,13 @@
               "pid": "2841336",
               "name": "python",
               "user": "luzsun",
-              "mem": 31688,
+              "mem": 31978,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 2.5,
+      "cpu_util": 21.5,
       "error": null
     },
     {
@@ -166,16 +166,23 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 12900,
+          "mem_used": 24408,
           "mem_total": 49140,
-          "util": 97,
+          "util": 100,
           "name": "NVIDIA RTX A6000",
           "processes": [
             {
               "pid": "2871729",
               "name": "python",
               "user": "luzsun",
-              "mem": 12890,
+              "mem": 11948,
+              "time": "N/A"
+            },
+            {
+              "pid": "2873773",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 12444,
               "time": "N/A"
             }
           ]
@@ -193,5 +200,5 @@
       "error": null
     }
   ],
-  "last_updated": "2026-02-25T06:22:01.714850Z"
+  "last_updated": "2026-02-25T06:23:01.177232Z"
 }
