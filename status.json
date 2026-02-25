@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 2.1,
+      "cpu_util": 4.8,
       "error": null
     },
     {
@@ -106,9 +106,9 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 87692,
+          "mem_used": 88507,
           "mem_total": 95830,
-          "util": 0,
+          "util": 98,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -117,12 +117,19 @@
               "user": "aglc",
               "mem": 87680,
               "time": "N/A"
+            },
+            {
+              "pid": "3921591",
+              "name": "/home/aglc/rfcllm/.venv/bin/python3",
+              "user": "aglc",
+              "mem": 810,
+              "time": "N/A"
             }
           ]
         },
         {
           "index": 1,
-          "mem_used": 72979,
+          "mem_used": 73667,
           "mem_total": 95830,
           "util": 100,
           "name": "NVIDIA H100 NVL",
@@ -131,14 +138,14 @@
               "pid": "3901788",
               "name": "python",
               "user": "luzsun",
-              "mem": 36240,
+              "mem": 36234,
               "time": "N/A"
             },
             {
               "pid": "3913532",
               "name": "python",
               "user": "luzsun",
-              "mem": 36724,
+              "mem": 37418,
               "time": "N/A"
             }
           ]
@@ -147,7 +154,7 @@
           "index": 2,
           "mem_used": 87692,
           "mem_total": 95830,
-          "util": 0,
+          "util": 98,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -161,22 +168,22 @@
         },
         {
           "index": 3,
-          "mem_used": 61298,
+          "mem_used": 61246,
           "mem_total": 95830,
-          "util": 43,
+          "util": 28,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "3687490",
               "name": "python",
               "user": "luzsun",
-              "mem": 62774,
+              "mem": 61236,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 4.5,
+      "cpu_util": 5.8,
       "error": null
     },
     {
@@ -219,5 +226,5 @@
       "error": null
     }
   ],
-  "last_updated": "2026-02-25T21:16:01.923273Z"
+  "last_updated": "2026-02-25T21:17:01.230346Z"
 }
