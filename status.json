@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 11.5,
+      "cpu_util": 5.6,
       "error": null
     },
     {
@@ -113,16 +113,30 @@
         },
         {
           "index": 1,
-          "mem_used": 42040,
+          "mem_used": 75779,
           "mem_total": 95830,
-          "util": 99,
+          "util": 100,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "502515",
               "name": "python",
               "user": "luzsun",
-              "mem": 42030,
+              "mem": 38382,
+              "time": "N/A"
+            },
+            {
+              "pid": "506637",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 35662,
+              "time": "N/A"
+            },
+            {
+              "pid": "508107",
+              "name": "/home/luzsun/miniconda3/envs/paper2slides/bin/python3.12",
+              "user": "luzsun",
+              "mem": 1714,
               "time": "N/A"
             }
           ]
@@ -131,7 +145,7 @@
           "index": 2,
           "mem_used": 87694,
           "mem_total": 95830,
-          "util": 97,
+          "util": 98,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -147,7 +161,7 @@
           "index": 3,
           "mem_used": 3018,
           "mem_total": 95830,
-          "util": 29,
+          "util": 19,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -160,7 +174,7 @@
           ]
         }
       ],
-      "cpu_util": 8.3,
+      "cpu_util": 8.7,
       "error": null
     },
     {
@@ -176,16 +190,16 @@
         },
         {
           "index": 1,
-          "mem_used": 18826,
+          "mem_used": 19954,
           "mem_total": 49140,
-          "util": 97,
+          "util": 98,
           "name": "NVIDIA RTX A6000",
           "processes": [
             {
               "pid": "3240328",
               "name": "python",
               "user": "luzsun",
-              "mem": 18816,
+              "mem": 19944,
               "time": "N/A"
             }
           ]
@@ -195,5 +209,5 @@
       "error": null
     }
   ],
-  "last_updated": "2026-02-26T19:10:01.531285Z"
+  "last_updated": "2026-02-26T19:11:01.172708Z"
 }
