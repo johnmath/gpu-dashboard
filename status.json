@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 5.9,
+      "cpu_util": 9.9,
       "error": null
     },
     {
@@ -43,7 +43,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 5.4,
+      "cpu_util": 2.3,
       "error": null
     },
     {
@@ -66,7 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 5.4,
+      "cpu_util": 2.3,
       "error": null
     },
     {
@@ -97,7 +97,7 @@
         },
         {
           "index": 1,
-          "mem_used": 63289,
+          "mem_used": 72977,
           "mem_total": 95830,
           "util": 100,
           "name": "NVIDIA H100 NVL",
@@ -106,14 +106,14 @@
               "pid": "438283",
               "name": "python",
               "user": "luzsun",
-              "mem": 36724,
+              "mem": 36240,
               "time": "N/A"
             },
             {
               "pid": "445872",
               "name": "python",
               "user": "luzsun",
-              "mem": 26550,
+              "mem": 36722,
               "time": "N/A"
             }
           ]
@@ -136,16 +136,47 @@
         },
         {
           "index": 3,
-          "mem_used": 4575,
+          "mem_used": 8281,
           "mem_total": 95830,
-          "util": 0,
+          "util": 32,
           "name": "NVIDIA H100 NVL",
+          "processes": [
+            {
+              "pid": "455710",
+              "name": "/home/ethanr/lerobot/.venv/bin/python3",
+              "user": "ethanr",
+              "mem": 8266,
+              "time": "N/A"
+            }
+          ]
+        }
+      ],
+      "cpu_util": 8.4,
+      "error": null
+    },
+    {
+      "name": "achtung-dome",
+      "gpus": [
+        {
+          "index": 0,
+          "mem_used": 3,
+          "mem_total": 12288,
+          "util": 0,
+          "name": "NVIDIA TITAN X (Pascal)",
+          "processes": []
+        },
+        {
+          "index": 1,
+          "mem_used": 3,
+          "mem_total": 12288,
+          "util": 0,
+          "name": "NVIDIA TITAN X (Pascal)",
           "processes": []
         }
       ],
-      "cpu_util": 5.8,
+      "cpu_util": 2.3,
       "error": null
     }
   ],
-  "last_updated": "2026-02-26T18:00:01.241228Z"
+  "last_updated": "2026-02-26T18:01:01.809341Z"
 }
