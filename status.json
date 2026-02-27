@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 10.6,
+      "cpu_util": 8.6,
       "error": null
     },
     {
@@ -55,34 +55,26 @@
       "error": null
     },
     {
-      "name": "achtung-biggpu",
+      "name": "achtung-dome",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 20610,
-          "mem_total": 49140,
-          "util": 98,
-          "name": "NVIDIA RTX A6000",
-          "processes": [
-            {
-              "pid": "3434788",
-              "name": "python",
-              "user": "luzsun",
-              "mem": 20600,
-              "time": "N/A"
-            }
-          ]
+          "mem_used": 3,
+          "mem_total": 12288,
+          "util": 0,
+          "name": "NVIDIA TITAN X (Pascal)",
+          "processes": []
         },
         {
           "index": 1,
-          "mem_used": 2,
-          "mem_total": 49140,
+          "mem_used": 3,
+          "mem_total": 12288,
           "util": 0,
-          "name": "NVIDIA RTX A6000",
+          "name": "NVIDIA TITAN X (Pascal)",
           "processes": []
         }
       ],
-      "cpu_util": 1.4,
+      "cpu_util": 4.4,
       "error": null
     },
     {
@@ -106,23 +98,16 @@
         },
         {
           "index": 1,
-          "mem_used": 75257,
+          "mem_used": 35014,
           "mem_total": 95830,
-          "util": 100,
+          "util": 99,
           "name": "NVIDIA H100 NVL",
           "processes": [
-            {
-              "pid": "1766305",
-              "name": "python",
-              "user": "luzsun",
-              "mem": 36338,
-              "time": "N/A"
-            },
             {
               "pid": "1791802",
               "name": "python",
               "user": "luzsun",
-              "mem": 39352,
+              "mem": 35004,
               "time": "N/A"
             }
           ]
@@ -167,7 +152,7 @@
           ]
         }
       ],
-      "cpu_util": 7.4,
+      "cpu_util": 6.9,
       "error": null
     },
     {
@@ -202,5 +187,5 @@
       "error": null
     }
   ],
-  "last_updated": "2026-02-27T19:44:01.858224Z"
+  "last_updated": "2026-02-27T19:45:01.150093Z"
 }
