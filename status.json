@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 5.0,
+      "cpu_util": 11.2,
       "error": null
     },
     {
@@ -43,7 +43,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 0.3,
+      "cpu_util": 2.5,
       "error": null
     },
     {
@@ -66,7 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 0.3,
+      "cpu_util": 2.5,
       "error": null
     },
     {
@@ -90,11 +90,19 @@
         },
         {
           "index": 1,
-          "mem_used": 4,
+          "mem_used": 5488,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "1658725",
+              "name": "/home/ethanr/lerobot/.venv/bin/python3",
+              "user": "ethanr",
+              "mem": 5478,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 2,
@@ -116,7 +124,7 @@
           "index": 3,
           "mem_used": 81281,
           "mem_total": 95830,
-          "util": 99,
+          "util": 100,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -136,7 +144,7 @@
           ]
         }
       ],
-      "cpu_util": 3.9,
+      "cpu_util": 5.8,
       "error": null
     },
     {
@@ -159,9 +167,9 @@
           "processes": []
         }
       ],
-      "cpu_util": 0.3,
+      "cpu_util": 2.5,
       "error": null
     }
   ],
-  "last_updated": "2026-02-27T16:05:01.099131Z"
+  "last_updated": "2026-02-27T16:06:01.557689Z"
 }
