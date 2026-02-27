@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 6.7,
+      "cpu_util": 11.0,
       "error": null
     },
     {
@@ -43,7 +43,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 2.3,
+      "cpu_util": 2.2,
       "error": null
     },
     {
@@ -66,7 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 2.3,
+      "cpu_util": 2.5,
       "error": null
     },
     {
@@ -76,7 +76,7 @@
           "index": 0,
           "mem_used": 88509,
           "mem_total": 95830,
-          "util": 97,
+          "util": 98,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -97,9 +97,9 @@
         },
         {
           "index": 1,
-          "mem_used": 36348,
+          "mem_used": 65095,
           "mem_total": 95830,
-          "util": 98,
+          "util": 100,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -108,6 +108,13 @@
               "user": "luzsun",
               "mem": 36338,
               "time": "N/A"
+            },
+            {
+              "pid": "840943",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 28742,
+              "time": "N/A"
             }
           ]
         },
@@ -115,7 +122,7 @@
           "index": 2,
           "mem_used": 87694,
           "mem_total": 95830,
-          "util": 97,
+          "util": 98,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -129,7 +136,7 @@
         },
         {
           "index": 3,
-          "mem_used": 81111,
+          "mem_used": 81115,
           "mem_total": 95830,
           "util": 100,
           "name": "NVIDIA H100 NVL",
@@ -138,20 +145,20 @@
               "pid": "837625",
               "name": "/home/shuyilin/miniconda3/envs/JO/bin/python",
               "user": "shuyilin",
-              "mem": 36670,
+              "mem": 36672,
               "time": "N/A"
             },
             {
               "pid": "838550",
               "name": "VLLM::EngineCore",
               "user": "shuyilin",
-              "mem": 44426,
+              "mem": 44428,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 5.6,
+      "cpu_util": 5.7,
       "error": null
     },
     {
@@ -174,9 +181,9 @@
           "processes": []
         }
       ],
-      "cpu_util": 2.3,
+      "cpu_util": 2.2,
       "error": null
     }
   ],
-  "last_updated": "2026-02-27T00:18:01.035824Z"
+  "last_updated": "2026-02-27T00:19:01.496469Z"
 }
