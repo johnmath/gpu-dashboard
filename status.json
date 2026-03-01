@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 5.4,
+      "cpu_util": 11.2,
       "error": null
     },
     {
@@ -43,7 +43,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 0.3,
+      "cpu_util": 0.2,
       "error": null
     },
     {
@@ -66,7 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 0.3,
+      "cpu_util": 0.2,
       "error": null
     },
     {
@@ -90,38 +90,53 @@
         },
         {
           "index": 1,
-          "mem_used": 62560,
+          "mem_used": 62286,
           "mem_total": 95830,
-          "util": 6,
+          "util": 37,
           "name": "NVIDIA H100 NVL",
           "processes": []
         },
         {
           "index": 2,
-          "mem_used": 66220,
+          "mem_used": 66008,
           "mem_total": 95830,
-          "util": 42,
+          "util": 40,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "3416858",
               "name": "python",
               "user": "luzsun",
-              "mem": 66208,
+              "mem": 65996,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 3,
-          "mem_used": 4,
+          "mem_used": 38197,
           "mem_total": 95830,
-          "util": 0,
+          "util": 51,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "3483573",
+              "name": "/home/shuyilin/miniconda3/envs/JO/bin/python",
+              "user": "shuyilin",
+              "mem": 8082,
+              "time": "N/A"
+            },
+            {
+              "pid": "3484325",
+              "name": "VLLM::EngineCore",
+              "user": "shuyilin",
+              "mem": 30100,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 5.1,
+      "cpu_util": 6.2,
       "error": null
     },
     {
@@ -144,9 +159,9 @@
           "processes": []
         }
       ],
-      "cpu_util": 0.3,
+      "cpu_util": 0.2,
       "error": null
     }
   ],
-  "last_updated": "2026-03-01T21:07:01.383527Z"
+  "last_updated": "2026-03-01T21:08:01.804578Z"
 }
