@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 10.1,
+      "cpu_util": 7.1,
       "error": null
     },
     {
@@ -43,7 +43,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 4.7,
+      "cpu_util": 5.5,
       "error": null
     },
     {
@@ -66,7 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 4.7,
+      "cpu_util": 5.5,
       "error": null
     },
     {
@@ -76,7 +76,7 @@
           "index": 0,
           "mem_used": 15748,
           "mem_total": 95830,
-          "util": 96,
+          "util": 0,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -90,7 +90,7 @@
         },
         {
           "index": 1,
-          "mem_used": 43131,
+          "mem_used": 43201,
           "mem_total": 95830,
           "util": 100,
           "name": "NVIDIA H100 NVL",
@@ -99,21 +99,14 @@
               "pid": "3013238",
               "name": "python",
               "user": "luzsun",
-              "mem": 21572,
-              "time": "N/A"
-            },
-            {
-              "pid": "3018826",
-              "name": "python",
-              "user": "luzsun",
-              "mem": 12700,
+              "mem": 35004,
               "time": "N/A"
             },
             {
               "pid": "3019234",
               "name": "python",
               "user": "luzsun",
-              "mem": 8838,
+              "mem": 8182,
               "time": "N/A"
             }
           ]
@@ -143,22 +136,29 @@
         },
         {
           "index": 3,
-          "mem_used": 24544,
+          "mem_used": 78863,
           "mem_total": 95830,
-          "util": 2,
+          "util": 100,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "3025540",
               "name": "python",
               "user": "shuyilin",
-              "mem": 25106,
+              "mem": 39246,
+              "time": "N/A"
+            },
+            {
+              "pid": "3026389",
+              "name": "VLLM::EngineCore",
+              "user": "shuyilin",
+              "mem": 39602,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 17.5,
+      "cpu_util": 10.1,
       "error": null
     },
     {
@@ -201,5 +201,5 @@
       "error": null
     }
   ],
-  "last_updated": "2026-03-01T05:13:01.525036Z"
+  "last_updated": "2026-03-01T05:14:01.908474Z"
 }
