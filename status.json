@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 5.9,
+      "cpu_util": 8.4,
       "error": null
     },
     {
@@ -90,7 +90,7 @@
         },
         {
           "index": 1,
-          "mem_used": 30303,
+          "mem_used": 33827,
           "mem_total": 95830,
           "util": 100,
           "name": "NVIDIA H100 NVL",
@@ -99,14 +99,14 @@
               "pid": "2949933",
               "name": "python",
               "user": "luzsun",
-              "mem": 21336,
+              "mem": 21112,
               "time": "N/A"
             },
             {
               "pid": "2949823",
               "name": "python",
               "user": "luzsun",
-              "mem": 8952,
+              "mem": 12700,
               "time": "N/A"
             }
           ]
@@ -143,7 +143,7 @@
           ]
         }
       ],
-      "cpu_util": 6.5,
+      "cpu_util": 6.6,
       "error": null
     },
     {
@@ -151,32 +151,40 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 8068,
+          "mem_used": 12224,
           "mem_total": 49140,
-          "util": 77,
+          "util": 100,
           "name": "NVIDIA RTX A6000",
           "processes": [
             {
               "pid": "3760688",
               "name": "python",
               "user": "luzsun",
-              "mem": 8058,
+              "mem": 12214,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 1,
-          "mem_used": 5,
+          "mem_used": 8092,
           "mem_total": 49140,
-          "util": 0,
+          "util": 71,
           "name": "NVIDIA RTX A6000",
-          "processes": []
+          "processes": [
+            {
+              "pid": "3762615",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 8082,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 2.5,
+      "cpu_util": 2.6,
       "error": null
     }
   ],
-  "last_updated": "2026-03-01T03:42:01.142136Z"
+  "last_updated": "2026-03-01T03:43:01.517345Z"
 }
