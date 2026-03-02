@@ -20,18 +20,18 @@
           "processes": []
         }
       ],
-      "cpu_util": 5.5,
+      "cpu_util": 9.9,
       "error": null
     },
     {
-      "name": "achtung-dome",
+      "name": "achtung-hood",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 3,
+          "mem_used": 2,
           "mem_total": 12288,
           "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
+          "name": "NVIDIA GeForce GTX TITAN X",
           "processes": []
         },
         {
@@ -41,6 +41,92 @@
           "util": 0,
           "name": "NVIDIA TITAN X (Pascal)",
           "processes": []
+        }
+      ],
+      "cpu_util": 2.3,
+      "error": null
+    },
+    {
+      "name": "achtung-biggpu",
+      "gpus": [
+        {
+          "index": 0,
+          "mem_used": 2,
+          "mem_total": 49140,
+          "util": 0,
+          "name": "NVIDIA RTX A6000",
+          "processes": []
+        },
+        {
+          "index": 1,
+          "mem_used": 2,
+          "mem_total": 49140,
+          "util": 0,
+          "name": "NVIDIA RTX A6000",
+          "processes": []
+        }
+      ],
+      "cpu_util": 0.4,
+      "error": null
+    },
+    {
+      "name": "achtung-gamma",
+      "gpus": [
+        {
+          "index": 0,
+          "mem_used": 15748,
+          "mem_total": 95830,
+          "util": 62,
+          "name": "NVIDIA H100 NVL",
+          "processes": [
+            {
+              "pid": "1736125",
+              "name": "/home/ethanr/lerobot/.venv/bin/python3",
+              "user": "ethanr",
+              "mem": 15736,
+              "time": "N/A"
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "mem_used": 4,
+          "mem_total": 95830,
+          "util": 0,
+          "name": "NVIDIA H100 NVL",
+          "processes": []
+        },
+        {
+          "index": 2,
+          "mem_used": 36272,
+          "mem_total": 95830,
+          "util": 95,
+          "name": "NVIDIA H100 NVL",
+          "processes": [
+            {
+              "pid": "42599",
+              "name": "python",
+              "user": "saefurukawa",
+              "mem": 36260,
+              "time": "N/A"
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "mem_used": 34050,
+          "mem_total": 95830,
+          "util": 89,
+          "name": "NVIDIA H100 NVL",
+          "processes": [
+            {
+              "pid": "49480",
+              "name": "python",
+              "user": "saefurukawa",
+              "mem": 34040,
+              "time": "N/A"
+            }
+          ]
         }
       ],
       "cpu_util": 4.3,
@@ -66,95 +152,9 @@
           "processes": []
         }
       ],
-      "cpu_util": 0.2,
-      "error": null
-    },
-    {
-      "name": "achtung-gamma",
-      "gpus": [
-        {
-          "index": 0,
-          "mem_used": 15748,
-          "mem_total": 95830,
-          "util": 99,
-          "name": "NVIDIA H100 NVL",
-          "processes": [
-            {
-              "pid": "1736125",
-              "name": "/home/ethanr/lerobot/.venv/bin/python3",
-              "user": "ethanr",
-              "mem": 15736,
-              "time": "N/A"
-            }
-          ]
-        },
-        {
-          "index": 1,
-          "mem_used": 4,
-          "mem_total": 95830,
-          "util": 0,
-          "name": "NVIDIA H100 NVL",
-          "processes": []
-        },
-        {
-          "index": 2,
-          "mem_used": 36272,
-          "mem_total": 95830,
-          "util": 97,
-          "name": "NVIDIA H100 NVL",
-          "processes": [
-            {
-              "pid": "42599",
-              "name": "python",
-              "user": "saefurukawa",
-              "mem": 36260,
-              "time": "N/A"
-            }
-          ]
-        },
-        {
-          "index": 3,
-          "mem_used": 34050,
-          "mem_total": 95830,
-          "util": 95,
-          "name": "NVIDIA H100 NVL",
-          "processes": [
-            {
-              "pid": "49480",
-              "name": "python",
-              "user": "saefurukawa",
-              "mem": 34040,
-              "time": "N/A"
-            }
-          ]
-        }
-      ],
-      "cpu_util": 13.7,
-      "error": null
-    },
-    {
-      "name": "achtung-biggpu",
-      "gpus": [
-        {
-          "index": 0,
-          "mem_used": 2,
-          "mem_total": 49140,
-          "util": 0,
-          "name": "NVIDIA RTX A6000",
-          "processes": []
-        },
-        {
-          "index": 1,
-          "mem_used": 2,
-          "mem_total": 49140,
-          "util": 0,
-          "name": "NVIDIA RTX A6000",
-          "processes": []
-        }
-      ],
-      "cpu_util": 0.2,
+      "cpu_util": 0.4,
       "error": null
     }
   ],
-  "last_updated": "2026-03-02T14:10:01.150028Z"
+  "last_updated": "2026-03-02T14:11:01.723773Z"
 }
