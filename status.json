@@ -20,30 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 13.0,
-      "error": null
-    },
-    {
-      "name": "achtung-hood",
-      "gpus": [
-        {
-          "index": 0,
-          "mem_used": 2,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA GeForce GTX TITAN X",
-          "processes": []
-        },
-        {
-          "index": 1,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
-        }
-      ],
-      "cpu_util": 2.7,
+      "cpu_util": 11.0,
       "error": null
     },
     {
@@ -51,30 +28,77 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 5,
+          "mem_used": 26660,
           "mem_total": 49140,
-          "util": 0,
+          "util": 99,
           "name": "NVIDIA RTX A6000",
-          "processes": []
+          "processes": [
+            {
+              "pid": "4097409",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 26650,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 1,
-          "mem_used": 21944,
+          "mem_used": 18036,
           "mem_total": 49140,
-          "util": 100,
+          "util": 96,
           "name": "NVIDIA RTX A6000",
           "processes": [
             {
               "pid": "4097003",
               "name": "python",
               "user": "luzsun",
-              "mem": 21934,
+              "mem": 18026,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 2.2,
+      "cpu_util": 2.8,
+      "error": null
+    },
+    {
+      "name": "achtung-biggpu",
+      "gpus": [
+        {
+          "index": 0,
+          "mem_used": 26660,
+          "mem_total": 49140,
+          "util": 99,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "4097409",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 26650,
+              "time": "N/A"
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "mem_used": 18036,
+          "mem_total": 49140,
+          "util": 96,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "4097003",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 18026,
+              "time": "N/A"
+            }
+          ]
+        }
+      ],
+      "cpu_util": 2.8,
       "error": null
     },
     {
@@ -82,7 +106,7 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 48697,
+          "mem_used": 51085,
           "mem_total": 95830,
           "util": 100,
           "name": "NVIDIA H100 NVL",
@@ -95,24 +119,24 @@
               "time": "N/A"
             },
             {
-              "pid": "585310",
-              "name": "/home/aglc/rfcllm/.venv/bin/python3",
-              "user": "aglc",
-              "mem": 810,
-              "time": "N/A"
-            },
-            {
               "pid": "585759",
               "name": "python",
               "user": "luzsun",
-              "mem": 32128,
+              "mem": 36630,
+              "time": "N/A"
+            },
+            {
+              "pid": "587508",
+              "name": "/home/aglc/rfcllm/.venv/bin/python3",
+              "user": "aglc",
+              "mem": 810,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 1,
-          "mem_used": 87761,
+          "mem_used": 76721,
           "mem_total": 95830,
           "util": 100,
           "name": "NVIDIA H100 NVL",
@@ -121,14 +145,14 @@
               "pid": "579899",
               "name": "python",
               "user": "luzsun",
-              "mem": 44040,
+              "mem": 44042,
               "time": "N/A"
             },
             {
               "pid": "580792",
               "name": "python",
               "user": "luzsun",
-              "mem": 43706,
+              "mem": 32664,
               "time": "N/A"
             }
           ]
@@ -166,7 +190,7 @@
           ]
         }
       ],
-      "cpu_util": 9.0,
+      "cpu_util": 9.4,
       "error": null
     },
     {
@@ -174,32 +198,40 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 5,
+          "mem_used": 26660,
           "mem_total": 49140,
-          "util": 0,
+          "util": 99,
           "name": "NVIDIA RTX A6000",
-          "processes": []
+          "processes": [
+            {
+              "pid": "4097409",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 26650,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 1,
-          "mem_used": 21944,
+          "mem_used": 18036,
           "mem_total": 49140,
-          "util": 100,
+          "util": 96,
           "name": "NVIDIA RTX A6000",
           "processes": [
             {
               "pid": "4097003",
               "name": "python",
               "user": "luzsun",
-              "mem": 21934,
+              "mem": 18026,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 2.2,
+      "cpu_util": 2.8,
       "error": null
     }
   ],
-  "last_updated": "2026-03-03T02:01:01.390280Z"
+  "last_updated": "2026-03-03T02:02:01.038256Z"
 }
