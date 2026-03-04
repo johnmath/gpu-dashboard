@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 19.6,
+      "cpu_util": 15.1,
       "error": null
     },
     {
@@ -43,7 +43,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 6.6,
+      "cpu_util": 2.8,
       "error": null
     },
     {
@@ -66,7 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 6.6,
+      "cpu_util": 2.8,
       "error": null
     },
     {
@@ -74,24 +74,32 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 4,
+          "mem_used": 29724,
           "mem_total": 95830,
-          "util": 0,
+          "util": 98,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "1766620",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 29714,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 1,
-          "mem_used": 19086,
+          "mem_used": 23906,
           "mem_total": 95830,
-          "util": 97,
+          "util": 98,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "1763476",
               "name": "python",
               "user": "luzsun",
-              "mem": 19076,
+              "mem": 23896,
               "time": "N/A"
             }
           ]
@@ -100,7 +108,7 @@
           "index": 2,
           "mem_used": 51174,
           "mem_total": 95830,
-          "util": 75,
+          "util": 86,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -121,7 +129,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 3.7,
+      "cpu_util": 3.8,
       "error": null
     },
     {
@@ -131,7 +139,7 @@
           "index": 0,
           "mem_used": 27982,
           "mem_total": 49140,
-          "util": 56,
+          "util": 57,
           "name": "NVIDIA RTX A6000",
           "processes": [
             {
@@ -156,5 +164,5 @@
       "error": null
     }
   ],
-  "last_updated": "2026-03-04T09:22:01.580727Z"
+  "last_updated": "2026-03-04T09:23:01.053928Z"
 }
