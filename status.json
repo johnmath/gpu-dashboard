@@ -20,18 +20,18 @@
           "processes": []
         }
       ],
-      "cpu_util": 12.3,
+      "cpu_util": 7.3,
       "error": null
     },
     {
-      "name": "achtung-dome",
+      "name": "achtung-hood",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 3,
+          "mem_used": 2,
           "mem_total": 12288,
           "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
+          "name": "NVIDIA GeForce GTX TITAN X",
           "processes": []
         },
         {
@@ -43,30 +43,46 @@
           "processes": []
         }
       ],
-      "cpu_util": 3.2,
+      "cpu_util": 2.6,
       "error": null
     },
     {
-      "name": "achtung-dome",
+      "name": "achtung-biggpu",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
+          "mem_used": 16772,
+          "mem_total": 49140,
+          "util": 97,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "703035",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 16762,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 1,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
+          "mem_used": 17530,
+          "mem_total": 49140,
+          "util": 96,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "702126",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 17520,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 3.2,
+      "cpu_util": 2.1,
       "error": null
     },
     {
@@ -113,23 +129,23 @@
         },
         {
           "index": 2,
-          "mem_used": 56373,
+          "mem_used": 54983,
           "mem_total": 95830,
-          "util": 43,
+          "util": 100,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "3057726",
               "name": "python",
               "user": "luzsun",
-              "mem": 28146,
+              "mem": 27258,
               "time": "N/A"
             },
             {
               "pid": "3063681",
               "name": "python",
               "user": "luzsun",
-              "mem": 28212,
+              "mem": 27710,
               "time": "N/A"
             }
           ]
@@ -138,7 +154,7 @@
           "index": 3,
           "mem_used": 87694,
           "mem_total": 95830,
-          "util": 98,
+          "util": 97,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -151,32 +167,48 @@
           ]
         }
       ],
-      "cpu_util": 5.1,
+      "cpu_util": 3.5,
       "error": null
     },
     {
-      "name": "achtung-dome",
+      "name": "achtung-biggpu",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
+          "mem_used": 16772,
+          "mem_total": 49140,
+          "util": 97,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "703035",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 16762,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 1,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
+          "mem_used": 17530,
+          "mem_total": 49140,
+          "util": 96,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "702126",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 17520,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 3.2,
+      "cpu_util": 2.1,
       "error": null
     }
   ],
-  "last_updated": "2026-03-05T19:06:01.482393Z"
+  "last_updated": "2026-03-05T19:07:01.973546Z"
 }
