@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 16.4,
+      "cpu_util": 24.6,
       "error": null
     },
     {
@@ -43,7 +43,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 2.4,
+      "cpu_util": 6.0,
       "error": null
     },
     {
@@ -66,7 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 2.4,
+      "cpu_util": 6.0,
       "error": null
     },
     {
@@ -74,9 +74,9 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 15537,
+          "mem_used": 39732,
           "mem_total": 95830,
-          "util": 50,
+          "util": 100,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -91,6 +91,20 @@
               "name": "/home/aglc/rfcllm/.venv/bin/python3",
               "user": "aglc",
               "mem": 810,
+              "time": "N/A"
+            },
+            {
+              "pid": "2459745",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 11526,
+              "time": "N/A"
+            },
+            {
+              "pid": "2459864",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 12658,
               "time": "N/A"
             }
           ]
@@ -113,7 +127,7 @@
         },
         {
           "index": 2,
-          "mem_used": 65549,
+          "mem_used": 60155,
           "mem_total": 95830,
           "util": 100,
           "name": "NVIDIA H100 NVL",
@@ -129,7 +143,7 @@
               "pid": "2455381",
               "name": "python",
               "user": "luzsun",
-              "mem": 29200,
+              "mem": 23806,
               "time": "N/A"
             }
           ]
@@ -151,7 +165,7 @@
           ]
         }
       ],
-      "cpu_util": 6.8,
+      "cpu_util": 6.5,
       "error": null
     },
     {
@@ -174,9 +188,9 @@
           "processes": []
         }
       ],
-      "cpu_util": 2.4,
+      "cpu_util": 6.0,
       "error": null
     }
   ],
-  "last_updated": "2026-03-05T03:20:01.130767Z"
+  "last_updated": "2026-03-05T03:21:01.661008Z"
 }
