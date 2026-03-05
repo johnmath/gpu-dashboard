@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 13.7,
+      "cpu_util": 12.7,
       "error": null
     },
     {
@@ -106,9 +106,9 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 820,
+          "mem_used": 28029,
           "mem_total": 95830,
-          "util": 0,
+          "util": 1,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -116,6 +116,13 @@
               "name": "/home/aglc/rfcllm/.venv/bin/python3",
               "user": "aglc",
               "mem": 810,
+              "time": "N/A"
+            },
+            {
+              "pid": "2560721",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 27204,
               "time": "N/A"
             }
           ]
@@ -176,7 +183,7 @@
           ]
         }
       ],
-      "cpu_util": 5.6,
+      "cpu_util": 5.2,
       "error": null
     },
     {
@@ -184,40 +191,40 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 9174,
+          "mem_used": 8182,
           "mem_total": 49140,
-          "util": 72,
+          "util": 57,
           "name": "NVIDIA RTX A6000",
           "processes": [
             {
               "pid": "571942",
               "name": "python",
               "user": "luzsun",
-              "mem": 9164,
+              "mem": 8172,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 1,
-          "mem_used": 7222,
+          "mem_used": 12334,
           "mem_total": 49140,
-          "util": 47,
+          "util": 81,
           "name": "NVIDIA RTX A6000",
           "processes": [
             {
               "pid": "570978",
               "name": "python",
               "user": "luzsun",
-              "mem": 7212,
+              "mem": 12324,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 3.5,
+      "cpu_util": 2.2,
       "error": null
     }
   ],
-  "last_updated": "2026-03-05T05:27:01.681393Z"
+  "last_updated": "2026-03-05T05:28:01.149422Z"
 }
