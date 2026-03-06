@@ -20,85 +20,53 @@
           "processes": []
         }
       ],
-      "cpu_util": 8.9,
+      "cpu_util": 7.0,
       "error": null
     },
     {
-      "name": "achtung-biggpu",
+      "name": "achtung-hood",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 28150,
-          "mem_total": 49140,
-          "util": 98,
-          "name": "NVIDIA RTX A6000",
-          "processes": [
-            {
-              "pid": "784194",
-              "name": "python",
-              "user": "luzsun",
-              "mem": 28140,
-              "time": "N/A"
-            }
-          ]
+          "mem_used": 2,
+          "mem_total": 12288,
+          "util": 0,
+          "name": "NVIDIA GeForce GTX TITAN X",
+          "processes": []
         },
         {
           "index": 1,
-          "mem_used": 21666,
-          "mem_total": 49140,
-          "util": 98,
-          "name": "NVIDIA RTX A6000",
-          "processes": [
-            {
-              "pid": "780786",
-              "name": "python",
-              "user": "luzsun",
-              "mem": 21656,
-              "time": "N/A"
-            }
-          ]
+          "mem_used": 3,
+          "mem_total": 12288,
+          "util": 0,
+          "name": "NVIDIA TITAN X (Pascal)",
+          "processes": []
         }
       ],
-      "cpu_util": 3.1,
+      "cpu_util": 2.3,
       "error": null
     },
     {
-      "name": "achtung-biggpu",
+      "name": "achtung-hood",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 28150,
-          "mem_total": 49140,
-          "util": 98,
-          "name": "NVIDIA RTX A6000",
-          "processes": [
-            {
-              "pid": "784194",
-              "name": "python",
-              "user": "luzsun",
-              "mem": 28140,
-              "time": "N/A"
-            }
-          ]
+          "mem_used": 2,
+          "mem_total": 12288,
+          "util": 0,
+          "name": "NVIDIA GeForce GTX TITAN X",
+          "processes": []
         },
         {
           "index": 1,
-          "mem_used": 21666,
-          "mem_total": 49140,
-          "util": 98,
-          "name": "NVIDIA RTX A6000",
-          "processes": [
-            {
-              "pid": "780786",
-              "name": "python",
-              "user": "luzsun",
-              "mem": 21656,
-              "time": "N/A"
-            }
-          ]
+          "mem_used": 3,
+          "mem_total": 12288,
+          "util": 0,
+          "name": "NVIDIA TITAN X (Pascal)",
+          "processes": []
         }
       ],
-      "cpu_util": 3.1,
+      "cpu_util": 2.3,
       "error": null
     },
     {
@@ -106,17 +74,25 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 4,
+          "mem_used": 820,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "3342478",
+              "name": "/home/aglc/rfcllm/.venv/bin/python3",
+              "user": "aglc",
+              "mem": 810,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 1,
           "mem_used": 87694,
           "mem_total": 95830,
-          "util": 0,
+          "util": 98,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -130,7 +106,7 @@
         },
         {
           "index": 2,
-          "mem_used": 57283,
+          "mem_used": 50241,
           "mem_total": 95830,
           "util": 100,
           "name": "NVIDIA H100 NVL",
@@ -139,14 +115,14 @@
               "pid": "3333930",
               "name": "python",
               "user": "luzsun",
-              "mem": 24370,
+              "mem": 29536,
               "time": "N/A"
             },
             {
               "pid": "3337592",
               "name": "python",
               "user": "luzsun",
-              "mem": 32898,
+              "mem": 20690,
               "time": "N/A"
             }
           ]
@@ -155,7 +131,7 @@
           "index": 3,
           "mem_used": 87694,
           "mem_total": 95830,
-          "util": 0,
+          "util": 98,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -168,7 +144,7 @@
           ]
         }
       ],
-      "cpu_util": 4.7,
+      "cpu_util": 5.4,
       "error": null
     },
     {
@@ -211,5 +187,5 @@
       "error": null
     }
   ],
-  "last_updated": "2026-03-06T02:05:01.580580Z"
+  "last_updated": "2026-03-06T02:06:01.086951Z"
 }
