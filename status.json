@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 14.4,
+      "cpu_util": 6.5,
       "error": null
     },
     {
@@ -74,16 +74,23 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 38266,
+          "mem_used": 33661,
           "mem_total": 95830,
-          "util": 99,
+          "util": 98,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "4044835",
               "name": "python",
               "user": "luzsun",
-              "mem": 38256,
+              "mem": 33212,
+              "time": "N/A"
+            },
+            {
+              "pid": "4045991",
+              "name": "/home/aglc/rfcllm/.venv/bin/python3",
+              "user": "aglc",
+              "mem": 810,
               "time": "N/A"
             }
           ]
@@ -92,7 +99,7 @@
           "index": 1,
           "mem_used": 87694,
           "mem_total": 95830,
-          "util": 0,
+          "util": 98,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -106,7 +113,7 @@
         },
         {
           "index": 2,
-          "mem_used": 41010,
+          "mem_used": 46740,
           "mem_total": 95830,
           "util": 95,
           "name": "NVIDIA H100 NVL",
@@ -115,7 +122,7 @@
               "pid": "3813175",
               "name": "python",
               "user": "saefurukawa",
-              "mem": 41000,
+              "mem": 46730,
               "time": "N/A"
             }
           ]
@@ -124,7 +131,7 @@
           "index": 3,
           "mem_used": 87694,
           "mem_total": 95830,
-          "util": 0,
+          "util": 98,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -137,7 +144,7 @@
           ]
         }
       ],
-      "cpu_util": 4.0,
+      "cpu_util": 4.6,
       "error": null
     },
     {
@@ -180,5 +187,5 @@
       "error": null
     }
   ],
-  "last_updated": "2026-03-06T18:25:01.617709Z"
+  "last_updated": "2026-03-06T18:26:01.138218Z"
 }
