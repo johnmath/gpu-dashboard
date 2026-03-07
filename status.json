@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 6.8,
+      "cpu_util": 9.3,
       "error": null
     },
     {
@@ -90,19 +90,11 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 70078,
+          "mem_used": 4,
           "mem_total": 95830,
-          "util": 99,
+          "util": 0,
           "name": "NVIDIA H100 NVL",
-          "processes": [
-            {
-              "pid": "682530",
-              "name": "python",
-              "user": "luzsun",
-              "mem": 70068,
-              "time": "N/A"
-            }
-          ]
+          "processes": []
         },
         {
           "index": 1,
@@ -130,22 +122,29 @@
         },
         {
           "index": 3,
-          "mem_used": 29878,
+          "mem_used": 90087,
           "mem_total": 95830,
-          "util": 99,
+          "util": 100,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "713881",
               "name": "python",
               "user": "luzsun",
-              "mem": 29868,
+              "mem": 34384,
+              "time": "N/A"
+            },
+            {
+              "pid": "717014",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 55688,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 3.6,
+      "cpu_util": 4.1,
       "error": null
     },
     {
@@ -155,7 +154,7 @@
           "index": 0,
           "mem_used": 16994,
           "mem_total": 49140,
-          "util": 50,
+          "util": 57,
           "name": "NVIDIA RTX A6000",
           "processes": []
         },
@@ -163,7 +162,7 @@
           "index": 1,
           "mem_used": 18070,
           "mem_total": 49140,
-          "util": 53,
+          "util": 42,
           "name": "NVIDIA RTX A6000",
           "processes": [
             {
@@ -180,5 +179,5 @@
       "error": null
     }
   ],
-  "last_updated": "2026-03-07T23:30:01.326748Z"
+  "last_updated": "2026-03-07T23:31:01.733974Z"
 }
