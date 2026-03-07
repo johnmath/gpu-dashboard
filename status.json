@@ -20,7 +20,30 @@
           "processes": []
         }
       ],
-      "cpu_util": 11.0,
+      "cpu_util": 9.2,
+      "error": null
+    },
+    {
+      "name": "achtung-hood",
+      "gpus": [
+        {
+          "index": 0,
+          "mem_used": 2,
+          "mem_total": 12288,
+          "util": 0,
+          "name": "NVIDIA GeForce GTX TITAN X",
+          "processes": []
+        },
+        {
+          "index": 1,
+          "mem_used": 3,
+          "mem_total": 12288,
+          "util": 0,
+          "name": "NVIDIA TITAN X (Pascal)",
+          "processes": []
+        }
+      ],
+      "cpu_util": 2.5,
       "error": null
     },
     {
@@ -43,30 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 5.7,
-      "error": null
-    },
-    {
-      "name": "achtung-dome",
-      "gpus": [
-        {
-          "index": 0,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
-        },
-        {
-          "index": 1,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
-        }
-      ],
-      "cpu_util": 4.4,
+      "cpu_util": 4.9,
       "error": null
     },
     {
@@ -74,16 +74,16 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 68826,
+          "mem_used": 70010,
           "mem_total": 95830,
-          "util": 50,
+          "util": 99,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "656873",
               "name": "python",
               "user": "luzsun",
-              "mem": 68816,
+              "mem": 70000,
               "time": "N/A"
             }
           ]
@@ -121,7 +121,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 2.9,
+      "cpu_util": 2.7,
       "error": null
     },
     {
@@ -164,5 +164,5 @@
       "error": null
     }
   ],
-  "last_updated": "2026-03-07T22:21:01.772949Z"
+  "last_updated": "2026-03-07T22:22:01.073078Z"
 }
