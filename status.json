@@ -20,18 +20,49 @@
           "processes": []
         }
       ],
-      "cpu_util": 15.5,
+      "cpu_util": 20.1,
       "error": null
     },
     {
-      "name": "achtung-dome",
+      "name": "achtung-biggpu",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 3,
+          "mem_used": 9198,
+          "mem_total": 49140,
+          "util": 37,
+          "name": "NVIDIA RTX A6000",
+          "processes": []
+        },
+        {
+          "index": 1,
+          "mem_used": 9182,
+          "mem_total": 49140,
+          "util": 46,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "1241046",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 9172,
+              "time": "N/A"
+            }
+          ]
+        }
+      ],
+      "cpu_util": 2.3,
+      "error": null
+    },
+    {
+      "name": "achtung-hood",
+      "gpus": [
+        {
+          "index": 0,
+          "mem_used": 2,
           "mem_total": 12288,
           "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
+          "name": "NVIDIA GeForce GTX TITAN X",
           "processes": []
         },
         {
@@ -43,30 +74,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 0.7,
-      "error": null
-    },
-    {
-      "name": "achtung-dome",
-      "gpus": [
-        {
-          "index": 0,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
-        },
-        {
-          "index": 1,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
-        }
-      ],
-      "cpu_util": 0.7,
+      "cpu_util": 2.3,
       "error": null
     },
     {
@@ -74,11 +82,19 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 4,
+          "mem_used": 63820,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "1431183",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 69632,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 1,
@@ -121,7 +137,7 @@
         },
         {
           "index": 3,
-          "mem_used": 54811,
+          "mem_used": 58983,
           "mem_total": 95830,
           "util": 100,
           "name": "NVIDIA H100 NVL",
@@ -137,13 +153,13 @@
               "pid": "1430256",
               "name": "python",
               "user": "luzsun",
-              "mem": 19842,
+              "mem": 24014,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 5.0,
+      "cpu_util": 4.6,
       "error": null
     },
     {
@@ -151,39 +167,32 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 10400,
+          "mem_used": 9198,
           "mem_total": 49140,
-          "util": 19,
+          "util": 37,
           "name": "NVIDIA RTX A6000",
           "processes": []
         },
         {
           "index": 1,
-          "mem_used": 25704,
+          "mem_used": 9182,
           "mem_total": 49140,
-          "util": 99,
+          "util": 46,
           "name": "NVIDIA RTX A6000",
           "processes": [
             {
               "pid": "1241046",
               "name": "python",
               "user": "luzsun",
-              "mem": 10374,
-              "time": "N/A"
-            },
-            {
-              "pid": "1243838",
-              "name": "python",
-              "user": "luzsun",
-              "mem": 15314,
+              "mem": 9172,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 3.2,
+      "cpu_util": 2.3,
       "error": null
     }
   ],
-  "last_updated": "2026-03-08T16:39:01.519010Z"
+  "last_updated": "2026-03-08T16:40:01.956918Z"
 }
