@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 10.4,
+      "cpu_util": 11.7,
       "error": null
     },
     {
@@ -74,32 +74,39 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 80514,
+          "mem_used": 77411,
           "mem_total": 95830,
-          "util": 99,
+          "util": 100,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "1666019",
               "name": "python",
               "user": "luzsun",
-              "mem": 80504,
+              "mem": 76470,
+              "time": "N/A"
+            },
+            {
+              "pid": "1683696",
+              "name": "python",
+              "user": "harshch1803",
+              "mem": 926,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 1,
-          "mem_used": 69443,
+          "mem_used": 91979,
           "mem_total": 95830,
-          "util": 91,
+          "util": 100,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "1662547",
               "name": "/home/shuyilin/miniconda3/envs/JO/bin/python",
               "user": "shuyilin",
-              "mem": 39328,
+              "mem": 61864,
               "time": "N/A"
             },
             {
@@ -115,7 +122,7 @@
           "index": 2,
           "mem_used": 73708,
           "mem_total": 95830,
-          "util": 40,
+          "util": 34,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -129,7 +136,7 @@
         },
         {
           "index": 3,
-          "mem_used": 60109,
+          "mem_used": 54127,
           "mem_total": 95830,
           "util": 100,
           "name": "NVIDIA H100 NVL",
@@ -145,7 +152,7 @@
               "pid": "1673341",
               "name": "python",
               "user": "luzsun",
-              "mem": 26354,
+              "mem": 20372,
               "time": "N/A"
             }
           ]
@@ -178,5 +185,5 @@
       "error": null
     }
   ],
-  "last_updated": "2026-03-08T22:43:01.901842Z"
+  "last_updated": "2026-03-08T22:44:01.164650Z"
 }
