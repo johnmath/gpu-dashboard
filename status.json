@@ -20,18 +20,18 @@
           "processes": []
         }
       ],
-      "cpu_util": 18.8,
+      "cpu_util": 13.2,
       "error": null
     },
     {
-      "name": "achtung-hood",
+      "name": "achtung-dome",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 2,
+          "mem_used": 3,
           "mem_total": 12288,
           "util": 0,
-          "name": "NVIDIA GeForce GTX TITAN X",
+          "name": "NVIDIA TITAN X (Pascal)",
           "processes": []
         },
         {
@@ -43,18 +43,18 @@
           "processes": []
         }
       ],
-      "cpu_util": 2.5,
+      "cpu_util": 1.4,
       "error": null
     },
     {
-      "name": "achtung-hood",
+      "name": "achtung-dome",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 2,
+          "mem_used": 3,
           "mem_total": 12288,
           "util": 0,
-          "name": "NVIDIA GeForce GTX TITAN X",
+          "name": "NVIDIA TITAN X (Pascal)",
           "processes": []
         },
         {
@@ -66,7 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 2.5,
+      "cpu_util": 1.4,
       "error": null
     },
     {
@@ -74,9 +74,9 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 60908,
+          "mem_used": 62939,
           "mem_total": 95830,
-          "util": 89,
+          "util": 100,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -85,14 +85,21 @@
               "user": "saefurukawa",
               "mem": 60898,
               "time": "N/A"
+            },
+            {
+              "pid": "2806573",
+              "name": "/home/harshch1803/miniconda3/envs/s1poison/bin/python3.10",
+              "user": "harshch1803",
+              "mem": 2026,
+              "time": "N/A"
             }
           ]
         },
         {
           "index": 1,
-          "mem_used": 87904,
+          "mem_used": 89937,
           "mem_total": 95830,
-          "util": 0,
+          "util": 73,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -101,14 +108,21 @@
               "user": "roseev",
               "mem": 87894,
               "time": "N/A"
+            },
+            {
+              "pid": "2806574",
+              "name": "/home/harshch1803/miniconda3/envs/s1poison/bin/python3.10",
+              "user": "harshch1803",
+              "mem": 2026,
+              "time": "N/A"
             }
           ]
         },
         {
           "index": 2,
-          "mem_used": 60213,
+          "mem_used": 62247,
           "mem_total": 95830,
-          "util": 99,
+          "util": 100,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -124,19 +138,41 @@
               "user": "shuyilin",
               "mem": 30102,
               "time": "N/A"
+            },
+            {
+              "pid": "2806575",
+              "name": "/home/harshch1803/miniconda3/envs/s1poison/bin/python3.10",
+              "user": "harshch1803",
+              "mem": 2026,
+              "time": "N/A"
             }
           ]
         },
         {
           "index": 3,
-          "mem_used": 4,
+          "mem_used": 70403,
           "mem_total": 95830,
-          "util": 0,
+          "util": 100,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "2806086",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 68362,
+              "time": "N/A"
+            },
+            {
+              "pid": "2806576",
+              "name": "/home/harshch1803/miniconda3/envs/s1poison/bin/python3.10",
+              "user": "harshch1803",
+              "mem": 2026,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 3.6,
+      "cpu_util": 8.1,
       "error": null
     },
     {
@@ -159,9 +195,9 @@
           "processes": []
         }
       ],
-      "cpu_util": 0.4,
+      "cpu_util": 0.5,
       "error": null
     }
   ],
-  "last_updated": "2026-03-09T18:54:01.364488Z"
+  "last_updated": "2026-03-09T18:55:02.002308Z"
 }
