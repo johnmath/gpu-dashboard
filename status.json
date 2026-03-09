@@ -7,7 +7,7 @@
           "index": 0,
           "mem_used": 24196,
           "mem_total": 24564,
-          "util": 100,
+          "util": 0,
           "name": "NVIDIA GeForce RTX 4090",
           "processes": []
         },
@@ -15,12 +15,12 @@
           "index": 1,
           "mem_used": 23770,
           "mem_total": 24564,
-          "util": 100,
+          "util": 0,
           "name": "NVIDIA GeForce RTX 4090",
           "processes": []
         }
       ],
-      "cpu_util": 22.5,
+      "cpu_util": 14.8,
       "error": null
     },
     {
@@ -76,7 +76,7 @@
           "index": 0,
           "mem_used": 43898,
           "mem_total": 95830,
-          "util": 100,
+          "util": 95,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -90,17 +90,25 @@
         },
         {
           "index": 1,
-          "mem_used": 4,
+          "mem_used": 34590,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "2679826",
+              "name": "VLLM::EngineCore",
+              "user": "roseev",
+              "mem": 34580,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 2,
           "mem_used": 60213,
           "mem_total": 95830,
-          "util": 99,
+          "util": 100,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -121,22 +129,22 @@
         },
         {
           "index": 3,
-          "mem_used": 71858,
+          "mem_used": 67238,
           "mem_total": 95830,
-          "util": 99,
+          "util": 98,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "2669963",
               "name": "python",
               "user": "luzsun",
-              "mem": 71848,
+              "mem": 67228,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 3.2,
+      "cpu_util": 3.9,
       "error": null
     },
     {
@@ -163,5 +171,5 @@
       "error": null
     }
   ],
-  "last_updated": "2026-03-09T16:12:01.794755Z"
+  "last_updated": "2026-03-09T16:13:01.528417Z"
 }
