@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 12.4,
+      "cpu_util": 18.7,
       "error": null
     },
     {
@@ -43,7 +43,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 0.7,
+      "cpu_util": 7.0,
       "error": null
     },
     {
@@ -66,7 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 0.7,
+      "cpu_util": 7.0,
       "error": null
     },
     {
@@ -76,7 +76,7 @@
           "index": 0,
           "mem_used": 73708,
           "mem_total": 95830,
-          "util": 43,
+          "util": 44,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -92,7 +92,7 @@
           "index": 1,
           "mem_used": 73698,
           "mem_total": 95830,
-          "util": 45,
+          "util": 44,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -106,30 +106,45 @@
         },
         {
           "index": 2,
-          "mem_used": 4,
+          "mem_used": 32921,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "2173032",
+              "name": "/home/shuyilin/miniconda3/envs/JO/bin/python",
+              "user": "shuyilin",
+              "mem": 26224,
+              "time": "N/A"
+            },
+            {
+              "pid": "2173805",
+              "name": "VLLM::EngineCore",
+              "user": "shuyilin",
+              "mem": 6682,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 3,
-          "mem_used": 70642,
+          "mem_used": 63212,
           "mem_total": 95830,
-          "util": 99,
+          "util": 0,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "2131579",
               "name": "python",
               "user": "luzsun",
-              "mem": 70834,
+              "mem": 63202,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 6.0,
+      "cpu_util": 4.0,
       "error": null
     },
     {
@@ -156,5 +171,5 @@
       "error": null
     }
   ],
-  "last_updated": "2026-03-09T05:50:01.106664Z"
+  "last_updated": "2026-03-09T05:51:01.509063Z"
 }
