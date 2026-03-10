@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 7.3,
+      "cpu_util": 12.3,
       "error": null
     },
     {
@@ -76,7 +76,7 @@
           "index": 0,
           "mem_used": 60748,
           "mem_total": 95830,
-          "util": 91,
+          "util": 100,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -98,7 +98,7 @@
         },
         {
           "index": 2,
-          "mem_used": 45551,
+          "mem_used": 44967,
           "mem_total": 95830,
           "util": 99,
           "name": "NVIDIA H100 NVL",
@@ -114,14 +114,14 @@
               "pid": "3400182",
               "name": "python",
               "user": "luzsun",
-              "mem": 44930,
+              "mem": 44346,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 3,
-          "mem_used": 17662,
+          "mem_used": 34099,
           "mem_total": 95830,
           "util": 98,
           "name": "NVIDIA H100 NVL",
@@ -130,13 +130,20 @@
               "pid": "3395514",
               "name": "python",
               "user": "luzsun",
-              "mem": 17652,
+              "mem": 15678,
+              "time": "N/A"
+            },
+            {
+              "pid": "3408948",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 18418,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 30.4,
+      "cpu_util": 62.6,
       "error": null
     },
     {
@@ -144,19 +151,11 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 21886,
+          "mem_used": 5,
           "mem_total": 49140,
-          "util": 97,
+          "util": 1,
           "name": "NVIDIA RTX A6000",
-          "processes": [
-            {
-              "pid": "2384028",
-              "name": "python",
-              "user": "luzsun",
-              "mem": 21876,
-              "time": "N/A"
-            }
-          ]
+          "processes": []
         },
         {
           "index": 1,
@@ -167,9 +166,9 @@
           "processes": []
         }
       ],
-      "cpu_util": 3.1,
+      "cpu_util": 1.9,
       "error": null
     }
   ],
-  "last_updated": "2026-03-10T03:35:02.010414Z"
+  "last_updated": "2026-03-10T03:36:01.310999Z"
 }
