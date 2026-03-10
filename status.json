@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 16.0,
+      "cpu_util": 14.1,
       "error": null
     },
     {
@@ -43,38 +43,30 @@
           "processes": []
         }
       ],
-      "cpu_util": 5.1,
+      "cpu_util": 1.8,
       "error": null
     },
     {
-      "name": "achtung-biggpu",
+      "name": "achtung-dome",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 20690,
-          "mem_total": 49140,
-          "util": 97,
-          "name": "NVIDIA RTX A6000",
-          "processes": [
-            {
-              "pid": "1936350",
-              "name": "python",
-              "user": "luzsun",
-              "mem": 20680,
-              "time": "N/A"
-            }
-          ]
+          "mem_used": 3,
+          "mem_total": 12288,
+          "util": 0,
+          "name": "NVIDIA TITAN X (Pascal)",
+          "processes": []
         },
         {
           "index": 1,
-          "mem_used": 5,
-          "mem_total": 49140,
+          "mem_used": 3,
+          "mem_total": 12288,
           "util": 0,
-          "name": "NVIDIA RTX A6000",
+          "name": "NVIDIA TITAN X (Pascal)",
           "processes": []
         }
       ],
-      "cpu_util": 3.3,
+      "cpu_util": 1.8,
       "error": null
     },
     {
@@ -84,7 +76,7 @@
           "index": 0,
           "mem_used": 89150,
           "mem_total": 95830,
-          "util": 76,
+          "util": 100,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -98,7 +90,7 @@
         },
         {
           "index": 1,
-          "mem_used": 70762,
+          "mem_used": 71680,
           "mem_total": 95830,
           "util": 99,
           "name": "NVIDIA H100 NVL",
@@ -107,16 +99,16 @@
               "pid": "3221377",
               "name": "python",
               "user": "luzsun",
-              "mem": 70752,
+              "mem": 71670,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 2,
-          "mem_used": 54341,
+          "mem_used": 63587,
           "mem_total": 95830,
-          "util": 97,
+          "util": 100,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -130,29 +122,29 @@
               "pid": "3258724",
               "name": "python",
               "user": "luzsun",
-              "mem": 53720,
+              "mem": 62966,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 3,
-          "mem_used": 53318,
+          "mem_used": 43842,
           "mem_total": 95830,
-          "util": 99,
+          "util": 91,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "3258008",
               "name": "python",
               "user": "luzsun",
-              "mem": 53308,
+              "mem": 43832,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 22.8,
+      "cpu_util": 38.8,
       "error": null
     },
     {
@@ -160,32 +152,40 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 20690,
+          "mem_used": 14732,
           "mem_total": 49140,
-          "util": 97,
+          "util": 100,
           "name": "NVIDIA RTX A6000",
           "processes": [
             {
               "pid": "1936350",
               "name": "python",
               "user": "luzsun",
-              "mem": 20680,
+              "mem": 14722,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 1,
-          "mem_used": 5,
+          "mem_used": 17902,
           "mem_total": 49140,
-          "util": 0,
+          "util": 24,
           "name": "NVIDIA RTX A6000",
-          "processes": []
+          "processes": [
+            {
+              "pid": "1936935",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 17892,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 3.3,
+      "cpu_util": 44.4,
       "error": null
     }
   ],
-  "last_updated": "2026-03-10T00:49:01.473855Z"
+  "last_updated": "2026-03-10T00:50:01.918437Z"
 }
