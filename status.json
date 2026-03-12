@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 12.0,
+      "cpu_util": 12.5,
       "error": null
     },
     {
@@ -76,7 +76,7 @@
           "index": 0,
           "mem_used": 63940,
           "mem_total": 95830,
-          "util": 72,
+          "util": 74,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -90,38 +90,46 @@
         },
         {
           "index": 1,
-          "mem_used": 24,
+          "mem_used": 77432,
           "mem_total": 95830,
-          "util": 0,
+          "util": 23,
+          "name": "NVIDIA H100 NVL",
+          "processes": []
+        },
+        {
+          "index": 2,
+          "mem_used": 84392,
+          "mem_total": 95830,
+          "util": 15,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "533421",
               "name": "python",
               "user": "luzsun",
-              "mem": 518,
+              "mem": 85326,
               "time": "N/A"
             }
           ]
         },
         {
-          "index": 2,
-          "mem_used": 4,
-          "mem_total": 95830,
-          "util": 0,
-          "name": "NVIDIA H100 NVL",
-          "processes": []
-        },
-        {
           "index": 3,
-          "mem_used": 4,
+          "mem_used": 55708,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "535057",
+              "name": "VLLM::EngineCore",
+              "user": "roseev",
+              "mem": 55698,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 2.5,
+      "cpu_util": 2.8,
       "error": null
     },
     {
@@ -144,9 +152,9 @@
           "processes": []
         }
       ],
-      "cpu_util": 1.8,
+      "cpu_util": 1.4,
       "error": null
     }
   ],
-  "last_updated": "2026-03-12T22:53:01.878022Z"
+  "last_updated": "2026-03-12T22:54:01.188225Z"
 }
