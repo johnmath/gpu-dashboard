@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 15.1,
+      "cpu_util": 14.2,
       "error": null
     },
     {
@@ -43,18 +43,18 @@
           "processes": []
         }
       ],
-      "cpu_util": 3.3,
+      "cpu_util": 2.1,
       "error": null
     },
     {
-      "name": "achtung-hood",
+      "name": "achtung-dome",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 2,
+          "mem_used": 3,
           "mem_total": 12288,
           "util": 0,
-          "name": "NVIDIA GeForce GTX TITAN X",
+          "name": "NVIDIA TITAN X (Pascal)",
           "processes": []
         },
         {
@@ -66,7 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 3.3,
+      "cpu_util": 2.1,
       "error": null
     },
     {
@@ -76,7 +76,7 @@
           "index": 0,
           "mem_used": 63940,
           "mem_total": 95830,
-          "util": 71,
+          "util": 72,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -90,38 +90,46 @@
         },
         {
           "index": 1,
-          "mem_used": 67146,
+          "mem_used": 94922,
           "mem_total": 95830,
-          "util": 31,
+          "util": 54,
           "name": "NVIDIA H100 NVL",
           "processes": []
         },
         {
           "index": 2,
-          "mem_used": 72068,
+          "mem_used": 57216,
           "mem_total": 95830,
-          "util": 37,
+          "util": 62,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "533421",
               "name": "python",
               "user": "luzsun",
-              "mem": 72058,
+              "mem": 57206,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 3,
-          "mem_used": 4,
+          "mem_used": 1096,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "598482",
+              "name": "VLLM::EngineCore",
+              "user": "roseev",
+              "mem": 9978,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 2.6,
+      "cpu_util": 3.5,
       "error": null
     },
     {
@@ -144,9 +152,9 @@
           "processes": []
         }
       ],
-      "cpu_util": 0.5,
+      "cpu_util": 1.6,
       "error": null
     }
   ],
-  "last_updated": "2026-03-12T23:08:01.384860Z"
+  "last_updated": "2026-03-12T23:09:02.002089Z"
 }
