@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 17.5,
+      "cpu_util": 20.0,
       "error": null
     },
     {
@@ -66,7 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 4.9,
+      "cpu_util": 5.5,
       "error": null
     },
     {
@@ -76,7 +76,7 @@
           "index": 0,
           "mem_used": 63940,
           "mem_total": 95830,
-          "util": 50,
+          "util": 65,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -92,7 +92,7 @@
           "index": 1,
           "mem_used": 47466,
           "mem_total": 95830,
-          "util": 0,
+          "util": 22,
           "name": "NVIDIA H100 NVL",
           "processes": []
         },
@@ -100,7 +100,7 @@
           "index": 2,
           "mem_used": 47912,
           "mem_total": 95830,
-          "util": 0,
+          "util": 28,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -121,7 +121,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 52.2,
+      "cpu_util": 55.7,
       "error": null
     },
     {
@@ -129,7 +129,7 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 5,
+          "mem_used": 13038,
           "mem_total": 49140,
           "util": 0,
           "name": "NVIDIA RTX A6000",
@@ -137,16 +137,24 @@
         },
         {
           "index": 1,
-          "mem_used": 5,
+          "mem_used": 14496,
           "mem_total": 49140,
-          "util": 0,
+          "util": 17,
           "name": "NVIDIA RTX A6000",
-          "processes": []
+          "processes": [
+            {
+              "pid": "1232556",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 14486,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 1.8,
+      "cpu_util": 12.3,
       "error": null
     }
   ],
-  "last_updated": "2026-03-12T21:45:01.575480Z"
+  "last_updated": "2026-03-12T21:46:01.044068Z"
 }
