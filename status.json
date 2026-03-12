@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 12.4,
+      "cpu_util": 14.9,
       "error": null
     },
     {
@@ -43,7 +43,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 5.7,
+      "cpu_util": 2.2,
       "error": null
     },
     {
@@ -76,7 +76,7 @@
           "index": 0,
           "mem_used": 61240,
           "mem_total": 95830,
-          "util": 66,
+          "util": 70,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -90,30 +90,46 @@
         },
         {
           "index": 1,
-          "mem_used": 4,
+          "mem_used": 47624,
           "mem_total": 95830,
-          "util": 0,
+          "util": 30,
           "name": "NVIDIA H100 NVL",
           "processes": []
         },
         {
           "index": 2,
-          "mem_used": 4,
+          "mem_used": 47440,
           "mem_total": 95830,
-          "util": 0,
+          "util": 37,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "1870158",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 47430,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 3,
-          "mem_used": 4,
+          "mem_used": 1684,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "1871914",
+              "name": "VLLM::EngineCore",
+              "user": "roseev",
+              "mem": 2524,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 52.7,
+      "cpu_util": 25.7,
       "error": null
     },
     {
@@ -136,9 +152,9 @@
           "processes": []
         }
       ],
-      "cpu_util": 5.7,
+      "cpu_util": 2.2,
       "error": null
     }
   ],
-  "last_updated": "2026-03-12T17:34:01.149983Z"
+  "last_updated": "2026-03-12T17:35:01.686496Z"
 }
