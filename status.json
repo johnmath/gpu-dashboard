@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 12.9,
+      "cpu_util": 15.6,
       "error": null
     },
     {
@@ -108,7 +108,7 @@
           "index": 1,
           "mem_used": 69472,
           "mem_total": 95830,
-          "util": 89,
+          "util": 100,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -124,7 +124,7 @@
           "index": 2,
           "mem_used": 41628,
           "mem_total": 95830,
-          "util": 57,
+          "util": 67,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -138,14 +138,22 @@
         },
         {
           "index": 3,
-          "mem_used": 4,
+          "mem_used": 26794,
           "mem_total": 95830,
-          "util": 0,
+          "util": 60,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "1653995",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 26784,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 3.0,
+      "cpu_util": 3.4,
       "error": null
     },
     {
@@ -153,24 +161,24 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 11434,
+          "mem_used": 19720,
           "mem_total": 49140,
-          "util": 37,
+          "util": 63,
           "name": "NVIDIA RTX A6000",
           "processes": []
         },
         {
           "index": 1,
-          "mem_used": 13156,
+          "mem_used": 21928,
           "mem_total": 49140,
-          "util": 59,
+          "util": 53,
           "name": "NVIDIA RTX A6000",
           "processes": [
             {
               "pid": "1637603",
               "name": "python",
               "user": "luzsun",
-              "mem": 13146,
+              "mem": 21918,
               "time": "N/A"
             }
           ]
@@ -180,5 +188,5 @@
       "error": null
     }
   ],
-  "last_updated": "2026-03-14T07:54:01.608805Z"
+  "last_updated": "2026-03-14T07:55:01.052534Z"
 }
