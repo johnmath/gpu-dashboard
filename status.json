@@ -20,53 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 15.9,
-      "error": null
-    },
-    {
-      "name": "achtung-dome",
-      "gpus": [
-        {
-          "index": 0,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
-        },
-        {
-          "index": 1,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
-        }
-      ],
-      "cpu_util": 2.8,
-      "error": null
-    },
-    {
-      "name": "achtung-dome",
-      "gpus": [
-        {
-          "index": 0,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
-        },
-        {
-          "index": 1,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
-        }
-      ],
-      "cpu_util": 2.8,
+      "cpu_util": 13.9,
       "error": null
     },
     {
@@ -74,7 +28,7 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 51644,
+          "mem_used": 50054,
           "mem_total": 95830,
           "util": 100,
           "name": "NVIDIA H100 NVL",
@@ -105,11 +59,19 @@
         },
         {
           "index": 2,
-          "mem_used": 4,
+          "mem_used": 65414,
           "mem_total": 95830,
-          "util": 0,
+          "util": 100,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "2896522",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 65404,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 3,
@@ -128,32 +90,9 @@
           ]
         }
       ],
-      "cpu_util": 3.3,
-      "error": null
-    },
-    {
-      "name": "achtung-dome",
-      "gpus": [
-        {
-          "index": 0,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
-        },
-        {
-          "index": 1,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
-        }
-      ],
-      "cpu_util": 2.8,
+      "cpu_util": 2.6,
       "error": null
     }
   ],
-  "last_updated": "2026-03-15T08:50:01.826769Z"
+  "last_updated": "2026-03-15T08:51:01.129342Z"
 }
