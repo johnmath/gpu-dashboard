@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 15.1,
+      "cpu_util": 12.7,
       "error": null
     },
     {
@@ -66,7 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 5.3,
+      "cpu_util": 7.5,
       "error": null
     },
     {
@@ -74,7 +74,7 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 62582,
+          "mem_used": 54618,
           "mem_total": 95830,
           "util": 100,
           "name": "NVIDIA H100 NVL",
@@ -83,7 +83,7 @@
               "pid": "2603946",
               "name": "python",
               "user": "luzsun",
-              "mem": 62572,
+              "mem": 54608,
               "time": "N/A"
             }
           ]
@@ -92,7 +92,7 @@
           "index": 1,
           "mem_used": 88954,
           "mem_total": 95830,
-          "util": 86,
+          "util": 100,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -106,16 +106,16 @@
         },
         {
           "index": 2,
-          "mem_used": 33216,
+          "mem_used": 27014,
           "mem_total": 95830,
-          "util": 99,
+          "util": 98,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "2609836",
               "name": "python",
               "user": "luzsun",
-              "mem": 33206,
+              "mem": 27004,
               "time": "N/A"
             }
           ]
@@ -124,7 +124,7 @@
           "index": 3,
           "mem_used": 66846,
           "mem_total": 95830,
-          "util": 78,
+          "util": 83,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -141,28 +141,36 @@
       "error": null
     },
     {
-      "name": "achtung-hood",
+      "name": "achtung-biggpu",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 2,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA GeForce GTX TITAN X",
+          "mem_used": 12586,
+          "mem_total": 49140,
+          "util": 38,
+          "name": "NVIDIA RTX A6000",
           "processes": []
         },
         {
           "index": 1,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
+          "mem_used": 13854,
+          "mem_total": 49140,
+          "util": 61,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "1810928",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 13844,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 3.4,
+      "cpu_util": 1.9,
       "error": null
     }
   ],
-  "last_updated": "2026-03-15T00:04:01.122150Z"
+  "last_updated": "2026-03-15T00:05:01.519549Z"
 }
