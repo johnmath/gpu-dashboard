@@ -20,30 +20,38 @@
           "processes": []
         }
       ],
-      "cpu_util": 18.2,
+      "cpu_util": 12.4,
       "error": null
     },
     {
-      "name": "achtung-dome",
+      "name": "achtung-biggpu",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 3,
-          "mem_total": 12288,
+          "mem_used": 5,
+          "mem_total": 49140,
           "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
+          "name": "NVIDIA RTX A6000",
           "processes": []
         },
         {
           "index": 1,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
+          "mem_used": 16468,
+          "mem_total": 49140,
+          "util": 92,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "3731468",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 16458,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 3.1,
+      "cpu_util": 2.4,
       "error": null
     },
     {
@@ -121,29 +129,22 @@
         },
         {
           "index": 3,
-          "mem_used": 63885,
+          "mem_used": 34852,
           "mem_total": 95830,
-          "util": 100,
+          "util": 99,
           "name": "NVIDIA H100 NVL",
           "processes": [
-            {
-              "pid": "709371",
-              "name": "python",
-              "user": "luzsun",
-              "mem": 31796,
-              "time": "N/A"
-            },
             {
               "pid": "716488",
               "name": "python",
               "user": "luzsun",
-              "mem": 32074,
+              "mem": 34842,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 3.7,
+      "cpu_util": 3.8,
       "error": null
     },
     {
@@ -170,5 +171,5 @@
       "error": null
     }
   ],
-  "last_updated": "2026-03-22T16:23:01.854723Z"
+  "last_updated": "2026-03-22T16:24:01.271515Z"
 }
