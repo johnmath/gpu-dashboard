@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 14.2,
+      "cpu_util": 18.4,
       "error": null
     },
     {
@@ -43,7 +43,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 0.6,
+      "cpu_util": 2.9,
       "error": null
     },
     {
@@ -66,7 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 0.6,
+      "cpu_util": 2.9,
       "error": null
     },
     {
@@ -76,7 +76,7 @@
           "index": 0,
           "mem_used": 70506,
           "mem_total": 95830,
-          "util": 99,
+          "util": 91,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -92,7 +92,7 @@
           "index": 1,
           "mem_used": 57018,
           "mem_total": 95830,
-          "util": 65,
+          "util": 100,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -114,14 +114,22 @@
         },
         {
           "index": 3,
-          "mem_used": 4,
+          "mem_used": 63024,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "3011249",
+              "name": "/home/luzsun/miniconda3/envs/poison/bin/python3.11",
+              "user": "luzsun",
+              "mem": 63014,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 3.9,
+      "cpu_util": 4.2,
       "error": null
     },
     {
@@ -148,5 +156,5 @@
       "error": null
     }
   ],
-  "last_updated": "2026-03-29T06:06:01.122845Z"
+  "last_updated": "2026-03-29T06:07:01.564935Z"
 }
