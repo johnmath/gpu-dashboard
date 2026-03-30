@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 20.2,
+      "cpu_util": 15.4,
       "error": null
     },
     {
@@ -43,7 +43,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 3.4,
+      "cpu_util": 4.7,
       "error": null
     },
     {
@@ -66,7 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 3.4,
+      "cpu_util": 4.7,
       "error": null
     },
     {
@@ -76,7 +76,7 @@
           "index": 0,
           "mem_used": 49868,
           "mem_total": 95830,
-          "util": 99,
+          "util": 88,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -90,11 +90,19 @@
         },
         {
           "index": 1,
-          "mem_used": 4,
+          "mem_used": 9286,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "97547",
+              "name": "/home/ethanr/WM_Poison/cosmos-predict2.5/.venv/bin/python",
+              "user": "ethanr",
+              "mem": 9276,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 2,
@@ -129,7 +137,7 @@
           ]
         }
       ],
-      "cpu_util": 4.3,
+      "cpu_util": 38.6,
       "error": null
     },
     {
@@ -152,9 +160,9 @@
           "processes": []
         }
       ],
-      "cpu_util": 1.9,
+      "cpu_util": 2.1,
       "error": null
     }
   ],
-  "last_updated": "2026-03-30T15:03:01.553910Z"
+  "last_updated": "2026-03-30T15:04:01.183617Z"
 }
