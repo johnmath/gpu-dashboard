@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 14.5,
+      "cpu_util": 12.6,
       "error": null
     },
     {
@@ -74,62 +74,54 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 60926,
+          "mem_used": 31774,
           "mem_total": 95830,
-          "util": 100,
+          "util": 0,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
-              "pid": "2336013",
+              "pid": "2341554",
               "name": "/home/shuyilin/miniconda3/envs/JO/bin/python",
               "user": "shuyilin",
-              "mem": 60916,
+              "mem": 31764,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 1,
-          "mem_used": 87280,
+          "mem_used": 4,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
-          "processes": [
-            {
-              "pid": "2336785",
-              "name": "VLLM::EngineCore",
-              "user": "shuyilin",
-              "mem": 87270,
-              "time": "N/A"
-            }
-          ]
+          "processes": []
         },
         {
           "index": 2,
-          "mem_used": 70724,
+          "mem_used": 77642,
           "mem_total": 95830,
-          "util": 2,
+          "util": 100,
           "name": "NVIDIA H100 NVL",
           "processes": []
         },
         {
           "index": 3,
-          "mem_used": 39982,
+          "mem_used": 45314,
           "mem_total": 95830,
-          "util": 100,
+          "util": 0,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "1859039",
               "name": "python",
               "user": "luzsun",
-              "mem": 39972,
+              "mem": 45304,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 2.9,
+      "cpu_util": 3.3,
       "error": null
     },
     {
@@ -156,5 +148,5 @@
       "error": null
     }
   ],
-  "last_updated": "2026-04-02T09:53:01.946219Z"
+  "last_updated": "2026-04-02T09:54:01.052982Z"
 }
