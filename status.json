@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 12.8,
+      "cpu_util": 15.6,
       "error": null
     },
     {
@@ -43,7 +43,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 2.2,
+      "cpu_util": 2.4,
       "error": null
     },
     {
@@ -66,7 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 2.2,
+      "cpu_util": 2.4,
       "error": null
     },
     {
@@ -74,11 +74,19 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 4,
+          "mem_used": 16982,
           "mem_total": 95830,
-          "util": 0,
+          "util": 15,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "3530080",
+              "name": "python",
+              "user": "ethanr",
+              "mem": 16972,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 1,
@@ -98,30 +106,30 @@
         },
         {
           "index": 2,
-          "mem_used": 72638,
+          "mem_used": 71896,
           "mem_total": 95830,
-          "util": 100,
+          "util": 14,
           "name": "NVIDIA H100 NVL",
           "processes": []
         },
         {
           "index": 3,
-          "mem_used": 23862,
+          "mem_used": 24608,
           "mem_total": 95830,
-          "util": 0,
+          "util": 86,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "1859039",
               "name": "python",
               "user": "luzsun",
-              "mem": 23852,
+              "mem": 25592,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 3.5,
+      "cpu_util": 3.8,
       "error": null
     },
     {
@@ -144,9 +152,9 @@
           "processes": []
         }
       ],
-      "cpu_util": 0.4,
+      "cpu_util": 0.3,
       "error": null
     }
   ],
-  "last_updated": "2026-04-03T18:50:01.920638Z"
+  "last_updated": "2026-04-03T18:51:01.635243Z"
 }
