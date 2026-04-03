@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 14.8,
+      "cpu_util": 12.6,
       "error": null
     },
     {
@@ -43,7 +43,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 0.6,
+      "cpu_util": 0.4,
       "error": null
     },
     {
@@ -66,7 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 0.6,
+      "cpu_util": 0.4,
       "error": null
     },
     {
@@ -74,11 +74,19 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 4,
+          "mem_used": 20920,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "3545863",
+              "name": "python",
+              "user": "ethanr",
+              "mem": 20910,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 1,
@@ -98,30 +106,30 @@
         },
         {
           "index": 2,
-          "mem_used": 86588,
+          "mem_used": 77278,
           "mem_total": 95830,
-          "util": 0,
+          "util": 13,
           "name": "NVIDIA H100 NVL",
           "processes": []
         },
         {
           "index": 3,
-          "mem_used": 88728,
+          "mem_used": 16512,
           "mem_total": 95830,
-          "util": 100,
+          "util": 91,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "1859039",
               "name": "python",
               "user": "luzsun",
-              "mem": 88718,
+              "mem": 16502,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 3.6,
+      "cpu_util": 3.7,
       "error": null
     },
     {
@@ -144,9 +152,9 @@
           "processes": []
         }
       ],
-      "cpu_util": 0.6,
+      "cpu_util": 0.4,
       "error": null
     }
   ],
-  "last_updated": "2026-04-03T19:09:01.931733Z"
+  "last_updated": "2026-04-03T19:10:01.508729Z"
 }
