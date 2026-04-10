@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 18.8,
+      "cpu_util": 13.1,
       "error": null
     },
     {
@@ -28,7 +28,7 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 42802,
+          "mem_used": 35996,
           "mem_total": 49140,
           "util": 100,
           "name": "NVIDIA RTX A6000",
@@ -36,7 +36,7 @@
         },
         {
           "index": 1,
-          "mem_used": 34790,
+          "mem_used": 19426,
           "mem_total": 49140,
           "util": 0,
           "name": "NVIDIA RTX A6000",
@@ -45,13 +45,13 @@
               "pid": "3059064",
               "name": "python",
               "user": "luzsun",
-              "mem": 34780,
+              "mem": 19416,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 1.3,
+      "cpu_util": 1.2,
       "error": null
     },
     {
@@ -74,7 +74,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 2.8,
+      "cpu_util": 2.4,
       "error": null
     },
     {
@@ -84,7 +84,7 @@
           "index": 0,
           "mem_used": 39660,
           "mem_total": 95830,
-          "util": 77,
+          "util": 10,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -114,15 +114,23 @@
         },
         {
           "index": 2,
-          "mem_used": 6,
+          "mem_used": 61536,
           "mem_total": 95830,
-          "util": 0,
+          "util": 13,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "1495166",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 61524,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 3,
-          "mem_used": 82163,
+          "mem_used": 82165,
           "mem_total": 95830,
           "util": 100,
           "name": "NVIDIA H100 NVL",
@@ -131,7 +139,7 @@
               "pid": "1162329",
               "name": "/home/shuyilin/miniconda3/envs/JO/bin/python",
               "user": "shuyilin",
-              "mem": 52056,
+              "mem": 52058,
               "time": "N/A"
             },
             {
@@ -144,7 +152,7 @@
           ]
         }
       ],
-      "cpu_util": 3.5,
+      "cpu_util": 4.2,
       "error": null
     },
     {
@@ -179,5 +187,5 @@
       "error": null
     }
   ],
-  "last_updated": "2026-04-10T14:34:01.570288Z"
+  "last_updated": "2026-04-10T14:35:01.083270Z"
 }
