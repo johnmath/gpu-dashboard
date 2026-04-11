@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 31.4,
+      "cpu_util": 22.1,
       "error": null
     },
     {
@@ -47,13 +47,36 @@
       "error": null
     },
     {
+      "name": "achtung-dome",
+      "gpus": [
+        {
+          "index": 0,
+          "mem_used": 3,
+          "mem_total": 12288,
+          "util": 0,
+          "name": "NVIDIA TITAN X (Pascal)",
+          "processes": []
+        },
+        {
+          "index": 1,
+          "mem_used": 3,
+          "mem_total": 12288,
+          "util": 0,
+          "name": "NVIDIA TITAN X (Pascal)",
+          "processes": []
+        }
+      ],
+      "cpu_util": 5.2,
+      "error": null
+    },
+    {
       "name": "achtung-gamma",
       "gpus": [
         {
           "index": 0,
           "mem_used": 50686,
           "mem_total": 95830,
-          "util": 78,
+          "util": 100,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -69,7 +92,7 @@
           "index": 1,
           "mem_used": 83573,
           "mem_total": 95830,
-          "util": 100,
+          "util": 59,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -92,7 +115,7 @@
           "index": 2,
           "mem_used": 67812,
           "mem_total": 95830,
-          "util": 91,
+          "util": 94,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -106,7 +129,7 @@
         },
         {
           "index": 3,
-          "mem_used": 71216,
+          "mem_used": 82510,
           "mem_total": 95830,
           "util": 100,
           "name": "NVIDIA H100 NVL",
@@ -115,15 +138,15 @@
               "pid": "2129693",
               "name": "python",
               "user": "luzsun",
-              "mem": 71206,
+              "mem": 82500,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 4.8,
+      "cpu_util": 4.7,
       "error": null
     }
   ],
-  "last_updated": "2026-04-11T17:40:01.571236Z"
+  "last_updated": "2026-04-11T17:41:01.143517Z"
 }
