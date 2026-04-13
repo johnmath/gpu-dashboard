@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 15.9,
+      "cpu_util": 9.9,
       "error": null
     },
     {
@@ -43,7 +43,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 5.3,
+      "cpu_util": 4.9,
       "error": null
     },
     {
@@ -66,7 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 5.3,
+      "cpu_util": 4.9,
       "error": null
     },
     {
@@ -76,7 +76,7 @@
           "index": 0,
           "mem_used": 23476,
           "mem_total": 95830,
-          "util": 86,
+          "util": 51,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -129,7 +129,7 @@
         },
         {
           "index": 3,
-          "mem_used": 79448,
+          "mem_used": 69052,
           "mem_total": 95830,
           "util": 100,
           "name": "NVIDIA H100 NVL",
@@ -138,38 +138,46 @@
               "pid": "3320309",
               "name": "python",
               "user": "luzsun",
-              "mem": 79438,
+              "mem": 69042,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 8.3,
+      "cpu_util": 6.4,
       "error": null
     },
     {
-      "name": "achtung-dome",
+      "name": "achtung-biggpu",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
+          "mem_used": 42018,
+          "mem_total": 49140,
+          "util": 28,
+          "name": "NVIDIA RTX A6000",
           "processes": []
         },
         {
           "index": 1,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
+          "mem_used": 16214,
+          "mem_total": 49140,
+          "util": 40,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "3059064",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 16204,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 1.3,
+      "cpu_util": 1.5,
       "error": null
     }
   ],
-  "last_updated": "2026-04-13T05:05:01.750357Z"
+  "last_updated": "2026-04-13T05:06:01.280290Z"
 }
