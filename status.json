@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 8.4,
+      "cpu_util": 6.8,
       "error": null
     },
     {
@@ -153,7 +153,7 @@
         },
         {
           "index": 3,
-          "mem_used": 94862,
+          "mem_used": 76022,
           "mem_total": 95830,
           "util": 100,
           "name": "NVIDIA H100 NVL",
@@ -162,54 +162,38 @@
               "pid": "3320309",
               "name": "python",
               "user": "luzsun",
-              "mem": 94852,
+              "mem": 76012,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 5.3,
+      "cpu_util": 4.5,
       "error": null
     },
     {
-      "name": "achtung-biggpu",
+      "name": "achtung-dome",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 31254,
-          "mem_total": 49140,
-          "util": 21,
-          "name": "NVIDIA RTX A6000",
-          "processes": [
-            {
-              "pid": "3753713",
-              "name": "/home/simona/castle/CyberFortress/venv_llm_py310/bin/python3",
-              "user": "simona",
-              "mem": 1164,
-              "time": "N/A"
-            }
-          ]
+          "mem_used": 3,
+          "mem_total": 12288,
+          "util": 0,
+          "name": "NVIDIA TITAN X (Pascal)",
+          "processes": []
         },
         {
           "index": 1,
-          "mem_used": 30438,
-          "mem_total": 49140,
-          "util": 100,
-          "name": "NVIDIA RTX A6000",
-          "processes": [
-            {
-              "pid": "3750856",
-              "name": "/home/simona/bin/ollama",
-              "user": "simona",
-              "mem": 30428,
-              "time": "N/A"
-            }
-          ]
+          "mem_used": 3,
+          "mem_total": 12288,
+          "util": 0,
+          "name": "NVIDIA TITAN X (Pascal)",
+          "processes": []
         }
       ],
-      "cpu_util": 1.4,
+      "cpu_util": 5.5,
       "error": null
     }
   ],
-  "last_updated": "2026-04-13T19:26:01.283128Z"
+  "last_updated": "2026-04-13T19:27:01.038104Z"
 }
