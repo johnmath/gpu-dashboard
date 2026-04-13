@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 5.1,
+      "cpu_util": 13.1,
       "error": null
     },
     {
@@ -43,7 +43,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 5.2,
+      "cpu_util": 4.8,
       "error": null
     },
     {
@@ -66,7 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 5.2,
+      "cpu_util": 4.8,
       "error": null
     },
     {
@@ -129,7 +129,7 @@
         },
         {
           "index": 3,
-          "mem_used": 76380,
+          "mem_used": 60242,
           "mem_total": 95830,
           "util": 100,
           "name": "NVIDIA H100 NVL",
@@ -138,7 +138,7 @@
               "pid": "3320309",
               "name": "python",
               "user": "luzsun",
-              "mem": 76370,
+              "mem": 60232,
               "time": "N/A"
             }
           ]
@@ -146,7 +146,38 @@
       ],
       "cpu_util": 4.2,
       "error": null
+    },
+    {
+      "name": "achtung-biggpu",
+      "gpus": [
+        {
+          "index": 0,
+          "mem_used": 9352,
+          "mem_total": 49140,
+          "util": 19,
+          "name": "NVIDIA RTX A6000",
+          "processes": []
+        },
+        {
+          "index": 1,
+          "mem_used": 10690,
+          "mem_total": 49140,
+          "util": 27,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "3739151",
+              "name": "/home/simona/castle/CyberFortress/venv_llm_py310/bin/python3",
+              "user": "simona",
+              "mem": 10680,
+              "time": "N/A"
+            }
+          ]
+        }
+      ],
+      "cpu_util": 1.2,
+      "error": null
     }
   ],
-  "last_updated": "2026-04-13T18:24:01.915158Z"
+  "last_updated": "2026-04-13T18:25:01.381662Z"
 }
