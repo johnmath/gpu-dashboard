@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 20.0,
+      "cpu_util": 15.4,
       "error": null
     },
     {
@@ -47,26 +47,42 @@
       "error": null
     },
     {
-      "name": "achtung-dome",
+      "name": "achtung-biggpu",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
+          "mem_used": 742,
+          "mem_total": 49140,
+          "util": 5,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "4178672",
+              "name": "/home/simona/castle/CyberFortress/venv_llm_py310/bin/python3",
+              "user": "simona",
+              "mem": 732,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 1,
-          "mem_used": 3,
-          "mem_total": 12288,
+          "mem_used": 19,
+          "mem_total": 49140,
           "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "4159516",
+              "name": "ollama",
+              "user": "simona",
+              "mem": 10,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 0.4,
+      "cpu_util": 1.4,
       "error": null
     },
     {
@@ -76,7 +92,7 @@
           "index": 0,
           "mem_used": 45330,
           "mem_total": 95830,
-          "util": 100,
+          "util": 97,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -108,7 +124,7 @@
           "index": 2,
           "mem_used": 89589,
           "mem_total": 95830,
-          "util": 89,
+          "util": 95,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -151,7 +167,7 @@
           ]
         }
       ],
-      "cpu_util": 3.8,
+      "cpu_util": 4.3,
       "error": null
     },
     {
@@ -178,5 +194,5 @@
       "error": null
     }
   ],
-  "last_updated": "2026-04-15T15:42:01.676840Z"
+  "last_updated": "2026-04-15T15:43:01.388816Z"
 }
