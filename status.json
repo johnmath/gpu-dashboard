@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 11.9,
+      "cpu_util": 16.0,
       "error": null
     },
     {
@@ -30,7 +30,7 @@
           "index": 0,
           "mem_used": 30718,
           "mem_total": 49140,
-          "util": 71,
+          "util": 49,
           "name": "NVIDIA RTX A6000",
           "processes": [
             {
@@ -44,45 +44,61 @@
         },
         {
           "index": 1,
-          "mem_used": 30278,
+          "mem_used": 30280,
           "mem_total": 49140,
-          "util": 25,
+          "util": 49,
           "name": "NVIDIA RTX A6000",
           "processes": [
             {
               "pid": "256813",
               "name": "/home/simona/bin/ollama",
               "user": "simona",
-              "mem": 30268,
+              "mem": 30270,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 2.2,
+      "cpu_util": 1.7,
       "error": null
     },
     {
-      "name": "achtung-dome",
+      "name": "achtung-biggpu",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
+          "mem_used": 30718,
+          "mem_total": 49140,
+          "util": 49,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "256657",
+              "name": "/home/simona/castle/CyberFortress/venv_llm_py310/bin/python3",
+              "user": "simona",
+              "mem": 788,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 1,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
+          "mem_used": 30280,
+          "mem_total": 49140,
+          "util": 49,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "256813",
+              "name": "/home/simona/bin/ollama",
+              "user": "simona",
+              "mem": 30270,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 0.4,
+      "cpu_util": 1.7,
       "error": null
     },
     {
@@ -92,7 +108,7 @@
           "index": 0,
           "mem_used": 45730,
           "mem_total": 95830,
-          "util": 73,
+          "util": 59,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -147,7 +163,7 @@
           "index": 3,
           "mem_used": 92889,
           "mem_total": 95830,
-          "util": 99,
+          "util": 100,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -167,32 +183,48 @@
           ]
         }
       ],
-      "cpu_util": 3.9,
+      "cpu_util": 3.5,
       "error": null
     },
     {
-      "name": "achtung-dome",
+      "name": "achtung-biggpu",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
+          "mem_used": 30718,
+          "mem_total": 49140,
+          "util": 49,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "256657",
+              "name": "/home/simona/castle/CyberFortress/venv_llm_py310/bin/python3",
+              "user": "simona",
+              "mem": 788,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 1,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
+          "mem_used": 30280,
+          "mem_total": 49140,
+          "util": 49,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "256813",
+              "name": "/home/simona/bin/ollama",
+              "user": "simona",
+              "mem": 30270,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 0.4,
+      "cpu_util": 1.7,
       "error": null
     }
   ],
-  "last_updated": "2026-04-16T16:23:01.172761Z"
+  "last_updated": "2026-04-16T16:24:01.789784Z"
 }
