@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 25.0,
+      "cpu_util": 13.1,
       "error": null
     },
     {
@@ -43,7 +43,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 4.4,
+      "cpu_util": 4.6,
       "error": null
     },
     {
@@ -66,7 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 4.4,
+      "cpu_util": 4.6,
       "error": null
     },
     {
@@ -76,7 +76,7 @@
           "index": 0,
           "mem_used": 45370,
           "mem_total": 95830,
-          "util": 57,
+          "util": 100,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -131,7 +131,7 @@
           "index": 3,
           "mem_used": 94661,
           "mem_total": 95830,
-          "util": 99,
+          "util": 100,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -151,9 +151,48 @@
           ]
         }
       ],
-      "cpu_util": 6.8,
+      "cpu_util": 5.2,
+      "error": null
+    },
+    {
+      "name": "achtung-biggpu",
+      "gpus": [
+        {
+          "index": 0,
+          "mem_used": 30970,
+          "mem_total": 49140,
+          "util": 51,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "118910",
+              "name": "/home/simona/castle/CyberFortress/venv_llm_py310/bin/python3",
+              "user": "simona",
+              "mem": 788,
+              "time": "N/A"
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "mem_used": 30530,
+          "mem_total": 49140,
+          "util": 100,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "119081",
+              "name": "/home/simona/bin/ollama",
+              "user": "simona",
+              "mem": 30520,
+              "time": "N/A"
+            }
+          ]
+        }
+      ],
+      "cpu_util": 2.1,
       "error": null
     }
   ],
-  "last_updated": "2026-04-16T01:38:01.646294Z"
+  "last_updated": "2026-04-16T01:39:01.224099Z"
 }
