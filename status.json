@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 11.9,
+      "cpu_util": 14.7,
       "error": null
     },
     {
@@ -28,17 +28,17 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 36920,
+          "mem_used": 37702,
           "mem_total": 49140,
-          "util": 37,
+          "util": 25,
           "name": "NVIDIA RTX A6000",
           "processes": []
         },
         {
           "index": 1,
-          "mem_used": 38712,
+          "mem_used": 39292,
           "mem_total": 49140,
-          "util": 0,
+          "util": 30,
           "name": "NVIDIA RTX A6000",
           "processes": [
             {
@@ -52,36 +52,51 @@
               "pid": "252831",
               "name": "/home/simona/castle/CyberFortress/venv_llm_py310/bin/python3",
               "user": "simona",
-              "mem": 8526,
+              "mem": 9106,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 22.1,
+      "cpu_util": 1.3,
       "error": null
     },
     {
-      "name": "achtung-hood",
+      "name": "achtung-biggpu",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 2,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA GeForce GTX TITAN X",
+          "mem_used": 37702,
+          "mem_total": 49140,
+          "util": 25,
+          "name": "NVIDIA RTX A6000",
           "processes": []
         },
         {
           "index": 1,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
+          "mem_used": 39292,
+          "mem_total": 49140,
+          "util": 30,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "252420",
+              "name": "/home/simona/bin/ollama",
+              "user": "simona",
+              "mem": 30170,
+              "time": "N/A"
+            },
+            {
+              "pid": "252831",
+              "name": "/home/simona/castle/CyberFortress/venv_llm_py310/bin/python3",
+              "user": "simona",
+              "mem": 9106,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 2.9,
+      "cpu_util": 1.3,
       "error": null
     },
     {
@@ -91,7 +106,7 @@
           "index": 0,
           "mem_used": 45730,
           "mem_total": 95830,
-          "util": 54,
+          "util": 64,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -144,16 +159,16 @@
         },
         {
           "index": 3,
-          "mem_used": 92767,
+          "mem_used": 92773,
           "mem_total": 95830,
-          "util": 100,
+          "util": 97,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "1814339",
               "name": "/home/shuyilin/miniconda3/envs/JO/bin/python",
               "user": "shuyilin",
-              "mem": 62658,
+              "mem": 62664,
               "time": "N/A"
             },
             {
@@ -170,28 +185,43 @@
       "error": null
     },
     {
-      "name": "achtung-hood",
+      "name": "achtung-biggpu",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 2,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA GeForce GTX TITAN X",
+          "mem_used": 37702,
+          "mem_total": 49140,
+          "util": 25,
+          "name": "NVIDIA RTX A6000",
           "processes": []
         },
         {
           "index": 1,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
+          "mem_used": 39292,
+          "mem_total": 49140,
+          "util": 30,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "252420",
+              "name": "/home/simona/bin/ollama",
+              "user": "simona",
+              "mem": 30170,
+              "time": "N/A"
+            },
+            {
+              "pid": "252831",
+              "name": "/home/simona/castle/CyberFortress/venv_llm_py310/bin/python3",
+              "user": "simona",
+              "mem": 9106,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 2.9,
+      "cpu_util": 1.3,
       "error": null
     }
   ],
-  "last_updated": "2026-04-16T15:59:01.142157Z"
+  "last_updated": "2026-04-16T16:00:01.791674Z"
 }
