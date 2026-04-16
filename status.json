@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 15.0,
+      "cpu_util": 19.1,
       "error": null
     },
     {
@@ -43,7 +43,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 2.7,
+      "cpu_util": 2.3,
       "error": null
     },
     {
@@ -66,7 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 2.7,
+      "cpu_util": 2.3,
       "error": null
     },
     {
@@ -92,7 +92,7 @@
           "index": 1,
           "mem_used": 87786,
           "mem_total": 95830,
-          "util": 63,
+          "util": 0,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -108,7 +108,7 @@
           "index": 2,
           "mem_used": 87973,
           "mem_total": 95830,
-          "util": 100,
+          "util": 86,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -131,7 +131,7 @@
           "index": 3,
           "mem_used": 94661,
           "mem_total": 95830,
-          "util": 97,
+          "util": 100,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -151,32 +151,47 @@
           ]
         }
       ],
-      "cpu_util": 4.3,
+      "cpu_util": 4.1,
       "error": null
     },
     {
-      "name": "achtung-hood",
+      "name": "achtung-biggpu",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 2,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA GeForce GTX TITAN X",
+          "mem_used": 38446,
+          "mem_total": 49140,
+          "util": 22,
+          "name": "NVIDIA RTX A6000",
           "processes": []
         },
         {
           "index": 1,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
+          "mem_used": 40024,
+          "mem_total": 49140,
+          "util": 29,
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "103404",
+              "name": "/home/simona/bin/ollama",
+              "user": "simona",
+              "mem": 30330,
+              "time": "N/A"
+            },
+            {
+              "pid": "103950",
+              "name": "/home/simona/castle/CyberFortress/venv_llm_py310/bin/python3",
+              "user": "simona",
+              "mem": 9678,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 3.3,
+      "cpu_util": 1.4,
       "error": null
     }
   ],
-  "last_updated": "2026-04-16T00:23:01.617367Z"
+  "last_updated": "2026-04-16T00:24:01.205336Z"
 }
