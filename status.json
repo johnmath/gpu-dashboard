@@ -20,30 +20,45 @@
           "processes": []
         }
       ],
-      "cpu_util": 12.6,
+      "cpu_util": 11.9,
       "error": null
     },
     {
-      "name": "achtung-hood",
+      "name": "achtung-biggpu",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 2,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA GeForce GTX TITAN X",
+          "mem_used": 36920,
+          "mem_total": 49140,
+          "util": 37,
+          "name": "NVIDIA RTX A6000",
           "processes": []
         },
         {
           "index": 1,
-          "mem_used": 3,
-          "mem_total": 12288,
+          "mem_used": 38712,
+          "mem_total": 49140,
           "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
+          "name": "NVIDIA RTX A6000",
+          "processes": [
+            {
+              "pid": "252420",
+              "name": "/home/simona/bin/ollama",
+              "user": "simona",
+              "mem": 30170,
+              "time": "N/A"
+            },
+            {
+              "pid": "252831",
+              "name": "/home/simona/castle/CyberFortress/venv_llm_py310/bin/python3",
+              "user": "simona",
+              "mem": 8526,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 2.9,
+      "cpu_util": 22.1,
       "error": null
     },
     {
@@ -76,7 +91,7 @@
           "index": 0,
           "mem_used": 45730,
           "mem_total": 95830,
-          "util": 47,
+          "util": 54,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -129,16 +144,16 @@
         },
         {
           "index": 3,
-          "mem_used": 91161,
+          "mem_used": 92767,
           "mem_total": 95830,
-          "util": 99,
+          "util": 100,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "1814339",
               "name": "/home/shuyilin/miniconda3/envs/JO/bin/python",
               "user": "shuyilin",
-              "mem": 61052,
+              "mem": 62658,
               "time": "N/A"
             },
             {
@@ -151,7 +166,7 @@
           ]
         }
       ],
-      "cpu_util": 4.1,
+      "cpu_util": 4.3,
       "error": null
     },
     {
@@ -178,5 +193,5 @@
       "error": null
     }
   ],
-  "last_updated": "2026-04-16T15:58:01.365164Z"
+  "last_updated": "2026-04-16T15:59:01.142157Z"
 }
