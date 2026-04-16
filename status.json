@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 15.1,
+      "cpu_util": 25.9,
       "error": null
     },
     {
@@ -92,7 +92,7 @@
           "index": 1,
           "mem_used": 87786,
           "mem_total": 95830,
-          "util": 100,
+          "util": 0,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -106,16 +106,16 @@
         },
         {
           "index": 2,
-          "mem_used": 94793,
+          "mem_used": 94795,
           "mem_total": 95830,
-          "util": 98,
+          "util": 100,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "1815875",
               "name": "/home/shuyilin/miniconda3/envs/JO/bin/python",
               "user": "shuyilin",
-              "mem": 64686,
+              "mem": 64688,
               "time": "N/A"
             },
             {
@@ -131,7 +131,7 @@
           "index": 3,
           "mem_used": 94661,
           "mem_total": 95830,
-          "util": 100,
+          "util": 99,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -151,7 +151,7 @@
           ]
         }
       ],
-      "cpu_util": 4.5,
+      "cpu_util": 4.3,
       "error": null
     },
     {
@@ -159,26 +159,19 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 40066,
+          "mem_used": 9700,
           "mem_total": 49140,
-          "util": 22,
+          "util": 23,
           "name": "NVIDIA RTX A6000",
           "processes": []
         },
         {
           "index": 1,
-          "mem_used": 41942,
+          "mem_used": 11220,
           "mem_total": 49140,
-          "util": 30,
+          "util": 34,
           "name": "NVIDIA RTX A6000",
           "processes": [
-            {
-              "pid": "138209",
-              "name": "/home/simona/bin/ollama",
-              "user": "simona",
-              "mem": 30716,
-              "time": "N/A"
-            },
             {
               "pid": "139145",
               "name": "/home/simona/castle/CyberFortress/venv_llm_py310/bin/python3",
@@ -189,9 +182,9 @@
           ]
         }
       ],
-      "cpu_util": 1.4,
+      "cpu_util": 2.0,
       "error": null
     }
   ],
-  "last_updated": "2026-04-16T03:03:01.720607Z"
+  "last_updated": "2026-04-16T03:04:01.355395Z"
 }
