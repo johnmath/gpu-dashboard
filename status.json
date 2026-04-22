@@ -5,7 +5,7 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 21314,
+          "mem_used": 5,
           "mem_total": 24564,
           "util": 0,
           "name": "NVIDIA GeForce RTX 4090",
@@ -13,14 +13,14 @@
         },
         {
           "index": 1,
-          "mem_used": 21314,
+          "mem_used": 4,
           "mem_total": 24564,
           "util": 0,
           "name": "NVIDIA GeForce RTX 4090",
           "processes": []
         }
       ],
-      "cpu_util": 8.9,
+      "cpu_util": 15.8,
       "error": null
     },
     {
@@ -43,7 +43,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 0.4,
+      "cpu_util": 1.1,
       "error": null
     },
     {
@@ -66,7 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 0.4,
+      "cpu_util": 1.1,
       "error": null
     },
     {
@@ -74,11 +74,26 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 4,
+          "mem_used": 58749,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "2528953",
+              "name": "/home/shuyilin/miniconda3/envs/JO/bin/python",
+              "user": "shuyilin",
+              "mem": 56862,
+              "time": "N/A"
+            },
+            {
+              "pid": "2529886",
+              "name": "VLLM::EngineCore",
+              "user": "shuyilin",
+              "mem": 6326,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 1,
@@ -121,7 +136,7 @@
           ]
         }
       ],
-      "cpu_util": 5.5,
+      "cpu_util": 6.5,
       "error": null
     },
     {
@@ -144,9 +159,9 @@
           "processes": []
         }
       ],
-      "cpu_util": 2.5,
+      "cpu_util": 3.3,
       "error": null
     }
   ],
-  "last_updated": "2026-04-22T00:28:01.673412Z"
+  "last_updated": "2026-04-22T00:29:01.402991Z"
 }
