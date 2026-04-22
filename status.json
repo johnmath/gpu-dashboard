@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 14.8,
+      "cpu_util": 14.0,
       "error": null
     },
     {
@@ -43,7 +43,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 1.0,
+      "cpu_util": 1.2,
       "error": null
     },
     {
@@ -66,7 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 1.0,
+      "cpu_util": 1.2,
       "error": null
     },
     {
@@ -74,23 +74,23 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 18694,
+          "mem_used": 48794,
           "mem_total": 95830,
-          "util": 0,
+          "util": 100,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "3288634",
               "name": "/home/shuyilin/miniconda3/envs/JO/bin/python",
               "user": "shuyilin",
-              "mem": 18684,
+              "mem": 48784,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 1,
-          "mem_used": 81352,
+          "mem_used": 87276,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
@@ -99,37 +99,45 @@
               "pid": "3454508",
               "name": "VLLM::EngineCore",
               "user": "shuyilin",
-              "mem": 81350,
+              "mem": 87266,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 2,
-          "mem_used": 4,
+          "mem_used": 14014,
           "mem_total": 95830,
-          "util": 0,
+          "util": 15,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "3456325",
+              "name": "python",
+              "user": "saefurukawa",
+              "mem": 14004,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 3,
-          "mem_used": 43578,
+          "mem_used": 46716,
           "mem_total": 95830,
-          "util": 90,
+          "util": 98,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "3451484",
               "name": "python",
               "user": "saefurukawa",
-              "mem": 43568,
+              "mem": 46706,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 2.6,
+      "cpu_util": 4.3,
       "error": null
     },
     {
@@ -152,9 +160,9 @@
           "processes": []
         }
       ],
-      "cpu_util": 1.0,
+      "cpu_util": 1.2,
       "error": null
     }
   ],
-  "last_updated": "2026-04-22T22:39:01.263730Z"
+  "last_updated": "2026-04-22T22:40:01.070902Z"
 }
