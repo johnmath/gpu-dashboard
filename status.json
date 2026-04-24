@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 13.0,
+      "cpu_util": 17.1,
       "error": null
     },
     {
@@ -43,7 +43,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 0.3,
+      "cpu_util": 3.0,
       "error": null
     },
     {
@@ -66,7 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 0.3,
+      "cpu_util": 3.0,
       "error": null
     },
     {
@@ -74,24 +74,32 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 4,
+          "mem_used": 17008,
           "mem_total": 95830,
-          "util": 0,
+          "util": 72,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "291790",
+              "name": "python",
+              "user": "luzsun",
+              "mem": 16998,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 1,
-          "mem_used": 17414,
+          "mem_used": 17834,
           "mem_total": 95830,
-          "util": 65,
+          "util": 63,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "288313",
               "name": "python",
               "user": "luzsun",
-              "mem": 17404,
+              "mem": 17824,
               "time": "N/A"
             }
           ]
@@ -121,7 +129,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 3.6,
+      "cpu_util": 4.3,
       "error": null
     },
     {
@@ -144,9 +152,9 @@
           "processes": []
         }
       ],
-      "cpu_util": 0.3,
+      "cpu_util": 3.0,
       "error": null
     }
   ],
-  "last_updated": "2026-04-24T02:39:01.229232Z"
+  "last_updated": "2026-04-24T02:40:02.018324Z"
 }
