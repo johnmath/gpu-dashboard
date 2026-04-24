@@ -20,30 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 14.0,
-      "error": null
-    },
-    {
-      "name": "achtung-hood",
-      "gpus": [
-        {
-          "index": 0,
-          "mem_used": 2,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA GeForce GTX TITAN X",
-          "processes": []
-        },
-        {
-          "index": 1,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
-        }
-      ],
-      "cpu_util": 2.3,
+      "cpu_util": 13.5,
       "error": null
     },
     {
@@ -76,7 +53,7 @@
           "index": 0,
           "mem_used": 77438,
           "mem_total": 95830,
-          "util": 81,
+          "util": 87,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -124,7 +101,7 @@
           "index": 3,
           "mem_used": 50256,
           "mem_total": 95830,
-          "util": 100,
+          "util": 90,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -137,32 +114,151 @@
           ]
         }
       ],
-      "cpu_util": 4.8,
+      "cpu_util": 4.0,
       "error": null
     },
     {
-      "name": "achtung-hood",
+      "name": "achtung-gamma",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 2,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA GeForce GTX TITAN X",
-          "processes": []
+          "mem_used": 77438,
+          "mem_total": 95830,
+          "util": 87,
+          "name": "NVIDIA H100 NVL",
+          "processes": [
+            {
+              "pid": "1218903",
+              "name": "/home/shuyilin/miniconda3/envs/JO/bin/python",
+              "user": "shuyilin",
+              "mem": 77428,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 1,
-          "mem_used": 3,
-          "mem_total": 12288,
+          "mem_used": 87276,
+          "mem_total": 95830,
           "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
+          "name": "NVIDIA H100 NVL",
+          "processes": [
+            {
+              "pid": "1219560",
+              "name": "VLLM::EngineCore",
+              "user": "shuyilin",
+              "mem": 87266,
+              "time": "N/A"
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "mem_used": 65448,
+          "mem_total": 95830,
+          "util": 100,
+          "name": "NVIDIA H100 NVL",
+          "processes": [
+            {
+              "pid": "355857",
+              "name": "python",
+              "user": "saefurukawa",
+              "mem": 65438,
+              "time": "N/A"
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "mem_used": 50256,
+          "mem_total": 95830,
+          "util": 90,
+          "name": "NVIDIA H100 NVL",
+          "processes": [
+            {
+              "pid": "1229394",
+              "name": "python",
+              "user": "saefurukawa",
+              "mem": 50246,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 2.3,
+      "cpu_util": 4.0,
+      "error": null
+    },
+    {
+      "name": "achtung-gamma",
+      "gpus": [
+        {
+          "index": 0,
+          "mem_used": 77438,
+          "mem_total": 95830,
+          "util": 87,
+          "name": "NVIDIA H100 NVL",
+          "processes": [
+            {
+              "pid": "1218903",
+              "name": "/home/shuyilin/miniconda3/envs/JO/bin/python",
+              "user": "shuyilin",
+              "mem": 77428,
+              "time": "N/A"
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "mem_used": 87276,
+          "mem_total": 95830,
+          "util": 0,
+          "name": "NVIDIA H100 NVL",
+          "processes": [
+            {
+              "pid": "1219560",
+              "name": "VLLM::EngineCore",
+              "user": "shuyilin",
+              "mem": 87266,
+              "time": "N/A"
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "mem_used": 65448,
+          "mem_total": 95830,
+          "util": 100,
+          "name": "NVIDIA H100 NVL",
+          "processes": [
+            {
+              "pid": "355857",
+              "name": "python",
+              "user": "saefurukawa",
+              "mem": 65438,
+              "time": "N/A"
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "mem_used": 50256,
+          "mem_total": 95830,
+          "util": 90,
+          "name": "NVIDIA H100 NVL",
+          "processes": [
+            {
+              "pid": "1229394",
+              "name": "python",
+              "user": "saefurukawa",
+              "mem": 50246,
+              "time": "N/A"
+            }
+          ]
+        }
+      ],
+      "cpu_util": 4.0,
       "error": null
     }
   ],
-  "last_updated": "2026-04-24T22:19:01.155958Z"
+  "last_updated": "2026-04-24T22:20:01.229250Z"
 }
