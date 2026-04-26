@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 21.9,
+      "cpu_util": 16.8,
       "error": null
     },
     {
@@ -106,7 +106,7 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 46128,
+          "mem_used": 49544,
           "mem_total": 95830,
           "util": 100,
           "name": "NVIDIA H100 NVL",
@@ -115,23 +115,23 @@
               "pid": "2672138",
               "name": "python",
               "user": "luzsun",
-              "mem": 46118,
+              "mem": 49534,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 1,
-          "mem_used": 41282,
+          "mem_used": 39192,
           "mem_total": 95830,
-          "util": 100,
+          "util": 55,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "2585037",
               "name": "python",
               "user": "luzsun",
-              "mem": 41272,
+              "mem": 39196,
               "time": "N/A"
             }
           ]
@@ -140,7 +140,7 @@
           "index": 2,
           "mem_used": 81486,
           "mem_total": 95830,
-          "util": 83,
+          "util": 100,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
@@ -154,14 +154,22 @@
         },
         {
           "index": 3,
-          "mem_used": 4,
+          "mem_used": 37612,
           "mem_total": 95830,
-          "util": 0,
+          "util": 90,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "2698875",
+              "name": "python",
+              "user": "saefurukawa",
+              "mem": 37602,
+              "time": "N/A"
+            }
+          ]
         }
       ],
-      "cpu_util": 4.5,
+      "cpu_util": 5.1,
       "error": null
     },
     {
@@ -204,5 +212,5 @@
       "error": null
     }
   ],
-  "last_updated": "2026-04-26T03:13:01.346422Z"
+  "last_updated": "2026-04-26T03:14:01.100339Z"
 }
