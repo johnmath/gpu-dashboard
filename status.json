@@ -20,7 +20,53 @@
           "processes": []
         }
       ],
-      "cpu_util": 13.0,
+      "cpu_util": 17.8,
+      "error": null
+    },
+    {
+      "name": "achtung-biggpu",
+      "gpus": [
+        {
+          "index": 0,
+          "mem_used": 2,
+          "mem_total": 49140,
+          "util": 0,
+          "name": "NVIDIA RTX A6000",
+          "processes": []
+        },
+        {
+          "index": 1,
+          "mem_used": 2,
+          "mem_total": 49140,
+          "util": 0,
+          "name": "NVIDIA RTX A6000",
+          "processes": []
+        }
+      ],
+      "cpu_util": 0.9,
+      "error": null
+    },
+    {
+      "name": "achtung-biggpu",
+      "gpus": [
+        {
+          "index": 0,
+          "mem_used": 2,
+          "mem_total": 49140,
+          "util": 0,
+          "name": "NVIDIA RTX A6000",
+          "processes": []
+        },
+        {
+          "index": 1,
+          "mem_used": 2,
+          "mem_total": 49140,
+          "util": 0,
+          "name": "NVIDIA RTX A6000",
+          "processes": []
+        }
+      ],
+      "cpu_util": 0.9,
       "error": null
     },
     {
@@ -28,11 +74,19 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 822,
+          "mem_used": 820,
           "mem_total": 95830,
-          "util": 0,
+          "util": 2,
           "name": "NVIDIA H100 NVL",
-          "processes": []
+          "processes": [
+            {
+              "pid": "2217524",
+              "name": "/home/aglc/rfcllm/.venv/bin/python3",
+              "user": "aglc",
+              "mem": 812,
+              "time": "N/A"
+            }
+          ]
         },
         {
           "index": 1,
@@ -83,7 +137,7 @@
           ]
         }
       ],
-      "cpu_util": 5.0,
+      "cpu_util": 4.5,
       "error": null
     },
     {
@@ -106,9 +160,9 @@
           "processes": []
         }
       ],
-      "cpu_util": 0.3,
+      "cpu_util": 0.9,
       "error": null
     }
   ],
-  "last_updated": "2026-05-01T16:07:01.202389Z"
+  "last_updated": "2026-05-01T16:08:01.893052Z"
 }
