@@ -2,25 +2,31 @@
   "servers": [
     {
       "name": "lambda",
+      "gpus": [],
+      "cpu_util": 8.5,
+      "error": "Failed to connect or run nvidia-smi."
+    },
+    {
+      "name": "achtung-biggpu",
       "gpus": [
         {
           "index": 0,
           "mem_used": 2,
-          "mem_total": 24564,
+          "mem_total": 49140,
           "util": 0,
-          "name": "NVIDIA GeForce RTX 4090",
+          "name": "NVIDIA RTX A6000",
           "processes": []
         },
         {
           "index": 1,
           "mem_used": 2,
-          "mem_total": 24564,
+          "mem_total": 49140,
           "util": 0,
-          "name": "NVIDIA GeForce RTX 4090",
+          "name": "NVIDIA RTX A6000",
           "processes": []
         }
       ],
-      "cpu_util": 7.0,
+      "cpu_util": 0.5,
       "error": null
     },
     {
@@ -43,7 +49,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 0.3,
+      "cpu_util": 0.5,
       "error": null
     },
     {
@@ -66,7 +72,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 0.3,
+      "cpu_util": 0.5,
       "error": null
     },
     {
@@ -89,32 +95,9 @@
           "processes": []
         }
       ],
-      "cpu_util": 0.3,
-      "error": null
-    },
-    {
-      "name": "achtung-biggpu",
-      "gpus": [
-        {
-          "index": 0,
-          "mem_used": 2,
-          "mem_total": 49140,
-          "util": 0,
-          "name": "NVIDIA RTX A6000",
-          "processes": []
-        },
-        {
-          "index": 1,
-          "mem_used": 2,
-          "mem_total": 49140,
-          "util": 0,
-          "name": "NVIDIA RTX A6000",
-          "processes": []
-        }
-      ],
-      "cpu_util": 0.3,
+      "cpu_util": 0.5,
       "error": null
     }
   ],
-  "last_updated": "2026-05-02T10:09:02.103094Z"
+  "last_updated": "2026-05-02T10:10:05.346202Z"
 }
