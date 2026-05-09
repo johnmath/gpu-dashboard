@@ -5,22 +5,45 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 41,
+          "mem_used": 755,
           "mem_total": 24564,
-          "util": 0,
+          "util": 8,
           "name": "NVIDIA GeForce RTX 4090",
           "processes": []
         },
         {
           "index": 1,
-          "mem_used": 15,
+          "mem_used": 18,
           "mem_total": 24564,
           "util": 0,
           "name": "NVIDIA GeForce RTX 4090",
           "processes": []
         }
       ],
-      "cpu_util": 8.1,
+      "cpu_util": 13.8,
+      "error": null
+    },
+    {
+      "name": "achtung-hood",
+      "gpus": [
+        {
+          "index": 0,
+          "mem_used": 2,
+          "mem_total": 12288,
+          "util": 0,
+          "name": "NVIDIA GeForce GTX TITAN X",
+          "processes": []
+        },
+        {
+          "index": 1,
+          "mem_used": 3,
+          "mem_total": 12288,
+          "util": 0,
+          "name": "NVIDIA TITAN X (Pascal)",
+          "processes": []
+        }
+      ],
+      "cpu_util": 2.7,
       "error": null
     },
     {
@@ -43,30 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 5.2,
-      "error": null
-    },
-    {
-      "name": "achtung-dome",
-      "gpus": [
-        {
-          "index": 0,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
-        },
-        {
-          "index": 1,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
-        }
-      ],
-      "cpu_util": 5.1,
+      "cpu_util": 5.3,
       "error": null
     },
     {
@@ -74,7 +74,7 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 91376,
+          "mem_used": 91378,
           "mem_total": 95830,
           "util": 98,
           "name": "NVIDIA H100 NVL",
@@ -83,14 +83,14 @@
               "pid": "2258285",
               "name": "VLLM::Worker_TP0",
               "user": "roseev",
-              "mem": 91362,
+              "mem": 91364,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 1,
-          "mem_used": 91184,
+          "mem_used": 91186,
           "mem_total": 95830,
           "util": 98,
           "name": "NVIDIA H100 NVL",
@@ -99,14 +99,14 @@
               "pid": "2258286",
               "name": "VLLM::Worker_TP1",
               "user": "roseev",
-              "mem": 91170,
+              "mem": 91172,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 2,
-          "mem_used": 91184,
+          "mem_used": 91186,
           "mem_total": 95830,
           "util": 98,
           "name": "NVIDIA H100 NVL",
@@ -115,14 +115,14 @@
               "pid": "2258287",
               "name": "VLLM::Worker_TP2",
               "user": "roseev",
-              "mem": 91170,
+              "mem": 91172,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 3,
-          "mem_used": 91184,
+          "mem_used": 91186,
           "mem_total": 95830,
           "util": 98,
           "name": "NVIDIA H100 NVL",
@@ -131,24 +131,24 @@
               "pid": "2258288",
               "name": "VLLM::Worker_TP3",
               "user": "roseev",
-              "mem": 91170,
+              "mem": 91172,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 5.7,
+      "cpu_util": 6.4,
       "error": null
     },
     {
-      "name": "achtung-dome",
+      "name": "achtung-hood",
       "gpus": [
         {
           "index": 0,
-          "mem_used": 3,
+          "mem_used": 2,
           "mem_total": 12288,
           "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
+          "name": "NVIDIA GeForce GTX TITAN X",
           "processes": []
         },
         {
@@ -160,9 +160,9 @@
           "processes": []
         }
       ],
-      "cpu_util": 5.2,
+      "cpu_util": 2.7,
       "error": null
     }
   ],
-  "last_updated": "2026-05-09T23:47:01.912374Z"
+  "last_updated": "2026-05-09T23:48:01.408895Z"
 }
