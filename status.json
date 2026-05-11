@@ -20,6 +20,29 @@
           "processes": []
         }
       ],
+      "cpu_util": 8.4,
+      "error": null
+    },
+    {
+      "name": "achtung-dome",
+      "gpus": [
+        {
+          "index": 0,
+          "mem_used": 3,
+          "mem_total": 12288,
+          "util": 0,
+          "name": "NVIDIA TITAN X (Pascal)",
+          "processes": []
+        },
+        {
+          "index": 1,
+          "mem_used": 3,
+          "mem_total": 12288,
+          "util": 0,
+          "name": "NVIDIA TITAN X (Pascal)",
+          "processes": []
+        }
+      ],
       "cpu_util": 5.2,
       "error": null
     },
@@ -43,30 +66,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 6.1,
-      "error": null
-    },
-    {
-      "name": "achtung-dome",
-      "gpus": [
-        {
-          "index": 0,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
-        },
-        {
-          "index": 1,
-          "mem_used": 3,
-          "mem_total": 12288,
-          "util": 0,
-          "name": "NVIDIA TITAN X (Pascal)",
-          "processes": []
-        }
-      ],
-      "cpu_util": 6.1,
+      "cpu_util": 5.2,
       "error": null
     },
     {
@@ -74,7 +74,7 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 90726,
+          "mem_used": 90736,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
@@ -83,14 +83,14 @@
               "pid": "2776227",
               "name": "VLLM::Worker_TP0",
               "user": "roseev",
-              "mem": 90714,
+              "mem": 90724,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 1,
-          "mem_used": 90326,
+          "mem_used": 90336,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
@@ -99,14 +99,14 @@
               "pid": "2776228",
               "name": "VLLM::Worker_TP1",
               "user": "roseev",
-              "mem": 90314,
+              "mem": 90324,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 2,
-          "mem_used": 90326,
+          "mem_used": 90336,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
@@ -115,14 +115,14 @@
               "pid": "2776229",
               "name": "VLLM::Worker_TP2",
               "user": "roseev",
-              "mem": 90314,
+              "mem": 90324,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 3,
-          "mem_used": 90326,
+          "mem_used": 90336,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
@@ -131,13 +131,13 @@
               "pid": "2776230",
               "name": "VLLM::Worker_TP3",
               "user": "roseev",
-              "mem": 90314,
+              "mem": 90324,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 1.9,
+      "cpu_util": 5.3,
       "error": null
     },
     {
@@ -160,9 +160,9 @@
           "processes": []
         }
       ],
-      "cpu_util": 0.4,
+      "cpu_util": 1.4,
       "error": null
     }
   ],
-  "last_updated": "2026-05-11T01:53:01.950776Z"
+  "last_updated": "2026-05-11T01:54:01.466356Z"
 }
