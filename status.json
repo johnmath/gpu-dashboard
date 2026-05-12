@@ -20,7 +20,7 @@
           "processes": []
         }
       ],
-      "cpu_util": 5.9,
+      "cpu_util": 5.0,
       "error": null
     },
     {
@@ -74,70 +74,70 @@
       "gpus": [
         {
           "index": 0,
-          "mem_used": 1186,
+          "mem_used": 61606,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "3714543",
-              "name": "VLLM::Worker",
+              "name": "VLLM::Worker_TP0",
               "user": "roseev",
-              "mem": 1176,
+              "mem": 61596,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 1,
-          "mem_used": 1186,
+          "mem_used": 61606,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "3714544",
-              "name": "VLLM::Worker",
+              "name": "VLLM::Worker_TP1",
               "user": "roseev",
-              "mem": 1176,
+              "mem": 61596,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 2,
-          "mem_used": 1186,
+          "mem_used": 61606,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "3714545",
-              "name": "VLLM::Worker",
+              "name": "VLLM::Worker_TP2",
               "user": "roseev",
-              "mem": 1176,
+              "mem": 61596,
               "time": "N/A"
             }
           ]
         },
         {
           "index": 3,
-          "mem_used": 1186,
+          "mem_used": 61606,
           "mem_total": 95830,
           "util": 0,
           "name": "NVIDIA H100 NVL",
           "processes": [
             {
               "pid": "3714546",
-              "name": "VLLM::Worker",
+              "name": "VLLM::Worker_TP3",
               "user": "roseev",
-              "mem": 1176,
+              "mem": 61596,
               "time": "N/A"
             }
           ]
         }
       ],
-      "cpu_util": 4.8,
+      "cpu_util": 5.0,
       "error": null
     },
     {
@@ -164,5 +164,5 @@
       "error": null
     }
   ],
-  "last_updated": "2026-05-12T15:29:01.914182Z"
+  "last_updated": "2026-05-12T15:30:01.037253Z"
 }
