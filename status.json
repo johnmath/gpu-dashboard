@@ -2,30 +2,311 @@
   "servers": [
     {
       "name": "lambda",
-      "gpus": [],
-      "cpu_util": 0,
-      "error": "Failed to connect or run nvidia-smi."
-    },
-    {
-      "name": "achtung-hood",
-      "gpus": [],
-      "error": "Data is stale. Machine may be offline."
-    },
-    {
-      "name": "achtung-dome",
-      "gpus": [],
-      "error": "Data is stale. Machine may be offline."
+      "gpus": [
+        {
+          "index": 0,
+          "mem_used": 41,
+          "mem_total": 24564,
+          "util": 0,
+          "name": "NVIDIA GeForce RTX 4090",
+          "processes": []
+        },
+        {
+          "index": 1,
+          "mem_used": 15,
+          "mem_total": 24564,
+          "util": 0,
+          "name": "NVIDIA GeForce RTX 4090",
+          "processes": []
+        }
+      ],
+      "cpu_util": 98.4,
+      "error": null
     },
     {
       "name": "achtung-gamma",
-      "gpus": [],
-      "error": "Data is stale. Machine may be offline."
+      "gpus": [
+        {
+          "index": 0,
+          "mem_used": 87890,
+          "mem_total": 95830,
+          "util": 0,
+          "name": "NVIDIA H100 NVL",
+          "processes": [
+            {
+              "pid": "363267",
+              "name": "VLLM::Worker_TP0",
+              "user": "roseev",
+              "mem": 87880,
+              "time": "N/A"
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "mem_used": 87590,
+          "mem_total": 95830,
+          "util": 0,
+          "name": "NVIDIA H100 NVL",
+          "processes": [
+            {
+              "pid": "363268",
+              "name": "VLLM::Worker_TP1",
+              "user": "roseev",
+              "mem": 87580,
+              "time": "N/A"
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "mem_used": 87590,
+          "mem_total": 95830,
+          "util": 0,
+          "name": "NVIDIA H100 NVL",
+          "processes": [
+            {
+              "pid": "363269",
+              "name": "VLLM::Worker_TP2",
+              "user": "roseev",
+              "mem": 87580,
+              "time": "N/A"
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "mem_used": 87590,
+          "mem_total": 95830,
+          "util": 0,
+          "name": "NVIDIA H100 NVL",
+          "processes": [
+            {
+              "pid": "363270",
+              "name": "VLLM::Worker_TP3",
+              "user": "roseev",
+              "mem": 87580,
+              "time": "N/A"
+            }
+          ]
+        }
+      ],
+      "cpu_util": 1.9,
+      "error": null
     },
     {
-      "name": "achtung-biggpu",
-      "gpus": [],
-      "error": "Data is stale. Machine may be offline."
+      "name": "achtung-gamma",
+      "gpus": [
+        {
+          "index": 0,
+          "mem_used": 87890,
+          "mem_total": 95830,
+          "util": 0,
+          "name": "NVIDIA H100 NVL",
+          "processes": [
+            {
+              "pid": "363267",
+              "name": "VLLM::Worker_TP0",
+              "user": "roseev",
+              "mem": 87880,
+              "time": "N/A"
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "mem_used": 87590,
+          "mem_total": 95830,
+          "util": 0,
+          "name": "NVIDIA H100 NVL",
+          "processes": [
+            {
+              "pid": "363268",
+              "name": "VLLM::Worker_TP1",
+              "user": "roseev",
+              "mem": 87580,
+              "time": "N/A"
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "mem_used": 87590,
+          "mem_total": 95830,
+          "util": 0,
+          "name": "NVIDIA H100 NVL",
+          "processes": [
+            {
+              "pid": "363269",
+              "name": "VLLM::Worker_TP2",
+              "user": "roseev",
+              "mem": 87580,
+              "time": "N/A"
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "mem_used": 87590,
+          "mem_total": 95830,
+          "util": 0,
+          "name": "NVIDIA H100 NVL",
+          "processes": [
+            {
+              "pid": "363270",
+              "name": "VLLM::Worker_TP3",
+              "user": "roseev",
+              "mem": 87580,
+              "time": "N/A"
+            }
+          ]
+        }
+      ],
+      "cpu_util": 1.9,
+      "error": null
+    },
+    {
+      "name": "achtung-gamma",
+      "gpus": [
+        {
+          "index": 0,
+          "mem_used": 87890,
+          "mem_total": 95830,
+          "util": 0,
+          "name": "NVIDIA H100 NVL",
+          "processes": [
+            {
+              "pid": "363267",
+              "name": "VLLM::Worker_TP0",
+              "user": "roseev",
+              "mem": 87880,
+              "time": "N/A"
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "mem_used": 87590,
+          "mem_total": 95830,
+          "util": 0,
+          "name": "NVIDIA H100 NVL",
+          "processes": [
+            {
+              "pid": "363268",
+              "name": "VLLM::Worker_TP1",
+              "user": "roseev",
+              "mem": 87580,
+              "time": "N/A"
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "mem_used": 87590,
+          "mem_total": 95830,
+          "util": 0,
+          "name": "NVIDIA H100 NVL",
+          "processes": [
+            {
+              "pid": "363269",
+              "name": "VLLM::Worker_TP2",
+              "user": "roseev",
+              "mem": 87580,
+              "time": "N/A"
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "mem_used": 87590,
+          "mem_total": 95830,
+          "util": 0,
+          "name": "NVIDIA H100 NVL",
+          "processes": [
+            {
+              "pid": "363270",
+              "name": "VLLM::Worker_TP3",
+              "user": "roseev",
+              "mem": 87580,
+              "time": "N/A"
+            }
+          ]
+        }
+      ],
+      "cpu_util": 1.9,
+      "error": null
+    },
+    {
+      "name": "achtung-gamma",
+      "gpus": [
+        {
+          "index": 0,
+          "mem_used": 87890,
+          "mem_total": 95830,
+          "util": 0,
+          "name": "NVIDIA H100 NVL",
+          "processes": [
+            {
+              "pid": "363267",
+              "name": "VLLM::Worker_TP0",
+              "user": "roseev",
+              "mem": 87880,
+              "time": "N/A"
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "mem_used": 87590,
+          "mem_total": 95830,
+          "util": 0,
+          "name": "NVIDIA H100 NVL",
+          "processes": [
+            {
+              "pid": "363268",
+              "name": "VLLM::Worker_TP1",
+              "user": "roseev",
+              "mem": 87580,
+              "time": "N/A"
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "mem_used": 87590,
+          "mem_total": 95830,
+          "util": 0,
+          "name": "NVIDIA H100 NVL",
+          "processes": [
+            {
+              "pid": "363269",
+              "name": "VLLM::Worker_TP2",
+              "user": "roseev",
+              "mem": 87580,
+              "time": "N/A"
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "mem_used": 87590,
+          "mem_total": 95830,
+          "util": 0,
+          "name": "NVIDIA H100 NVL",
+          "processes": [
+            {
+              "pid": "363270",
+              "name": "VLLM::Worker_TP3",
+              "user": "roseev",
+              "mem": 87580,
+              "time": "N/A"
+            }
+          ]
+        }
+      ],
+      "cpu_util": 1.9,
+      "error": null
     }
   ],
-  "last_updated": "2026-05-14T15:48:47.409659Z"
+  "last_updated": "2026-05-14T15:51:51.903419Z"
 }
